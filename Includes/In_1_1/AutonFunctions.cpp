@@ -2,7 +2,7 @@ void AutonDrive(double Distance,int Pct=100, int FinalWait=250, int Correction=2
     //Local Variables
     double WheelSize=4*3.1415926535;
     double Vector=sgn(Distance);
-    double Revolutions= std;;abs(Distance)/WheelSize;
+    double Revolutions= std::abs(Distance)/WheelSize;
     int LeftPowSend=0;
     int RightPowSend=0;
     //Clear it
@@ -29,13 +29,10 @@ void AutonDrive(double Distance,int Pct=100, int FinalWait=250, int Correction=2
         LeftPowSend=LeftPowSend*Vector
         RightPowSend=RightPowSend*Vector
         //Send it to Driving Power
-        SetDRpower(LeftPowSend,RightPowSend);
+        SDMP(LeftPowSend,RightPowSend);
         vex::task::sleep(1);
     }
-    SetDRpower(0,0);
-    while(BRightMotor.isSpinning() || BLeftMotor.isSpinning()){
-        vex::task::sleep(1);
-    }
+    SDMP(0,0);
     vex::task::sleep(FinalWait)
 }
 

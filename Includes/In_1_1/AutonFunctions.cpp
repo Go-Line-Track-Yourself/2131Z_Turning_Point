@@ -29,6 +29,13 @@ void AutonDrive(double Distance,int Pct=100, int FinalWait=250, int Correction=2
         LeftPowSend=LeftPowSend*Vector
         RightPowSend=RightPowSend*Vector
         //Send it to Driving Power
-        
+        SetDRpower(LeftPowSend,RightPowSend);
+        vex::task::sleep(1);
     }
+    SetDRpower(0,0);
+    while(BRightMotor.isSpinning() || BLeftMotor.isSpinning()){
+        vex::task::sleep(1);
+    }
+    vex::task::sleep(FinalWait)
 }
+

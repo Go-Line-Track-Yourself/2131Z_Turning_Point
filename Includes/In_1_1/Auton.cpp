@@ -1,5 +1,16 @@
 void Auton(){
-    AutonDrive(20); //(Distance in Inches)
+    //AutonMove(); (Distance in Inches)  
+    //AutonTurn(); (Turning Degrees)
+}
+void BackB{
+
+}
+void FrntB{
+
+}
+void BackR{
+
+}
+void FrntR{
     
-    AutonTurn(0); //(Turning Degrees)
 }

@@ -47,7 +47,8 @@ void AutonMove(double Distance,int Pct=100, int FinalWait=250, int Correction=2)
     }
     vex::task::sleep(FinalWait);
 }
-void AutonTurn(double deg, int LPowSend=50, int RPowSend=50, int FinalWait=25){
+
+void AutonTurn(double deg, int LPowSend=10, int RPowSend=10, int FinalWait=25){
     int Direction=sgn(deg);
     deg=abs(deg);
     LPowSend=LPowSend*Direction;

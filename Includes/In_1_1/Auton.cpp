@@ -2,7 +2,9 @@ void Auton(){
     //--------- Guide ---------//
     //AutonMove(Distance in Inches);   
     //AutonTurn(Turning Degrees); 
-    //AutonIntk(ON or !ON, Way or !Way);
+    //AutonIntk(ON or !ON, In or !In);
+    //AutonFlyC(Go or !Go);
+    //AutonFlip();
 }
 void BackB(){
     

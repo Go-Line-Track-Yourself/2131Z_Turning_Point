@@ -7,3 +7,7 @@ void SDMP(int LPower, int RPower){
 void SetIntakePower(int power){
     IntakeMotor.spin(vex::directionType::fwd, power, vex::velocityUnits::pct);
 }
+
+void SetFlyPower(int rpm){
+    FlyWheelMotor.spin(vex::directionType::fwd,rpm,vex::velocityUnits::rpm);
+}

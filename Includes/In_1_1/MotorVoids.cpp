@@ -4,3 +4,6 @@ void SDMP(int LPower, int RPower){
          FRMotor.spin(vex::directionType::fwd, RPower, vex::velocityUnits::pct);
          BRMotor.spin(vex::directionType::fwd, RPower, vex::velocityUnits::pct); 
 }
+void SetIntakePower(int power){
+    IntakeMotor.spin(vex::directionType::fwd, power, vex::velocityUnits::pct);
+}

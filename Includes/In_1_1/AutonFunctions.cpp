@@ -68,3 +68,17 @@ void AutonTurn(double deg, int LPowSend=10, int RPowSend=10, int FinalWait=25){
     SDMP(0,0);
 }
 
+void AutonIntk(bool ON, bool direction){
+    if(ON){
+        if(direction) SetIntakePower(100);
+        if(!direction) SetIntakePower(-100);
+    }
+    if(!ON){
+        IntakeMotor.stop();
+    }
+}
+
+void AutonFlyW(){
+    SetFlyPower(600);
+    while()
+}

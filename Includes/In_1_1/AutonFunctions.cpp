@@ -48,24 +48,23 @@ void AutonMove(double Distance,int Pct=100, int FinalWait=250, int Correction=2)
     vex::task::sleep(FinalWait);
 }
 
-void AutonTurn(double deg, int LPowSend=50, int RPowSend=50, int FinalWait=25){
+void AutonTurn(double deg, bool Rel=true, int LPowSend=50 , int RPowSend=50, int FinalWait=25){
+    if(Rel) Deg+=Gyro.value(vex::rotationUnits::deg);
+
     int Direction=sgn(deg);
-    deg=std::abs(deg);
-    LPowSend=LPowSend*Direction;
-    RPowSend=RPowSend*Direction;
+    LPowSend=std::abs(LPowSend)*Direction;
+    RPowSend=std::abs(RPowSend)*Direction;
 
-    Brain.Screen.print("Amount Turned = ");
-    Brain.Screen.print(deg);
-    Brain.Screen.newLine();
-
-    while(std::abs(BRMotor.rotation(vex::rotationUnits::rev))<deg){
+    while(std::abs(Gyro.value(vex::rotationUnits::deg)-deg)>2){
        SDMP(LPowSend,-RPowSend);
        vex::task::sleep(1); 
     }
     SDMP(0,0);
+    Brain.Screen.print("Amount Turned = ");
+    Brain.Screen.print(deg);
+    Brain.Screen.newLine();
 
     vex::task::sleep(FinalWait);
-    SDMP(0,0);
 }
 
 void AutonIntk(bool ON, bool In){

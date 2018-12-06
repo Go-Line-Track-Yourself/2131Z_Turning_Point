@@ -102,6 +102,19 @@ void AutonFlyC(bool Go){
     }
 }
 
+void AutonIndx(bool Go){
+    if(Go){
+        SetIndexerPower(200);
+        Brain.Screen.print("Indexer is on ");
+        Brain.Screen.newLine();
+    }
+    if(!Go){
+        IndexerMotor.stop();
+        Brain.Screen.print("Indexer is off ");
+        Brain.Screen.newLine();
+    }
+}
+
 void AutonFlip(){
         FlipMotor.startRotateTo(-90,vex::rotationUnits::deg,50,vex::velocityUnits::pct);
         FlipMotor.startRotateTo(90,vex::rotationUnits::deg,50,vex::velocityUnits::pct);

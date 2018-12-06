@@ -11,3 +11,7 @@ void SetIntakePower(int power){
 void SetFlyPower(int rpm){
     FlyWheelMotor.spin(vex::directionType::fwd,rpm,vex::velocityUnits::rpm);
 }
+
+void SetIndexerPower(int rpm){
+    IndexerMotor.spin(vex::directionType::fwd,rpm,vex::velocityUnits::rpm);
+}

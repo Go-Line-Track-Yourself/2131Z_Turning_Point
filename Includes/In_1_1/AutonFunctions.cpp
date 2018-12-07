@@ -1,4 +1,4 @@
-void AutonMove(double Distance,int Pct=100, int FinalWait=250, int Correction=2){
+void AutonMove(double Distance,int Pct=75, int FinalWait=400, int Correction=2){
     //Local Variables
     double WheelSize=4*3.1415926535;
     double Vector=sgn(Distance);
@@ -42,26 +42,27 @@ void AutonMove(double Distance,int Pct=100, int FinalWait=250, int Correction=2)
         vex::task::sleep(1);
     }
     SDMP(0,0);
+    /*
     while(BRMotor.isSpinning() || BLMotor.isSpinning()){
         vex::task::sleep(1);
     }
+    */
     vex::task::sleep(FinalWait);
 }
 
-void AutonTurn(double deg, bool Rel=true, int LPowSend=50 , int RPowSend=50, int FinalWait=25){
-    if(Rel) Deg+=Gyro.value(vex::rotationUnits::deg);
-
-    int Direction=sgn(deg);
-    LPowSend=std::abs(LPowSend)*Direction;
-    RPowSend=std::abs(RPowSend)*Direction;
-
-    while(std::abs(Gyro.value(vex::rotationUnits::deg)-deg)>2){
+void AutonTurn(double Dis, int LPowSend=50 , int RPowSend=50, int FinalWait=25){    
+    int Direction=sgn(Dis);
+    Dis=std::abs(Dis)/12.56;
+    LPowSend=LPowSend*Direction;
+    RPowSend=RPowSend*Direction;
+    FLMotor.resetRotation();
+    while(std::abs(FLMotor.rotation(vex::rotationUnits::rev))<std::abs(Dis)){
        SDMP(LPowSend,-RPowSend);
        vex::task::sleep(1); 
     }
     SDMP(0,0);
     Brain.Screen.print("Amount Turned = ");
-    Brain.Screen.print(deg);
+    Brain.Screen.print(Dis);
     Brain.Screen.newLine();
 
     vex::task::sleep(FinalWait);
@@ -90,7 +91,7 @@ void AutonIntk(bool ON, bool In){
 
 void AutonFlyC(bool Go){
     if(Go){
-        SetFlyPower(600);
+        SetFlyPower(-600);
         Brain.Screen.print("FlyWheel is on ");
         Brain.Screen.newLine();
     }
@@ -103,7 +104,7 @@ void AutonFlyC(bool Go){
 
 void AutonIndx(bool Go){
     if(Go){
-        SetIndexerPower(200);
+        SetIndexerPower(-50);
         Brain.Screen.print("Indexer is on ");
         Brain.Screen.newLine();
     }
@@ -114,9 +115,10 @@ void AutonIndx(bool Go){
     }
 }
 
-void AutonFlip(){
-        FlipMotor.startRotateTo(-90,vex::rotationUnits::deg,50,vex::velocityUnits::pct);
-        FlipMotor.startRotateTo(90,vex::rotationUnits::deg,50,vex::velocityUnits::pct);
+void AutonFlip(double DEG,int Wait=20){
+        FlipMotor.rotateTo(DEG,vex::rotationUnits::deg,100,vex::velocityUnits::pct);
+        vex::task::sleep(Wait);
+        FlipMotor.startRotateTo(0,vex::rotationUnits::deg,100,vex::velocityUnits::pct);
             Brain.Screen.print("Flipped!");
             Brain.Screen.newLine();
 }

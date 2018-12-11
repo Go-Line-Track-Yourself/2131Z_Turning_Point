@@ -12,26 +12,26 @@ void FrntB(){
     AutonMove(44);  //Go forward 46 Inches
     AutonTurn(-4);  //Turn right 45 degrees
     AutonIntk(false, false); //Turn off Intake
-    AutonMove(-19); //Go backwards 19 Inches
+    AutonMove(-18); //Go backwards 19 Inches
     AutonFlip(500);    //Flip Cap
     AutonTurn(4); //Turn left 45 degrees
-    AutonMove(-28); //Go backwards 28 Inches
-    AutonTurn(8); //Turn left 90 degrees
+    AutonMove(-28.5); //Go backwards 28 Inches
+    AutonTurn(9.75); //Turn left 90 degrees
     AutonMove(30);  //Go forwards 10 Inches
-    AutonTurn(.5);
-    AutonMove(-4);
-    AutonTurn(-.25);
-    AutonMove(-18);   //Go back to Middle Flag Shot Spot
+//    AutonTurn(.5);
+//    AutonMove(-4);
+//    AutonTurn(-.25);
+    AutonMove(-16);   //Go back to Middle Flag Shot Spot
     AutonIndx(true);  //Turn on Indexer
     vex::task::sleep(1300);
     AutonIndx(false);  //Turn off Indexer  
-    AutonTurn(.5);  
-    AutonMove(-38);   //Go back to Top Flad Shot Spot
-    AutonTurn(-.5);
+    AutonTurn(-.5);  
+    AutonMove(-37);   //Go back to Top Flad Shot Spot
+//    AutonTurn(-.5);
     AutonIndx(true);
     AutonIntk(true, true);  //Turn on Intake to Move Ball into Indexer and Shoot it
 //    AutonMove(-);   //Go backwards to be Parallel with Platform
-    vex::task::sleep(15000);
+    vex::task::sleep(3000);
     AutonIndx(false); //Turn off Indexer
     AutonFlyC(false); //Turn off Flywheel
     AutonIntk(false, false); //Turn off Intake

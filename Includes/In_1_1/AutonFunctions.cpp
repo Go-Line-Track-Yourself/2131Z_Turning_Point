@@ -116,10 +116,18 @@ void AutonIndx(bool Go){
 }
 
 void AutonFlip(double DEG,int Wait=20){
-        FlipMotor.rotateTo(DEG,vex::rotationUnits::deg,100,vex::velocityUnits::pct);
-        vex::task::sleep(Wait);
-        FlipMotor.startRotateTo(0,vex::rotationUnits::deg,100,vex::velocityUnits::pct);
+    FlipMotor.rotateTo(DEG,vex::rotationUnits::deg,100,vex::velocityUnits::pct);
+    vex::task::sleep(Wait);
+    FlipMotor.startRotateTo(0,vex::rotationUnits::deg,100,vex::velocityUnits::pct);
             Brain.Screen.print("Flipped!");
             Brain.Screen.newLine();
 }
 
+void AutonStop(bool on){
+    if(on){
+        BLMotor.stop();
+        BRMotor.stop();
+        FLMotor.stop();
+        FRMotor.stop();
+    }
+}

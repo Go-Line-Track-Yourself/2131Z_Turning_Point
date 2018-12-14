@@ -123,11 +123,17 @@ void AutonFlip(double DEG,int Wait=20){
             Brain.Screen.newLine();
 }
 
-void AutonStop(bool on){
+void AutonHold(bool on){
     if(on){
-        BLMotor.stop();
-        BRMotor.stop();
-        FLMotor.stop();
-        FRMotor.stop();
+        BLMotor.stop(vex::brakeType::hold);
+        BRMotor.stop(vex::brakeType::hold);
+        FLMotor.stop(vex::brakeType::hold);
+        FRMotor.stop(vex::brakeType::hold);
+    }
+    if(!on){
+        BLMotor.stop(vex::brakeType::brake);
+        BRMotor.stop(vex::brakeType::brake);
+        FLMotor.stop(vex::brakeType::brake);
+        FRMotor.stop(vex::brakeType::brake);        
     }
 }

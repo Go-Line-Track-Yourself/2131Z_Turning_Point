@@ -5,6 +5,33 @@
     //AutonFlyC(Go or !Go);
     //AutonFlip();
     //AutonIndx(Go or !Go);
+void FrntRPark(){
+    AutonMove(20);
+    AutonTurn(-9);
+    AutonMove(36);
+    AutonHold(true);
+}
+
+void BackRPark(){
+    AutonMove(20);
+    AutonTurn(9);
+    AutonMove(36);
+    AutonHold(true);
+}
+
+void FrntBPark(){
+    AutonMove(20);
+    AutonTurn(9);
+    AutonMove(36);
+    AutonHold(true);
+}
+
+void BackBPark(){
+    AutonMove(20);
+    AutonTurn(-9);
+    AutonMove(36);
+    AutonHold(true);
+}
 
 void BackB(){
     AutonHold(false);
@@ -69,10 +96,6 @@ void FrntB(){
     AutonIntk(false, false);
     AutonMove(7);
     AutonTurn(-9);
-    AutonMove(20);
-    AutonTurn(9);
-    AutonMove(36);
-    AutonHold(true);
 }
 void FrntR(){
     AutonStop(false);
@@ -103,10 +126,6 @@ void FrntR(){
     AutonIntk(false, false);
     AutonMove(7);
     AutonTurn(9);
-    AutonMove(20);
-    AutonTurn(-9);
-    AutonMove(36);
-    AutonHold(true);
 }
 
 void Skillz(){

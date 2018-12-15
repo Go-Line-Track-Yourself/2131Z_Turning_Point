@@ -5,14 +5,7 @@ void AutonMove(double Distance,int Pct=75, int FinalWait=400, int Correction=2){
     double Revolutions=std::abs(Distance)/WheelSize;
     int LPowSend=0;
     int RPowSend=0;
-
-    Brain.Screen.print("Inches Driven Forward = ");
-    Brain.Screen.print(Distance);
-    Brain.Screen.newLine();
-    Brain.Screen.print("Direction Driven Forward = ");
-    Brain.Screen.print(Vector);
-    Brain.Screen.newLine();
-
+    
     //Clear it
     BLMotor.resetRotation();
     BRMotor.resetRotation();

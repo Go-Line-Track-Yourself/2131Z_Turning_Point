@@ -7,34 +7,28 @@
     //AutonIndx(Go or !Go);
     
 void FrntRPark(){
-    AutonMove(20);
-    AutonTurn(-9);
-    AutonMove(36);
-    AutonHold(true);
+    Brain.Screen.print("FrntRPark");
+    Brain.Screen.newLine();
 }
 
-void BackRPark(){
-    AutonMove(20);
-    AutonTurn(9);
-    AutonMove(36);
-    AutonHold(true);
+void BackRPark(){                                               //fix
+    Brain.Screen.print("BackRPark");
+    Brain.Screen.newLine();
 }
 
 void FrntBPark(){
-    AutonMove(20);
-    AutonTurn(9);
-    AutonMove(36);
-    AutonHold(true);
+    Brain.Screen.print("FrntBPark");
+    Brain.Screen.newLine();
 }
 
-void BackBPark(){
-    AutonMove(20);
-    AutonTurn(-9);
-    AutonMove(36);
-    AutonHold(true);
+void BackBPark(){                                               //fix
+    Brain.Screen.print("BackBPark");
+    Brain.Screen.newLine();
 }
 
-void BackB(){
+void BackB(){                                                   //fix
+    Brain.Screen.print("BackB");
+    Brain.Screen.newLine();
     AutonHold(false);
     AutonIntk(true, true);  //Turn on Intake
     AutonFlyC(true);
@@ -50,7 +44,9 @@ void BackB(){
     AutonFlip(500);
     AutonFlyC(false);
 }
-void BackR(){
+void BackR(){                                                   //fix
+    Brain.Screen.print("BackR");
+    Brain.Screen.newLine();
     AutonHold(false);
     AutonIntk(true, true);  //Turn on Intake
     AutonFlyC(true);
@@ -68,38 +64,45 @@ void BackR(){
     
 }
 
-void FrntB(){
+void FrntB(){                                                   //test
+    Brain.Screen.print("FrntB");
+    Brain.Screen.newLine();
     AutonHold(false);
     AutonFlyC(true);  
     AutonIntk(true, true);  
     AutonMove(44);  
     AutonIntk(false, false); 
     AutonMove(-39.5);
-    AutonTurn(7.75);
-    AutonMove(1);  
+    AutonTurn(9.1);
+    AutonMove(10);  
     AutonIndx(true); 
-    vex::task::sleep(1300);
+    vex::task::sleep(1400);
     AutonIndx(false);
-    AutonMove(21.5);   
+    AutonMove(21.5);
+//    AutonTurn(1);   
     AutonIndx(true);
     AutonIntk(true, true);  
     vex::task::sleep(1500);
     AutonIndx(false); 
     AutonFlyC(false); 
     AutonIntk(false, false); 
+    AutonMove(27);
     AutonTurn(1);
-    AutonMove(24);
-    AutonMove(-36);
-    AutonTurn(-9);
-    AutonIntk(true, false)
-    AutonMove(36);
-    AutonMove(-40);
+    AutonMove(-22);
+    AutonTurn(-11);
+    AutonIntk(true, false);
+    AutonMove(32);
+//    AutonMove(-40);
     AutonIntk(false, false);
+/*    
     AutonMove(7);
     AutonTurn(-9);
+*/
 }
 void FrntR(){
-    AutonStop(false);
+    Brain.Screen.print("FrntR");
+    Brain.Screen.newLine();
+    AutonHold(false);
     AutonFlyC(true);  
     AutonIntk(true, true);  
     AutonMove(44);  
@@ -108,7 +111,7 @@ void FrntR(){
     AutonTurn(-7.75);
     AutonMove(1);  
     AutonIndx(true); 
-    vex::task::sleep(1300);
+    vex::task::sleep(1400);
     AutonIndx(false);
     AutonMove(21.5);   
     AutonIndx(true);
@@ -119,17 +122,20 @@ void FrntR(){
     AutonIntk(false, false); 
     AutonTurn(-1);
     AutonMove(24);
-    AutonMove(-36);
+/*    AutonMove(-36);
     AutonTurn(9);
-    AutonIntk(true, false)
+    AutonIntk(true, false);
     AutonMove(36);
     AutonMove(-40);
     AutonIntk(false, false);
     AutonMove(7);
     AutonTurn(9);
+*/
 }
 
-void Skillz(){
+void Skillz(){                                                  //fix
+    Brain.Screen.print("Skillz");
+    Brain.Screen.newLine();
     AutonHold(false);
     AutonIntk(true, true);  //Turn on Intake
     AutonFlyC(true);
@@ -147,5 +153,4 @@ void Skillz(){
     AutonTurn(-4.5);
     AutonMove(-25);
     AutonFlip(500);
-
 }

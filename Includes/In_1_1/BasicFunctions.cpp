@@ -74,3 +74,18 @@ void FlipRodVoid(){
         FlipMotor.stop();
     }
 }
+
+void DriveLock() {
+    if(Controller1.ButtonRight.pressing()) {
+        BLMotor.stop(vex::brakeType::hold);
+        BRMotor.stop(vex::brakeType::hold);
+        FLMotor.stop(vex::brakeType::hold);
+        FRMotor.stop(vex::brakeType::hold);
+    }
+    else {
+        BLMotor.stop(vex::brakeType::coast);
+        BRMotor.stop(vex::brakeType::coast);
+        FLMotor.stop(vex::brakeType::coast);
+        FRMotor.stop(vex::brakeType::coast);
+    }
+}

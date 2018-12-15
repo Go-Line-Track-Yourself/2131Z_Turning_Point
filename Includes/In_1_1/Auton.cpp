@@ -34,32 +34,34 @@ void BackB(){                                                   //fix
     AutonFlyC(true);
     AutonMove(43);  //Go forward 46 Inches
     AutonIntk(false, false);
-    AutonTurn(7.2);
-    AutonMove(-3);
+    AutonMove(-5);
+    AutonTurn(6.95);
+    AutonMove(-9);
     AutonIndx(true);
     vex::task::sleep(1300);
     AutonIndx(false);
-    AutonTurn(1.6);
-    AutonMove(-4);
+    AutonTurn(3.75);
+    AutonMove(-7.2);
     AutonFlip(300);
     AutonFlyC(false);
 }
-void BackR(){                                                   //fix
+void BackR(){                                                   
     Brain.Screen.print("BackR");
     Brain.Screen.newLine();
     AutonHold(false);
     AutonIntk(true, true);  //Turn on Intake
     AutonFlyC(true);
     AutonMove(43);  //Go forward 46 Inches
-    AutonMove(-2);
     AutonIntk(false, false);
-    AutonTurn(-8.75);
+    AutonMove(-5);
+    AutonTurn(-6.95);
+    AutonMove(-9);
     AutonIndx(true);
     vex::task::sleep(1300);
     AutonIndx(false);
-    AutonTurn(.25);
-    AutonMove(-9);
-    AutonFlip(500);
+    AutonTurn(-3.75);
+    AutonMove(-7.2);
+    AutonFlip(300);
     AutonFlyC(false);
     
 }
@@ -73,15 +75,14 @@ void FrntB(){
     AutonMove(44);  
     AutonIntk(false, false);
     AutonMove(-39.5);
-    AutonTurn(9.1);
+    AutonTurn(9.3);
     AutonMove(10); 
-    AutonTurn(-1.5); 
     AutonIndx(true); 
     vex::task::sleep(1400);
     AutonIndx(false);
-    AutonMove(21.5);   
+    AutonMove(20);   
     AutonIndx(true);
-    AutonTurn(.25);
+    AutonTurn(.1);
     AutonIntk(true, true);  
     vex::task::sleep(1500);
     AutonTurn(1.5);
@@ -89,13 +90,12 @@ void FrntB(){
     AutonFlyC(false); 
     AutonIntk(false, false); 
     AutonMove(15);
-//    AutonTurn(1);
     AutonMove(-18);
     AutonTurn(-4);
     AutonMove(-4);
     AutonTurn(-7);
     AutonIntk(true, false);
-    AutonMove(30);
+    AutonMove(16);
     AutonIntk(false, false);
 }
 void FrntR(){

@@ -153,3 +153,46 @@ void Skillz(){                                                  //fix
     AutonMove(-25);
     AutonFlip(500);
 }
+
+void AutonPots(){
+    int SelectValue = AutonSelect.value(vex::percentUnits::pct);
+    int SelectValueTwo = AutonSelectTwo.value(vex::percentUnits::pct);
+    if(SelectValue > 98){
+        if(SelectValueTwo > 80){
+            FrntBPark();
+            vex::task::sleep(15000);
+        }
+        if(SelectValueTwo > 50){
+            BackBPark();
+            vex::task::sleep(15000);
+        }
+        if(SelectValueTwo > 30){
+            FrntRPark();
+            vex::task::sleep(15000);
+        }
+        if(SelectValueTwo >= 0){
+            BackRPark();
+            vex::task::sleep(15000);
+        }
+    }
+    if(SelectValue > 80){
+        Skillz();
+        vex::task::sleep(15000);
+    }
+    if(SelectValue > 60) {
+        FrntB();
+        vex::task::sleep(15000);
+    }
+    if(SelectValue > 40){
+        BackB();
+        vex::task::sleep(15000);
+    }
+    if(SelectValue > 20){
+        FrntR();
+        vex::task::sleep(15000);
+    }
+    if(SelectValue >= 0){
+        BackR();
+        vex::task::sleep(15000);
+    }
+}

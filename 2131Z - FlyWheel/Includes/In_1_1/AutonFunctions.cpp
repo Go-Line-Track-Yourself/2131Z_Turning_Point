@@ -35,11 +35,6 @@ void AutonMove(double Distance,int Pct=75, int FinalWait=400, int Correction=2){
         vex::task::sleep(1);
     }
     SDMP(0,0);
-    /*
-    while(BRMotor.isSpinning() || BLMotor.isSpinning()){
-        vex::task::sleep(1);
-    }
-    */
     vex::task::sleep(FinalWait);
 }
 

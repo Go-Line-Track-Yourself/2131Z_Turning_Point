@@ -107,7 +107,7 @@ void FrntR(){
     AutonMove(44);  
     AutonIntk(false, false); 
     AutonMove(-39.5);
-    AutonTurn(-7.75);
+    AutonTurn(-7.9);
     AutonMove(1);  
     AutonIndx(true); 
     vex::task::sleep(1400);
@@ -119,17 +119,16 @@ void FrntR(){
     AutonIndx(false); 
     AutonFlyC(false); 
     AutonIntk(false, false); 
-    AutonTurn(-1);
+//    AutonTurn(-1);
     AutonMove(24);
-/*    AutonMove(-36);
+    AutonMove(-28);
     AutonTurn(9);
     AutonIntk(true, false);
-    AutonMove(36);
-    AutonMove(-40);
+    AutonMove(20);
+    AutonMove(-22);
     AutonIntk(false, false);
     AutonMove(7);
     AutonTurn(9);
-*/
 }
 
 void Skillz(){                                                  //fix

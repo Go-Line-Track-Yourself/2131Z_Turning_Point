@@ -116,15 +116,12 @@ void FrntR(){
     AutonIndx(true);
     AutonIntk(true, true);  
     vex::task::sleep(1500);
-    AutonIndx(false); 
-    AutonFlyC(false); 
-    AutonIntk(false, false); 
+    AutonIndx(false);   
 //    AutonTurn(-1);
     AutonMove(24);
-    AutonMove(-26);
-    AutonTurn(-9);
     AutonMove(-12);
-    AutonFlip(300);
+    AutonTurn(-7);
+    AutonIndx(true);
 /*
     AutonTurn(9);
     AutonIntk(true, false);

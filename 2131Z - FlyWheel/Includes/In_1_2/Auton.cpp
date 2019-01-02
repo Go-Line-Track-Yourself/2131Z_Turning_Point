@@ -100,13 +100,13 @@ void FrntB(){
 }
 void FrntR(){
     //////////////////// Top Center Flag ////////////////////
-/*
+
     Brain.Screen.print("FrntR");
     Brain.Screen.newLine();
     AutonHold(false);
     AutonFlyC(true);  
     AutonIntk(true, true);  
-    AutonMove(44);  
+    AutonMove(40);  
     AutonIntk(false, false); 
     AutonMove(-39.5);
     AutonTurn(-8.7);
@@ -114,18 +114,19 @@ void FrntR(){
     AutonIndx(true); 
     vex::task::sleep(1400);
     AutonIndx(false);
-    AutonMove(22);   
+    AutonMove(20);   
     AutonIndx(true);
     AutonIntk(true, true);  
     vex::task::sleep(1500);
-    AutonIndx(false);   
-    AutonMove(24);
+    AutonIndx(false);  
+//    AutonTurn(-1); 
+    AutonMove(17);
     AutonMove(-12);
     AutonTurn(7.5);
     AutonIndx(true);
-*/
-    ///////////////////// Flip Cap ///////////////////////
 
+    ///////////////////// Flip Cap ///////////////////////
+/*
     Brain.Screen.print("FrntR");
     Brain.Screen.newLine();
     AutonHold(false);
@@ -151,6 +152,7 @@ void FrntR(){
     AutonTurn(-9);
     AutonMove(-12);
     AutonFlip(300);
+*/
 }
 
 void Skillz(){                                                  //fix

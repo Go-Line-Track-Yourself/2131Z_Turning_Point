@@ -1,41 +1,27 @@
-/*
+
 int DriveRamping(){
     DriveRampingEnabled=true;
     while(DriveRampingEnabled){
         LDR.TaskRun();
         RDR.TaskRun();
-        DriveSMS(LDR.Pct,RDR.Pct);
+        SDMP(LDR.Pct,RDR.Pct);
         vex::task::sleep(LDR.ChangeMsec);
     }
     return 1;
-}
-void DR(int L,int R){
-    LDR.RequestedPct=L;
-    RDR.RequestedPct=R;
-}
-void QDRS(int CMS=2){//quick drive ramp stop
-    //save old ramping Change Msec
-    int LDRCMS=LDR.ChangeMsec;
-    int RDRCMS=RDR.ChangeMsec;
-    //set new ramping Change Msec
-    LDR.ChangeMsec=CMS;
-    RDR.ChangeMsec=CMS;
-    //set drive to stop
-    DR(0,0);
-    //wait for drive to stop
-    while(LDR.Pct!=0 || RDR.Pct!=0){EndTimeSlice();}
-    //Revert drive ramping Change Msec
-    LDR.ChangeMsec=LDRCMS;
-    RDR.ChangeMsec=RDRCMS;
 }
 void DI(int L,int R){
     LDR.RequestedPct=L;
     RDR.RequestedPct=R;
     LDR.Pct=L;
     RDR.Pct=R;
-    DriveSMS(LDR.Pct,RDR.Pct);
+    SDMP(LDR.Pct,RDR.Pct);
 }
-*/
+
+void SetDRpower(int Lpower,int Rpower){ //DR
+    LDR.RequestedPct=Lpower;
+    RDR.RequestedPct=Rpower;
+}
+
 void AutonMove(double Distance,int Pct=75, int FinalWait=200, int Correction=2){
     //Local Variables
     double WheelSize=4*3.1415926535;
@@ -69,41 +55,13 @@ void AutonMove(double Distance,int Pct=75, int FinalWait=200, int Correction=2){
         LPowSend=LPowSend*Vector;
         RPowSend=RPowSend*Vector;
         //Send it to Driving Power
-        SDMP(LPowSend,RPowSend);
+        SetDRpower(LPowSend,RPowSend);
         vex::task::sleep(1);
     }
-    SDMP(0,0);
+    SetDRpower(0,0);
     vex::task::sleep(FinalWait);
-    /*
-    if(FinalWait==-1){
+}
 
-    }
-    else if(FinalWait>0){
-        SDMP(0,0);
-        while(LDR.Pct!=0 || RDR.Pct!=0){EndTimeSlice(LDR.ChangeMsec);}
-        vex::task::sleep(FinalWait);        
-    }
-        else{//>=0,!=-1; set stop dont wait;                                        Stop
-        DR(0,0);
-    }
-    */
-}
-/*
-void DriveRecon(int Pct,int Wait,int FinalWait=250){
-    DR(Pct,Pct);
-    vex::task::sleep(Wait);
-    if(FinalWait>0){
-        DR(0,0);
-        while(LDR.Pct!=0 || RDR.Pct!=0){EndTimeSlice(LDR.ChangeMsec);}
-        Controller1.Screen.clearLine();
-        Controller1.Screen.print("RECONED");
-    }
-    else if(FinalWait==0){
-        Controller1.Screen.clearLine();
-        Controller1.Screen.print("RECONED!END");
-    }
-}
-*/
 void AutonTurn(double Dis, int LPowSend=40 , int RPowSend=40, int FinalWait=25){    
     int Direction=sgn(Dis);
     Dis=std::abs(Dis)/12.56;
@@ -111,10 +69,10 @@ void AutonTurn(double Dis, int LPowSend=40 , int RPowSend=40, int FinalWait=25){
     RPowSend=RPowSend*Direction;
     FLMotor.resetRotation();
     while(std::abs(FLMotor.rotation(vex::rotationUnits::rev))<std::abs(Dis)){
-       SDMP(LPowSend,-RPowSend);
+       DI(LPowSend,-RPowSend);
        vex::task::sleep(1); 
     }
-    SDMP(0,0);
+    DI(0,0);
     Brain.Screen.print("Amount Turned = ");
     Brain.Screen.print(Dis);
     Brain.Screen.newLine();
@@ -191,15 +149,3 @@ void AutonHold(bool on){
         FRMotor.stop(vex::brakeType::brake);        
     }
 }
-/*
-void DriveWait(bool stop){
-    if(stop)    DR(0,0);
-    while(LDR.Pct!=0 || RDR.Pct!=0){EndTimeSlice(LDR.ChangeMsec);}
-}
-
-//need to do forward def
-void StopAllMotors(){
-    DI(0,0);//set drive ramping to 0
-    DriveSMS(0,0);
-}
-*/

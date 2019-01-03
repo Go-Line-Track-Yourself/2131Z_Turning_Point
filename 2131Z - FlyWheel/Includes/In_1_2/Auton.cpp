@@ -106,23 +106,24 @@ void FrntR(){
     AutonHold(false);
     AutonFlyC(true);  
     AutonIntk(true, true);  
-    AutonMove(40);  
+    AutonMove(40);
+    vex::task::sleep(200); 
     AutonIntk(false, false); 
     AutonMove(-39.5);
-    AutonTurn(-8.7);
+    AutonTurn(-8.8);
     AutonMove(1);  
     AutonIndx(true); 
     vex::task::sleep(1400);
     AutonIndx(false);
-    AutonMove(20);   
+    AutonMove(15);   
     AutonIndx(true);
     AutonIntk(true, true);  
     vex::task::sleep(1500);
     AutonIndx(false);  
-//    AutonTurn(-1); 
+    AutonTurn(-1); 
     AutonMove(17);
     AutonMove(-12);
-    AutonTurn(7.5);
+    AutonTurn(7);
     AutonIndx(true);
 
     ///////////////////// Flip Cap ///////////////////////

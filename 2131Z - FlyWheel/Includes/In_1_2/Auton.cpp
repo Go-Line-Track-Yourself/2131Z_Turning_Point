@@ -6,9 +6,34 @@
     //AutonFlip();
     //AutonIndx(Go or !Go);
     
-void FrntRPark(){
-    Brain.Screen.print("FrntRPark");
+void FrntRTopF(){
+    Brain.Screen.print("FrntRFlip");
     Brain.Screen.newLine();
+    //////////////////// Top Center Flag ////////////////////
+
+    AutonHold(false);
+    AutonFlyC(true);  
+    AutonIntk(true, true);  
+    AutonMove(40);
+    vex::task::sleep(200); 
+    AutonIntk(false, false); 
+    AutonMove(-39.5);
+    AutonTurn(-8.85);
+    AutonMove(1);  
+    AutonIndx(true); 
+    vex::task::sleep(1400);
+    AutonIndx(false);
+    AutonMove(15);   
+    AutonIndx(true);
+    AutonIntk(true, true);  
+    vex::task::sleep(1500);
+    AutonIndx(false);  
+    AutonTurn(-1); 
+    AutonMove(17);
+    AutonMove(-12);
+    AutonTurn(7);
+    AutonIndx(true);
+
 }
 
 void BackRPark(){                                               //fix
@@ -24,24 +49,39 @@ void FrntBPark(){
 void BackBPark(){                                               //fix
     Brain.Screen.print("BackBPark");
     Brain.Screen.newLine();
+    AutonHold(false);
+    AutonIntk(true, true);
+    AutonFlyC(true);
+    AutonMove(43);
+    AutonIntk(false, false);
+    AutonMove(-5);
+    AutonTurn(7.65);
+    AutonMove(-9);
+    AutonIndx(true);
+    vex::task::sleep(1300);
+    AutonIndx(false);
+    AutonTurn(6.5);
+    AutonMove(-1);
+    AutonFlip(300);
+    AutonFlyC(false);
 }
 
 void BackB(){                                                   //fix
     Brain.Screen.print("BackB");
     Brain.Screen.newLine();
     AutonHold(false);
-    AutonIntk(true, true);  //Turn on Intake
+    AutonIntk(true, true);
     AutonFlyC(true);
-    AutonMove(43);  //Go forward 46 Inches
+    AutonMove(43);
     AutonIntk(false, false);
     AutonMove(-5);
-    AutonTurn(6.95);
+    AutonTurn(7.65);
     AutonMove(-9);
     AutonIndx(true);
     vex::task::sleep(1300);
     AutonIndx(false);
-    AutonTurn(3.75);
-    AutonMove(-7.2);
+    AutonTurn(6.5);
+    AutonMove(-1);
     AutonFlip(300);
     AutonFlyC(false);
 }
@@ -75,12 +115,11 @@ void FrntB(){
     AutonMove(44);  
     AutonIntk(false, false);
     AutonMove(-39.5);
-    AutonTurn(9.3);
-    AutonMove(10); 
+    AutonTurn(8.45); 
     AutonIndx(true); 
     vex::task::sleep(1400);
     AutonIndx(false);
-    AutonMove(20);   
+    AutonMove(21);   
     AutonIndx(true);
     AutonTurn(.1);
     AutonIntk(true, true);  
@@ -89,9 +128,9 @@ void FrntB(){
     AutonIndx(false); 
     AutonFlyC(false); 
     AutonIntk(false, false); 
-    AutonMove(15);
-    AutonMove(-18);
-    AutonTurn(-4);
+    AutonMove(13);
+    AutonMove(-16);
+    AutonTurn(-3);
     AutonMove(-4);
     AutonTurn(-7);
     AutonIntk(true, false);
@@ -99,7 +138,7 @@ void FrntB(){
     AutonIntk(false, false);
 }
 void FrntR(){
-    //////////////////// Top Center Flag ////////////////////
+    ///////////////////// Flip Cap ///////////////////////
 
     Brain.Screen.print("FrntR");
     Brain.Screen.newLine();
@@ -110,7 +149,7 @@ void FrntR(){
     vex::task::sleep(200); 
     AutonIntk(false, false); 
     AutonMove(-39.5);
-    AutonTurn(-8.8);
+    AutonTurn(-8.85);
     AutonMove(1);  
     AutonIndx(true); 
     vex::task::sleep(1400);
@@ -122,38 +161,10 @@ void FrntR(){
     AutonIndx(false);  
     AutonTurn(-1); 
     AutonMove(17);
-    AutonMove(-12);
-    AutonTurn(7);
-    AutonIndx(true);
-
-    ///////////////////// Flip Cap ///////////////////////
-/*
-    Brain.Screen.print("FrntR");
-    Brain.Screen.newLine();
-    AutonHold(false);
-    AutonFlyC(true);  
-    AutonIntk(true, true);  
-    AutonMove(44);  
-    AutonIntk(false, false); 
-    AutonMove(-39.5);
-    AutonTurn(-8.7);
-    AutonMove(1);  
-    AutonIndx(true); 
-    vex::task::sleep(1400);
-    AutonIndx(false);
-    AutonMove(22);   
-    AutonIndx(true);
-    AutonIntk(true, true);  
-    vex::task::sleep(1500);
-    AutonIndx(false); 
-    AutonFlyC(false); 
-    AutonIntk(false, false); 
-    AutonMove(24);
-    AutonMove(-26);
+    AutonMove(-18);
     AutonTurn(-9);
-    AutonMove(-12);
+    AutonMove(-9);
     AutonFlip(300);
-*/
 }
 
 void Skillz(){                                                  //fix
@@ -191,7 +202,7 @@ void AutonPots(){
             vex::task::sleep(15000);
         }
         if(SelectValueTwo > 30){
-            FrntRPark();
+            FrntRTopF();
             vex::task::sleep(15000);
         }
         if(SelectValueTwo >= 0){

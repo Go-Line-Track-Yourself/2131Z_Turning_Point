@@ -6,6 +6,7 @@ void PAutonStart(){
 }
 
 void UserCoStart(){
+    DriveRampingEnabled=false;
     FLMotor.setStopping(vex::brakeType::coast);
     BLMotor.setStopping(vex::brakeType::coast);
     FRMotor.setStopping(vex::brakeType::coast);

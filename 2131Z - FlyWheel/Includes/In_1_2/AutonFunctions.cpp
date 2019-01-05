@@ -135,6 +135,13 @@ void AutonFlip(double DEG,int Wait=20){
             Brain.Screen.newLine();
 }
 
+void AutonRodU(double DEG,int Wait=20){
+    FlipMotor.rotateTo(DEG,vex::rotationUnits::deg,100,vex::velocityUnits::pct);
+}
+
+void AutonRodD(int Wait=20){
+    FlipMotor.startRotateTo(0,vex::rotationUnits::deg,100,vex::velocityUnits::pct);
+}
 void AutonHold(bool on){
     if(on){
         BLMotor.stop(vex::brakeType::hold);
@@ -148,4 +155,18 @@ void AutonHold(bool on){
         FLMotor.stop(vex::brakeType::brake);
         FRMotor.stop(vex::brakeType::brake);        
     }
+}
+
+void AutonLock(){
+        BLMotor.stop(vex::brakeType::hold);
+        BRMotor.stop(vex::brakeType::hold);
+        FLMotor.stop(vex::brakeType::hold);
+        FRMotor.stop(vex::brakeType::hold);
+}
+
+void AutonNLck(){
+        BLMotor.stop(vex::brakeType::coast);
+        BRMotor.stop(vex::brakeType::coast);
+        FLMotor.stop(vex::brakeType::coast);
+        FRMotor.stop(vex::brakeType::coast);
 }

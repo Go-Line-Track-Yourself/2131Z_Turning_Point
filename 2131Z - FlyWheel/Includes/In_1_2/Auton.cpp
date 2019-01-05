@@ -44,6 +44,32 @@ void BackRPark(){                                               //fix
 void FrntBPark(){
     Brain.Screen.print("FrntBPark");
     Brain.Screen.newLine();
+    AutonHold(false);
+    AutonFlyC(true);  
+    AutonIntk(true, true);  
+    AutonMove(42);
+    vex::task::sleep(50);
+    AutonMove(-39);
+    AutonIntk(false, false);
+    AutonTurn(8.05);
+    AutonIndx(true); 
+    vex::task::sleep(1400);
+    AutonIndx(false);
+    AutonMove(18);   
+    AutonIndx(true);
+    AutonIntk(true, true);  
+    vex::task::sleep(1500);
+    AutonIndx(false); 
+    AutonFlyC(false); 
+    AutonIntk(false, false);
+    AutonTurn(2);
+    AutonMove(25);
+    AutonMove(-65);
+    AutonTurn(-10);
+    AutonLock();
+    AutonMove(40);
+    vex::task::sleep(2000);
+    AutonNLck();
 }
 
 void BackBPark(){                                               //fix
@@ -80,9 +106,6 @@ void BackB(){                                                   //fix
     AutonIndx(true);
     vex::task::sleep(1300);
     AutonIndx(false);
-    AutonTurn(6.5);
-    AutonMove(-1);
-    AutonFlip(300);
     AutonFlyC(false);
 }
 void BackR(){                                                   
@@ -103,7 +126,6 @@ void BackR(){
     AutonMove(-7.2);
     AutonFlip(300);
     AutonFlyC(false);
-    
 }
 
 void FrntB(){                                                   
@@ -112,29 +134,26 @@ void FrntB(){
     AutonHold(false);
     AutonFlyC(true);  
     AutonIntk(true, true);  
-    AutonMove(44);  
+    AutonMove(42);  
+    AutonMove(-39);
     AutonIntk(false, false);
-    AutonMove(-39.5);
-    AutonTurn(8.45); 
+    AutonTurn(8);
     AutonIndx(true); 
     vex::task::sleep(1400);
     AutonIndx(false);
-    AutonMove(21);   
+    AutonMove(18);   
     AutonIndx(true);
-    AutonTurn(.1);
     AutonIntk(true, true);  
     vex::task::sleep(1500);
-    AutonTurn(1.5);
     AutonIndx(false); 
     AutonFlyC(false); 
-    AutonIntk(false, false); 
+    AutonIntk(false, false);
+    AutonTurn(2);
     AutonMove(13);
     AutonMove(-16);
-    AutonTurn(-3);
-    AutonMove(-4);
-    AutonTurn(-7);
     AutonIntk(true, false);
-    AutonMove(16);
+    AutonTurn(-12);
+    AutonMove(15);
     AutonIntk(false, false);
 }
 void FrntR(){

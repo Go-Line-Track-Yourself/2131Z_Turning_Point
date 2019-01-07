@@ -7,7 +7,7 @@
     //AutonIndx(Go or !Go);
     
 void FrntRTopF(){
-    Brain.Screen.print("FrntRFlip");
+    Brain.Screen.print("FrntRTopF");
     Brain.Screen.newLine();
     //////////////////// Top Center Flag ////////////////////
 
@@ -112,19 +112,20 @@ void BackR(){
     Brain.Screen.print("BackR");
     Brain.Screen.newLine();
     AutonHold(false);
-    AutonIntk(true, true);  //Turn on Intake
+    AutonIntk(true, true); 
     AutonFlyC(true);
-    AutonMove(43);  //Go forward 46 Inches
-    AutonIntk(false, false);
+    AutonMove(43);
+    vex::task::sleep(200);
     AutonMove(-5);
-    AutonTurn(-6.95);
+    AutonIntk(false, false);
+    AutonTurn(-8.3);
     AutonMove(-9);
     AutonIndx(true);
     vex::task::sleep(1300);
     AutonIndx(false);
-    AutonTurn(-3.75);
+    AutonTurn(-5);
     AutonMove(-7.2);
-    AutonFlip(300);
+    AutonFlip(150);
     AutonFlyC(false);
 }
 

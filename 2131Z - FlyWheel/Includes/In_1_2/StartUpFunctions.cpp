@@ -1,4 +1,6 @@
 void PAutonStart(){
+    Brain.Screen.render(true,false);
+    WhatAuton();
     FlyWheelMotor.setStopping(vex::brakeType::coast);
     IndexerMotor.setStopping(vex::brakeType::coast);
     IntakeMotor.setStopping(vex::brakeType::coast);

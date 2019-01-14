@@ -242,3 +242,74 @@ void AutonPots(){
         BackR();
     }
 }
+void AtonUpdator(){
+    int SelectValue = AutonSelect.value(vex::percentUnits::pct);
+    int SelectValueTwo = AutonSelectTwo.value(vex::percentUnits::pct);
+    Brain.Screen.clearScreen();
+
+    if(SelectValue > 98){
+        if(SelectValueTwo > 80){
+            // FrntBPark();
+        Brain.Screen.clearLine(1,vex::color::blue);
+        Brain.Screen.clearLine();
+        Brain.Screen.print("FrntBPark");
+        }
+        else if(SelectValueTwo > 50){
+            // BackBPark();
+        Brain.Screen.clearLine(1,vex::color::blue);
+        Brain.Screen.clearLine();
+        Brain.Screen.print("BackBPark");
+        }
+        else if(SelectValueTwo > 30){
+            // FrntRTopF();
+        Brain.Screen.clearLine(1,vex::color::red);
+        Brain.Screen.clearLine();
+        Brain.Screen.print("FrntRTopF");
+        }
+        else if(SelectValueTwo >= 0){
+            // BackRPark();
+        Brain.Screen.clearLine(1,vex::color::red);
+        Brain.Screen.clearLine();
+        Brain.Screen.print("BackRPark");
+        }
+    }
+    else if(SelectValue > 80){
+        // Skillz();
+        Brain.Screen.clearLine(1,vex::color::white);
+        Brain.Screen.clearLine();
+        Brain.Screen.print("Skillz");
+    }
+    else if(SelectValue > 60) {
+        // FrntB();
+        Brain.Screen.clearLine(1,vex::color::blue);
+        Brain.Screen.clearLine();
+        Brain.Screen.print("FrntB");
+    }
+    else if(SelectValue > 40){
+        // BackB();
+        Brain.Screen.clearLine(1,vex::color::blue);
+        Brain.Screen.clearLine();
+        Brain.Screen.print("BackB");
+    }
+    else if(SelectValue > 20){
+        // FrntR();
+        Brain.Screen.clearLine(1,vex::color::red);
+        Brain.Screen.clearLine();
+        Brain.Screen.print("FrntR");
+    }
+    else if(SelectValue >= 0){
+        // BackR();
+        Brain.Screen.clearLine(1,vex::color::red);
+        Brain.Screen.clearLine();
+        Brain.Screen.print("BackR");
+    }
+}
+
+int WhatAuton(){
+    while(true){
+        AtonUpdator();
+        Brain.Screen.render();
+        vex::task::sleep(20);
+    }
+    return 1;
+}

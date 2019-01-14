@@ -215,39 +215,30 @@ void AutonPots(){
     if(SelectValue > 98){
         if(SelectValueTwo > 80){
             FrntBPark();
-            vex::task::sleep(15000);
         }
-        if(SelectValueTwo > 50){
+        else if(SelectValueTwo > 50){
             BackBPark();
-            vex::task::sleep(15000);
         }
-        if(SelectValueTwo > 30){
+        else if(SelectValueTwo > 30){
             FrntRTopF();
-            vex::task::sleep(15000);
         }
-        if(SelectValueTwo >= 0){
+        else if(SelectValueTwo >= 0){
             BackRPark();
-            vex::task::sleep(15000);
         }
     }
-    if(SelectValue > 80){
+    else if(SelectValue > 80){
         Skillz();
-        vex::task::sleep(15000);
     }
-    if(SelectValue > 60) {
+    else if(SelectValue > 60) {
         FrntB();
-        vex::task::sleep(15000);
     }
-    if(SelectValue > 40){
+    else if(SelectValue > 40){
         BackB();
-        vex::task::sleep(15000);
     }
-    if(SelectValue > 20){
+    else if(SelectValue > 20){
         FrntR();
-        vex::task::sleep(15000);
     }
-    if(SelectValue >= 0){
+    else if(SelectValue >= 0){
         BackR();
-        vex::task::sleep(15000);
     }
 }

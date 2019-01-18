@@ -73,10 +73,6 @@ void AutonTurn(double Dis, int LPowSend=40 , int RPowSend=40, int FinalWait=25){
        vex::task::sleep(1); 
     }
     DI(0,0);
-    Brain.Screen.print("Amount Turned = ");
-    Brain.Screen.print(Dis);
-    Brain.Screen.newLine();
-
     vex::task::sleep(FinalWait);
 }
 
@@ -84,46 +80,31 @@ void AutonIntk(bool ON, bool In){
     if(ON){
         if(In){
             SetIntakePower(100);
-            Brain.Screen.print("Intake feeding in ");
-            Brain.Screen.print(ON);
-            Brain.Screen.newLine();
         } 
         if(!In){
             SetIntakePower(-100);
-            Brain.Screen.print("Intake feeding out ");
-            Brain.Screen.newLine();
         } 
     }
     if(!ON){
         IntakeMotor.stop();
-        Brain.Screen.print("Intake stopped");
-        Brain.Screen.newLine();
     }
 }
 
 void AutonFlyC(bool Go){
     if(Go){
         SetFlyPower(-600);
-        Brain.Screen.print("FlyWheel is on ");
-        Brain.Screen.newLine();
     }
     if(!Go){
         FlyWheelMotor.stop();
-        Brain.Screen.print("FlyWheel is off ");
-        Brain.Screen.newLine();
     }
 }
 
 void AutonIndx(bool Go){
     if(Go){
         SetIndexerPower(-50);
-        Brain.Screen.print("Indexer is on ");
-        Brain.Screen.newLine();
     }
     if(!Go){
         IndexerMotor.stop();
-        Brain.Screen.print("Indexer is off ");
-        Brain.Screen.newLine();
     }
 }
 
@@ -131,8 +112,6 @@ void AutonFlip(double DEG,int Wait=20){
     FlipMotor.rotateTo(DEG,vex::rotationUnits::deg,100,vex::velocityUnits::pct);
     vex::task::sleep(Wait);
     FlipMotor.startRotateTo(0,vex::rotationUnits::deg,100,vex::velocityUnits::pct);
-            Brain.Screen.print("Flipped!");
-            Brain.Screen.newLine();
 }
 
 void AutonRodU(double DEG,int Wait=20){

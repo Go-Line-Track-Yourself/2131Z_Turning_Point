@@ -7,8 +7,6 @@
     //AutonIndx(Go or !Go);
     
 void FrntRTopF(){
-    Brain.Screen.print("FrntRTopF");
-    Brain.Screen.newLine();
     //////////////////// Top Center Flag ////////////////////
 
     AutonHold(false);
@@ -36,14 +34,16 @@ void FrntRTopF(){
 
 }
 
-void BackRPark(){                                               //fix
-    Brain.Screen.print("BackRPark");
-    Brain.Screen.newLine();
+void BackRPark(){
+    AutonHold(false);
+    AutonFlyC(true);
+    AutonIntk(true, true);
+    AutonMove(42);
+    vex::task::sleep(60);
+    AutonMove(-40);
 }
 
 void FrntBPark(){
-    Brain.Screen.print("FrntBPark");
-    Brain.Screen.newLine();
     AutonHold(false);
     AutonFlyC(true);  
     AutonIntk(true, true);  
@@ -72,9 +72,7 @@ void FrntBPark(){
     AutonNLck();
 }
 
-void BackBPark(){                                               //fix
-    Brain.Screen.print("BackBPark");
-    Brain.Screen.newLine();
+void BackBPark(){                                           
     AutonHold(false);
     AutonIntk(true, true);
     AutonFlyC(true);
@@ -92,9 +90,7 @@ void BackBPark(){                                               //fix
     AutonFlyC(false);
 }
 
-void BackB(){                                                   //fix
-    Brain.Screen.print("BackB");
-    Brain.Screen.newLine();
+void BackB(){                                                   
     AutonHold(false);
     AutonIntk(true, true);
     AutonFlyC(true);
@@ -109,29 +105,24 @@ void BackB(){                                                   //fix
     AutonFlyC(false);
 }
 void BackR(){                                                   
-    Brain.Screen.print("BackR");
-    Brain.Screen.newLine();
     AutonHold(false);
     AutonIntk(true, true); 
     AutonFlyC(true);
-    AutonMove(43);
-    vex::task::sleep(200);
-    AutonMove(-5);
+    AutonMove(40);
+    vex::task::sleep(50);
     AutonIntk(false, false);
-    AutonTurn(-8.3);
-    AutonMove(-9);
+    AutonTurn(-9.5);
+    AutonMove(-8);
+    AutonFlip(350);
+    AutonMove(3);
+    AutonTurn(1.75);
     AutonIndx(true);
     vex::task::sleep(1300);
-    AutonIndx(false);
-    AutonTurn(-5);
-    AutonMove(-7.2);
-    AutonFlip(150);
     AutonFlyC(false);
+    AutonIndx(false);
 }
 
 void FrntB(){                                                   
-    Brain.Screen.print("FrntB");
-    Brain.Screen.newLine();
     AutonHold(false);
     AutonFlyC(true);  
     AutonIntk(true, true);  
@@ -159,9 +150,6 @@ void FrntB(){
 }
 void FrntR(){
     ///////////////////// Flip Cap ///////////////////////
-
-    Brain.Screen.print("FrntR");
-    Brain.Screen.newLine();
     AutonHold(false);
     AutonFlyC(true);  
     AutonIntk(true, true);  
@@ -187,9 +175,7 @@ void FrntR(){
     AutonFlip(300);
 }
 
-void Skillz(){                                                  //fix
-    Brain.Screen.print("Skillz");
-    Brain.Screen.newLine();
+void Skillz(){                                                 
     AutonHold(false);
     AutonIntk(true, true);  //Turn on Intake
     AutonFlyC(true);
@@ -252,56 +238,56 @@ void AtonUpdator(){
             // FrntBPark();
         Brain.Screen.clearLine(1,vex::color::blue);
         Brain.Screen.clearLine();
-        Brain.Screen.print("FrntBPark");
+        Brain.Screen.print("Front Blue Parking Mode");
         }
         else if(SelectValueTwo > 50){
             // BackBPark();
         Brain.Screen.clearLine(1,vex::color::blue);
         Brain.Screen.clearLine();
-        Brain.Screen.print("BackBPark");
+        Brain.Screen.print("Back Blue Parking Mode");
         }
         else if(SelectValueTwo > 30){
             // FrntRTopF();
         Brain.Screen.clearLine(1,vex::color::red);
         Brain.Screen.clearLine();
-        Brain.Screen.print("FrntRTopF");
+        Brain.Screen.print("Front Red with the Top Middle Flag");
         }
         else if(SelectValueTwo >= 0){
             // BackRPark();
         Brain.Screen.clearLine(1,vex::color::red);
         Brain.Screen.clearLine();
-        Brain.Screen.print("BackRPark");
+        Brain.Screen.print("Back Red Parking Mode");
         }
     }
     else if(SelectValue > 80){
         // Skillz();
-        Brain.Screen.clearLine(1,vex::color::white);
+        Brain.Screen.clearLine(1,vex::color::purple);
         Brain.Screen.clearLine();
-        Brain.Screen.print("Skillz");
+        Brain.Screen.print("Skillz Mode");
     }
     else if(SelectValue > 60) {
         // FrntB();
         Brain.Screen.clearLine(1,vex::color::blue);
         Brain.Screen.clearLine();
-        Brain.Screen.print("FrntB");
+        Brain.Screen.print("Front Blue with Cap");
     }
     else if(SelectValue > 40){
         // BackB();
         Brain.Screen.clearLine(1,vex::color::blue);
         Brain.Screen.clearLine();
-        Brain.Screen.print("BackB");
+        Brain.Screen.print("Back Blue Caps");
     }
     else if(SelectValue > 20){
         // FrntR();
         Brain.Screen.clearLine(1,vex::color::red);
         Brain.Screen.clearLine();
-        Brain.Screen.print("FrntR");
+        Brain.Screen.print("Front Red with Cap");
     }
     else if(SelectValue >= 0){
         // BackR();
         Brain.Screen.clearLine(1,vex::color::red);
         Brain.Screen.clearLine();
-        Brain.Screen.print("BackR");
+        Brain.Screen.print("Back Red Caps");
     }
 }
 

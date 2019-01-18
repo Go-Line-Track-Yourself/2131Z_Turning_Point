@@ -8,6 +8,9 @@ void PAutonStart(){
 }
 
 void UserCoStart(){
+    Brain.Screen.render(false,false);
+    Brain.Screen.clearScreen();
+
     DriveRampingEnabled=false;
     FLMotor.setStopping(vex::brakeType::coast);
     BLMotor.setStopping(vex::brakeType::coast);

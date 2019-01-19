@@ -35,33 +35,31 @@ void FrntRTopF(){
 }
 
 void BackRBread(){
-    // This is the back Auton when we are teamed up with P-Team
+    // This is the back Red Auton when we are teamed up with P-Team
     AutonHold(false);
     AutonFlyC(true);
     AutonIntk(true, true);
     AutonMove(41,75);
-    vex::task::sleep(60);
+    vex::task::sleep(100);
     AutonIntk(false, false);
     AutonMove(-41,70);
     AutonMove(-3,25);
     vex::task::sleep(300);
     AutonMove(2.5,25);
-    AutonTurn(-9.39,30,30);
+    AutonTurn(-9.37,30,30);
     AutonMove(43, 80);
     AutonIndx(true);
     vex::task::sleep(1400);
     AutonIndx(false);
-    AutonMove(19,50);
+    AutonMove(18,50);
     AutonIndx(true);
     AutonIntk(true, true);  
     vex::task::sleep(1500);
     AutonIndx(false);
-    AutonTurn(-1,30,30);
+    AutonTurn(-2,30,30);
     AutonMove(16,70);
     AutonMove(-20,80);
     AutonTurn(8,30,30);
-    AutonIntk(true, false);
-    AutonMove(16,80);
 }
 
 void FrntBPark(){
@@ -93,22 +91,32 @@ void FrntBPark(){
     AutonNLck();
 }
 
-void BackBPark(){                                           
+void BackBBread(){                                           
+    // This is the back Blue Auton when we are teamed up with P-Team
     AutonHold(false);
-    AutonIntk(true, true);
     AutonFlyC(true);
-    AutonMove(43);
+    AutonIntk(true, true);
+    AutonMove(41,75);
+    vex::task::sleep(60);
     AutonIntk(false, false);
-    AutonMove(-5);
-    AutonTurn(7.65);
-    AutonMove(-9);
+    AutonMove(-41,70);
+    AutonMove(-3,25);
+    vex::task::sleep(300);
+    AutonMove(2.5,25);
+    AutonTurn(9.37,30,30);
+    AutonMove(43, 80);
     AutonIndx(true);
-    vex::task::sleep(1300);
+    vex::task::sleep(1400);
     AutonIndx(false);
-    AutonTurn(6.5);
-    AutonMove(-1);
-    AutonFlip(300);
-    AutonFlyC(false);
+    AutonMove(19,50);
+    AutonIndx(true);
+    AutonIntk(true, true);  
+    vex::task::sleep(1500);
+    AutonIndx(false);
+    AutonTurn(1,30,30);
+    AutonMove(16,70);
+    AutonMove(-20,80);
+    AutonTurn(-8,30,30);
 }
 
 void BackB(){                                                   
@@ -198,9 +206,9 @@ void FrntR(){
 
 void Skillz(){                                                 
     AutonHold(false);
-    AutonIntk(true, true);  //Turn on Intake
+    AutonIntk(true, true);  
     AutonFlyC(true);
-    AutonMove(44);  //Go forward 46 Inches
+    AutonMove(44);  
     AutonMove(-1.5);
     AutonIntk(false, false);
     AutonTurn(-8.75);
@@ -215,7 +223,71 @@ void Skillz(){
     AutonMove(-25);
     AutonFlip(500);
 }
+/*
+void AutonPots(){
+    int SelectValue = AutonSelect.value(vex::percentUnits::pct);
+    int SelectValueTwo = AutonSelectTwo.value(vex::percentUnits::pct);
+    if(SelectValue >= 0){
+        if(SelectValueTwo > 80){
+            
+        }
+        else if(SelectValueTwo > 50){
 
+        }
+        else if(SelectValueTwo > 30){
+
+        }
+        else if(SelectValueTwo >= 0){
+
+        }
+    }
+    else if(SelectValue > 20){
+        if(SelectValueTwo > 80){
+            
+        }
+        else if(SelectValueTwo > 50){
+
+        }
+        else if(SelectValueTwo > 30){
+
+        }
+        else if(SelectValueTwo >= 0){
+
+        }
+    }
+    else if(SelectValue > 40){
+        if(SelectValueTwo > 80){
+
+        }
+        else if(SelectValueTwo > 50){
+
+        }
+        else if(SelectValueTwo > 30){
+
+        }
+        else if(SelectValueTwo >= 0){
+
+        }
+    }
+    else if(SelectValue > 60){
+        if(SelectValueTwo > 80){
+
+        }
+        else if(SelectValueTwo > 50){
+
+        }
+        else if(SelectValueTwo > 30){
+
+        }
+        else if(SelectValueTwo >= 0){
+
+        }
+    }
+    else if(SelectValue > 80){
+        Skillz;
+    }
+}
+*/
 void AutonPots(){
     int SelectValue = AutonSelect.value(vex::percentUnits::pct);
     int SelectValueTwo = AutonSelectTwo.value(vex::percentUnits::pct);
@@ -224,7 +296,7 @@ void AutonPots(){
             FrntBPark();
         }
         else if(SelectValueTwo > 50){
-            BackBPark();
+            BackBBread();
         }
         else if(SelectValueTwo > 30){
             FrntRTopF();
@@ -262,10 +334,10 @@ void AtonUpdator(){
         Brain.Screen.print("Front Blue Parking Mode");
         }
         else if(SelectValueTwo > 50){
-            // BackBPark();
+            // BackBBread();
         Brain.Screen.clearLine(1,vex::color::blue);
         Brain.Screen.clearLine();
-        Brain.Screen.print("Back Blue Parking Mode");
+        Brain.Screen.print("Back Blue Bread");
         }
         else if(SelectValueTwo > 30){
             // FrntRTopF();
@@ -277,7 +349,7 @@ void AtonUpdator(){
             // BackRBread();
         Brain.Screen.clearLine(1,vex::color::red);
         Brain.Screen.clearLine();
-        Brain.Screen.print("Back Red When Allianced With P-Team");
+        Brain.Screen.print("Back Red Bread");
         }
     }
     else if(SelectValue > 80){

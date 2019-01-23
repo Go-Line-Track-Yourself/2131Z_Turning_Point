@@ -105,3 +105,9 @@ void DriveCont_LockContM(){
     }
 }
 
+void Puncher(){
+    if(Controller1.ButtonA.pressing){
+        Rotate
+    }
+}
+

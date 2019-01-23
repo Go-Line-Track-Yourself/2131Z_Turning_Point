@@ -105,9 +105,25 @@ void DriveCont_LockContM(){
     }
 }
 
-void Puncher(){
-    if(Controller1.ButtonA.pressing){
-        Rotate
-    }
+void setPuncherPower(int power){
+    PuncherMotor.spin(vex::directionType::rev, power, vex::velocityUnits::pct);
 }
 
+void puncherControll(){
+    if(Controller1.ButtonA.pressing()) {
+        setPuncherPower(100);
+    }  
+    else PuncherMotor.stop(vex::brakeType::coast);
+}
+/*
+/void setPuncherPower(int degrees){
+    PuncherMotor.spin(vex::directionType::rev, degrees, vex::velocityUnits::deg);
+}
+
+void puncherControll(){
+    if(Controller1.ButtonA.pressing()) {
+        setPuncherPower(360);
+    }  
+    else PuncherMotor.stop(vex::brakeType::coast);
+}
+*/

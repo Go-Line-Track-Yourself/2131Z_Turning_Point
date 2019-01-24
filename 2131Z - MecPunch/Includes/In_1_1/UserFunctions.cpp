@@ -115,6 +115,7 @@ void puncherControll(){
     }  
     else PuncherMotor.stop(vex::brakeType::coast);
 }
+
 /*
 /void setPuncherPower(int degrees){
     PuncherMotor.spin(vex::directionType::rev, degrees, vex::velocityUnits::deg);
@@ -127,3 +128,12 @@ void puncherControll(){
     else PuncherMotor.stop(vex::brakeType::coast);
 }
 */
+
+void AdjustMove(){
+    if(Controller1.ButtonR1.pressing){
+              AdjustPMotor.rotateTo(90,vex::rotationUnits::deg);
+          }
+          else(Controller1.ButtonR2.pressing){
+              AdjustPMotor.rotateTo(0,vex::rotationUnits::deg);
+          }
+}

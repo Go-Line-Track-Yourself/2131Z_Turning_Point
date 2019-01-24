@@ -109,7 +109,7 @@ void setPuncherPower(int power){
     PuncherMotor.spin(vex::directionType::rev, power, vex::velocityUnits::pct);
 }
 
-void puncherControll(){
+void PuncherControl(){
     if(Controller1.ButtonA.pressing()) {
         setPuncherPower(100);
     }  
@@ -130,10 +130,22 @@ void puncherControll(){
 */
 
 void AdjustMove(){
-    if(Controller1.ButtonR1.pressing){
+    if(Controller1.ButtonL1.pressing){
               AdjustPMotor.rotateTo(90,vex::rotationUnits::deg);
           }
-          else(Controller1.ButtonR2.pressing){
+          else(Controller1.ButtonL2.pressing){
               AdjustPMotor.rotateTo(0,vex::rotationUnits::deg);
           }
+}
+
+void IntakeVoid(){
+    if(Controller1.ButtonR1.pressing()) {
+        IntakeMotorSMS(IntakeIn);
+    }
+    else if(Controller1.ButtonR2.pressing()) {
+        IntakeMotorSMS(IntakeOut);
+    }
+    else {
+        IntakeMotor.stop();
+    }
 }

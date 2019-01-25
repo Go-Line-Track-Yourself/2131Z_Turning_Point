@@ -88,8 +88,14 @@ void AdjustMove(){
 }
 
 void IntakeVoid(){
-    if(Controller1.ButtonDown.pressing()){
+    if(Controller1.ButtonDown.pressing()) {
         IntakeToggle=true;
+    }
+    if(Controller1.ButtonUp.pressing()) {
+        IntakeToggle=false;
+    }
+
+    if(IntakeToggle){
         if(Controller1.ButtonR1.pressing()) {
             IntakerMotor.spin(vex::directionType::rev, 100, vex::velocityUnits::pct);
         }
@@ -98,9 +104,9 @@ void IntakeVoid(){
         }
         else {
             IntakerMotor.stop();
+        }
     }
-    else if(Controller1.ButtonUp.pressing()){
-        IntakeToggle=false;
+    if(!IntakeToggle){
         if(Controller1.ButtonR1.pressing()) {
             TFeederMotor.spin(vex::directionType::rev, 100, vex::velocityUnits::pct);
             IntakerMotor.spin(vex::directionType::rev, 100, vex::velocityUnits::pct);
@@ -112,5 +118,7 @@ void IntakeVoid(){
         else {
             TFeederMotor.stop();
             IntakerMotor.stop();
+        }
+
     }
 }

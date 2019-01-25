@@ -137,14 +137,14 @@ void Skillz(){
 }
 
 void AutonPots(){
-    int SelectValue = AutonSelect.value(vex::percentUnits::pct);
+    int SelectValueOne = AutonSelectOne.value(vex::percentUnits::pct);
     int SelectValueTwo = AutonSelectTwo.value(vex::percentUnits::pct);
     
-    if(SelectValue > 80){
+    if(SelectValueOne > 80){
         Skillz();
     }
     
-    else if(SelectValue > 60){
+    else if(SelectValueOne > 60){
         if(SelectValueTwo > 80){
 
         }
@@ -159,7 +159,7 @@ void AutonPots(){
         }
     }
     
-    else if(SelectValue > 40){
+    else if(SelectValueOne > 40){
         if(SelectValueTwo > 80){
 
         }
@@ -173,7 +173,7 @@ void AutonPots(){
             BackBPark();
         }
     }
-    else if(SelectValue > 20){
+    else if(SelectValueOne > 20){
         if(SelectValueTwo > 80){
             
         }
@@ -187,7 +187,7 @@ void AutonPots(){
             FrntR();
         }
     }
-    else if(SelectValue >= 0){
+    else if(SelectValueOne >= 0){
         if(SelectValueTwo > 80){
             
         }
@@ -203,17 +203,17 @@ void AutonPots(){
     }
 }
 void AutonUpdater(){
-    int SelectValue = AutonSelect.value(vex::percentUnits::pct);
+    int SelectValueOne = AutonSelectOne.value(vex::percentUnits::pct);
     int SelectValueTwo = AutonSelectTwo.value(vex::percentUnits::pct);
     Brain.Screen.clearScreen();
-    if(SelectValue > 80){
+    if(SelectValueOne > 80){
         //Skillz;
         Brain.Screen.clearLine(1,vex::color::purple);
         Brain.Screen.clearLine();
         Brain.Screen.print("Skillz Mode");
     }
 
-    else if(SelectValue > 60){
+    else if(SelectValueOne > 60){
         if(SelectValueTwo > 80){
             Brain.Screen.clearLine(1,vex::color::blue);
             Brain.Screen.clearLine();
@@ -239,7 +239,7 @@ void AutonUpdater(){
             Brain.Screen.print("Front Blue with Cap (Inch From Right)");
         }
     }
-    else if(SelectValue > 40){
+    else if(SelectValueOne > 40){
         if(SelectValueTwo > 80){
             Brain.Screen.clearLine(1,vex::color::blue);
             Brain.Screen.clearLine();
@@ -264,7 +264,7 @@ void AutonUpdater(){
             Brain.Screen.print("Back Blue Parking");
         }
     }
-    else if(SelectValue > 20){
+    else if(SelectValueOne > 20){
         if(SelectValueTwo > 80){
             Brain.Screen.clearLine(1,vex::color::red);
             Brain.Screen.clearLine();
@@ -289,7 +289,7 @@ void AutonUpdater(){
             Brain.Screen.print("Front Red with Cap (Inch From Right)");
         }
     }
-    else if(SelectValue >= 0){
+    else if(SelectValueOne >= 0){
         if(SelectValueTwo > 80){
             Brain.Screen.clearLine(1,vex::color::red);
             Brain.Screen.clearLine();

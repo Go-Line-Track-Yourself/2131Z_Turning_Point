@@ -82,10 +82,10 @@ void AutonTurn(double Dis, int LPowSend=40 , int RPowSend=40, int FinalWait=25){
 void AutonIntk(bool ON, bool In){
     if(ON){
         if(In){
-            SetIntakePower(100);
+            SetIntakerPower(100);
         } 
         if(!In){
-            SetIntakePower(-100);
+            SetIntakerPower(-100);
         } 
     }
     if(!ON){

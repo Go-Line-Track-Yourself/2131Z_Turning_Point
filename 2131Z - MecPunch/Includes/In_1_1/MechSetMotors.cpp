@@ -1,3 +1,14 @@
+void SDMP(int LPower, int RPower){
+         FLMotor.spin(vex::directionType::fwd, LPower, vex::velocityUnits::pct);
+         BLMotor.spin(vex::directionType::fwd, LPower, vex::velocityUnits::pct);
+         FRMotor.spin(vex::directionType::fwd, RPower, vex::velocityUnits::pct);
+         BRMotor.spin(vex::directionType::fwd, RPower, vex::velocityUnits::pct); 
+}
+
+void SetIntakerPower(int power){
+    IntakerMotor.spin(vex::directionType::fwd, power, vex::velocityUnits::pct);
+}
+
 void setDriveBrakeCoast(){
     BLMotor.setStopping(vex::brakeType::coast);
     BRMotor.setStopping(vex::brakeType::coast);

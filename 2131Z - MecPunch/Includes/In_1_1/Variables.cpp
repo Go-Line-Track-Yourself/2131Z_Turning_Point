@@ -3,3 +3,11 @@ double sgn(double Var) {
 	else        Var = -1;
 	return Var;
 }
+bool DriveRampingEnabled;
+bool MechDriveRampingEnabled;
+
+bool DriveLockConBtnPressed;
+bool DriveLockInverted = false;
+
+bool DriveDirConBtnPressed;
+bool DriveDirInverted = false;

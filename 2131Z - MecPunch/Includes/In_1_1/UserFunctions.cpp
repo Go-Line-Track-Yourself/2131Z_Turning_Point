@@ -1,50 +1,3 @@
-void setMechFLPower(int pct){
-    if(pct==0)   FLMotor.stop();
-    else{
-        FLMotor.spin(vex::directionType::fwd,pct,vex::velocityUnits::pct);
-    }
-}
-void setMechDLPower(int pct){
-    if(pct==0)   BLMotor.stop();
-    else{
-        BLMotor.spin(vex::directionType::fwd,pct,vex::velocityUnits::pct);
-    }
-}
-void setMechFRPower(int pct){
-    if(pct==0)   FRMotor.stop();
-    else{
-        FRMotor.spin(vex::directionType::fwd,pct,vex::velocityUnits::pct);
-    }
-}
-void setMechBRPower(int pct){
-    if(pct==0)   BRMotor.stop();
-    else{
-        BRMotor.spin(vex::directionType::fwd,pct,vex::velocityUnits::pct);
-    }
-}
-void setMechDrivePower(int LF,int LB,int RF,int RB){
-    setMechFLPower(LF);
-    setMechBLPower(LB);
-    setMechFRPower(RF);
-    setMechBRPower(RB);
-}
-void DriveMechPowerSend(int j1,int j2,int j3=0,int j4=0){//left,right,side1,side2
-    int LF=j1;//left
-    int RF=j2;//right
-    int SD=(j3+j4)/2;//side
-
-    setMechDrivePower(//left go apart && right go into when going right
-        LF+SD,
-        LF-SD,
-        RF-SD,
-        RF+SD);
-}
-void setDrivePower(int left, int right){
-    setMechFLPower(left);
-    setMechBLPower(left);
-    setMechFRPower(right);
-    setMechBRPower(right);
-}
 
 //------Manual Drive Mech Controll------------//
 void IsFippedControll(){
@@ -80,13 +33,8 @@ void ManualMechDriveCont(){
         setMechDrivePower(0,0,0,0);//Last loop before disableing; used to release drivemanualcontrol
     }        
 }
-void stopDriveHold(){
-    BLMotor.stop(vex::brakeType::hold);
-    BRMotor.stop(vex::brakeType::hold);
-    FLMotor.stop(vex::brakeType::hold);
-    FRMotor.stop(vex::brakeType::hold);
-}
-void driveLock(){-
+
+void driveLock(){
     stopDriveHold();
 }
 void DriveCont_LockContM(){
@@ -98,7 +46,7 @@ void DriveCont_LockContM(){
         DriveLockConBtnPressed=false;
     }
     
-    if(DriveLockInverted || Controller1.ButtonL1.pressing()) driveLock();
+    if(DriveLockInverted || Controller1.ButtonDown.pressing()) driveLock();
     else if(!DriveLockInverted) {
         setDriveBrakeCoast();
         ManualMechDriveCont();
@@ -113,15 +61,16 @@ void PuncherControl(){
     if(Controller1.ButtonA.pressing()) {
         setPuncherPower(100);
     }  
-    else PuncherMotor.stop(vex::brakeType::coast);
+    else {
+        PuncherMotor.stop(vex::brakeType::coast);
+    }
 }
-
 /*
-/void setPuncherPower(int degrees){
-    PuncherMotor.spin(vex::directionType::rev, degrees, vex::velocityUnits::deg);
+void setPuncherPower(int degrees){
+    PuncherMotor.rotateFor(vex::directionType::rev, degrees, vex::rotationUnits::deg);
 }
 
-void puncherControll(){
+void PuncherControl(){
     if(Controller1.ButtonA.pressing()) {
         setPuncherPower(360);
     }  
@@ -130,22 +79,22 @@ void puncherControll(){
 */
 
 void AdjustMove(){
-    if(Controller1.ButtonL1.pressing){
-              AdjustPMotor.rotateTo(90,vex::rotationUnits::deg);
-          }
-          else(Controller1.ButtonL2.pressing){
-              AdjustPMotor.rotateTo(0,vex::rotationUnits::deg);
-          }
+    if(Controller1.ButtonL1.pressing()){
+        AdjustPMotor.rotateTo(120,vex::rotationUnits::deg);
+      }
+    else if(Controller1.ButtonL2.pressing()){
+        AdjustPMotor.rotateTo(0,vex::rotationUnits::deg);
+      }
 }
 
 void IntakeVoid(){
     if(Controller1.ButtonR1.pressing()) {
-        IntakeMotorSMS(IntakeIn);
+        IntakerMotor.spin(vex::directionType::rev, 100, vex::velocityUnits::pct);
     }
     else if(Controller1.ButtonR2.pressing()) {
-        IntakeMotorSMS(IntakeOut);
+        IntakerMotor.spin(vex::directionType::fwd, 100, vex::velocityUnits::pct);
     }
     else {
-        IntakeMotor.stop();
+        IntakerMotor.stop();
     }
 }

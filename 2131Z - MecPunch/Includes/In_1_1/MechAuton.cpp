@@ -1,47 +1,5 @@
-    //--------- Guide ---------//
-    //AutonMove(Distance in Inches);   
-    //AutonTurn(Turning Degrees); 
-    //AutonIntk(ON or !ON, In or !In);
-    //AutonFlyC(Go or !Go);
-    //AutonFlip();
-    //AutonIndx(Go or !Go);
-    
-void FrntRTopF(){
-    //////////////////// Top Center Flag ////////////////////
-
-    AutonHold(false);
-    AutonFlyC(true);  
-    AutonIntk(true, true);  
-    AutonMove(40,75);
-    vex::task::sleep(200); 
-    AutonIntk(false, false); 
-    AutonMove(-39.5,70);
-    AutonMove(-3,25);
-    vex::task::sleep(200);
-    AutonMove(3,25);
-    AutonTurn(-8.85,25,25);
-    AutonMove(1,25);  
-    AutonIndx(true); 
-    vex::task::sleep(1400);
-    AutonIndx(false);
-    AutonMove(17,60);   
-    AutonIndx(true);
-    AutonIntk(true, true);  
-    vex::task::sleep(1500);
-    AutonIndx(false);  
-    AutonTurn(-1,50,50); 
-    AutonMove(25,70);
-    AutonMove(-40,60);
-    AutonTurn(5.8,30,30);
-    AutonMove(12,60);
-    AutonIndx(true);
-
-}
-
 void BackRBread(){
     // This is the back Red Auton when we are teamed up with P-Team
-    AutonHold(false);
-    AutonFlyC(true);
     AutonIntk(true, true);
     AutonMove(41,75);
     vex::task::sleep(100);
@@ -52,43 +10,38 @@ void BackRBread(){
     AutonMove(3,25);
     AutonTurn(-9.1,30,30);
     AutonMove(43, 70);
-    AutonIndx(true);
-    vex::task::sleep(1400);
-    AutonIndx(false);
-    AutonMove(18,50);
-    AutonIndx(true);
-    AutonIntk(true, true);  
-    vex::task::sleep(1500);
-    AutonIndx(false);
-    AutonTurn(-1.25,30,30);
-    AutonMove(20,70);
+    AutonFire();
+    AutonAjUp();
+    AutonIntk(true, true);
+    vex::task::sleep(200);
+    AutonIntk(false, false); 
+    AutonFire();
+    AutonAjDn();
+    AutonTurn(-.5,30,30);
+    AutonMove(40,70);
     AutonMove(-20,80);
     AutonTurn(8,30,30);
 }
 
 void FrntBPark(){
-    AutonHold(false);
-    AutonFlyC(true);  
-    AutonIntk(true, true);  
     AutonMove(42,70); 
     vex::task::sleep(300);
     AutonIntk(false, false); 
     AutonMove(-41,70);
     AutonMove(-3,25);
+    vex::task::sleep(200);
     AutonMove(3,25);
     AutonTurn(8.75,25,25);
-    AutonIndx(true); 
-    vex::task::sleep(1400);
-    AutonIndx(false);
-    AutonMove(16,80);   
-    AutonIndx(true);
-    AutonIntk(true, true);  
-    vex::task::sleep(1400);
-    AutonIndx(false); 
-    AutonFlyC(false); 
+    AutonFire();
+    AutonAjUp();
+    AutonIntk(true, true);
+    vex::task::sleep(200);
+    AutonIntk(false, false); 
+    AutonFire();
+    AutonAjDn();
     AutonIntk(false, false);
-    AutonTurn(1,25,25);
-    AutonMove(20,90);
+    AutonTurn(.5,25,25);
+    AutonMove(40,90);
     AutonMove(-66,70);
     AutonTurn(-10);
     AutonLock();
@@ -97,36 +50,7 @@ void FrntBPark(){
     AutonNLck();
 }
 
-void BackBBread(){                                           
-    // This is the back Blue Auton when we are teamed up with P-Team
-    AutonHold(false);
-    AutonFlyC(true);
-    AutonIntk(true, true);
-    AutonMove(41,75);
-    vex::task::sleep(60);
-    AutonIntk(false, false);
-    AutonMove(-41,70);
-    AutonMove(-3,25);
-    vex::task::sleep(300);
-    AutonMove(2.5,25);
-    AutonTurn(8.9,30,30);
-    AutonMove(42, 80);
-    AutonIndx(true);
-    vex::task::sleep(1400);
-    AutonIndx(false);
-    AutonMove(19,50);
-    AutonIndx(true);
-    AutonIntk(true, true);  
-    vex::task::sleep(1500);
-    AutonIndx(false);
-    AutonTurn(1,30,30);
-    AutonMove(16,70);
-    AutonMove(-20,80);
-    AutonTurn(-9,30,30);
-}
-
 void BackBPark(){                                                   
-    AutonHold(false);
     AutonIntk(true, true);
     AutonMove(43,75);
     vex::task::sleep(500);
@@ -141,25 +65,22 @@ void BackBPark(){
     AutonNLck();
 }
 void BackR(){                                                   
-    AutonHold(false);
     AutonIntk(true, true); 
     AutonMove(40,80);
     vex::task::sleep(200);
     AutonIntk(false, false);
-    AutonMove(-5.5,70);
+    AutonMove(-12,70);
     AutonTurn(-9, 25,25);
-    AutonMove(-20,50);
-    AutonMove(-2,25);
+    AutonMove(-15,50);
+    AutonMove(-3,25);
     AutonLock();
-    AutonMove(47,100);
+    AutonMove(55,100);
     vex::task::sleep(3000);
     AutonNLck();
 
 }
 
 void FrntB(){                                                   
-    AutonHold(false);
-    AutonFlyC(true);  
     AutonIntk(true, true);  
     AutonMove(42,70); 
     vex::task::sleep(300);
@@ -167,20 +88,18 @@ void FrntB(){
     AutonMove(-41,70);
     AutonMove(-3,25);
     AutonMove(3,25);
-    AutonTurn(6.5,25);
+    AutonTurn(8.9,25,25);
     AutonMove(1,25);
-    AutonIndx(true); 
-    vex::task::sleep(1400);
-    AutonIndx(false);
-    AutonMove(18,50);   
-    AutonIndx(true);
-    AutonIntk(true, true);  
-    vex::task::sleep(1500);
-    AutonIndx(false); 
-    AutonFlyC(false); 
+    AutonFire();
+    AutonAjUp();
+    AutonIntk(true, true);
+    vex::task::sleep(200);
+    AutonIntk(false, false); 
+    AutonFire();
+    AutonAjDn();
     AutonIntk(false, false);
-    AutonTurn(1,25);
-    AutonMove(20,70);
+    AutonTurn(.5,25,25);
+    AutonMove(40,70);
     AutonMove(-16,80);
     AutonIntk(true, false);
     AutonTurn(-12);
@@ -188,9 +107,6 @@ void FrntB(){
     AutonIntk(false, false);
 }
 void FrntR(){
-    ///////////////////// Flip Cap ///////////////////////
-    AutonHold(false);
-    AutonFlyC(true);  
     AutonIntk(true, true);  
     AutonMove(40,70);
     vex::task::sleep(200); 
@@ -198,59 +114,26 @@ void FrntR(){
     AutonMove(-39,70);
     AutonMove(-3,25);
     AutonMove(3,25);
-    AutonTurn(-9, 30,30);
-    AutonMove(1, 25);  
-    AutonIndx(true); 
-    vex::task::sleep(1400);
-    AutonIndx(false);
-    AutonMove(15);   
-    AutonIndx(true);
-    AutonIntk(true, true);  
-    vex::task::sleep(1500);
-    AutonIndx(false);  
-    AutonTurn(-1,25,25); 
-    AutonMove(17,80);
+    AutonTurn(-9,30,30);
+    AutonMove(1,25);  
+    AutonFire();
+    AutonAjUp();
+    AutonIntk(true, true);
+    vex::task::sleep(200);
+    AutonIntk(false, false); 
+    AutonFire();
+    AutonAjDn();
+    AutonTurn(-.5,25,25); 
+    AutonMove(40,80);
     AutonMove(-18,80);
     AutonIntk(true, false);
     AutonTurn(9,25,25);
     AutonMove(20,60);
-    
-
+    AutonIntk(false, false);
 }
 
 void Skillz(){                                                 
-    AutonHold(false);
-    AutonFlyC(true);
-    AutonIntk(true, true);
-    AutonMove(42,75);
-    vex::task::sleep(100);
-    AutonIntk(false, false);
-    AutonMove(-42,70);
-    AutonMove(-3,25);
-    vex::task::sleep(300);
-    AutonMove(3,25);
-    AutonTurn(-9.2,30,30);
-    AutonMove(43, 70);
-    AutonIndx(true);
-    vex::task::sleep(1400);
-    AutonIndx(false);
-    AutonMove(18,50);
-    AutonIndx(true);
-    AutonIntk(true, true);  
-    vex::task::sleep(1500);
-    AutonIndx(false);
-    AutonTurn(-1.25,30,30);
-    AutonMove(25,70);
-    AutonFlyC(false);
-    AutonMove(-45,80);
-    AutonTurn(8,25,25);
-    AutonMove(-5,30);
-    AutonMove(45,70);
-    vex::task::sleep(300);
-    AutonMove(-8,70);
-    AutonTurn(7.5,25,25);
-    AutonMove(30);
-    AutonLock();
+
 }
 
 void AutonPots(){
@@ -284,7 +167,7 @@ void AutonPots(){
 
         }
         else if(SelectValueTwo > 30){
-            BackBBread();
+            
         }
         else if(SelectValueTwo >= 0){
             BackBPark();
@@ -298,7 +181,7 @@ void AutonPots(){
 
         }
         else if(SelectValueTwo > 30){
-            FrntRTopF();
+            
         }
         else if(SelectValueTwo >= 0){
             FrntR();
@@ -370,10 +253,9 @@ void AutonUpdater(){
 
         }
         else if(SelectValueTwo > 30){
-            //BackBBread();
             Brain.Screen.clearLine(1,vex::color::blue);
             Brain.Screen.clearLine();
-            Brain.Screen.print("Back Blue Bread");
+            Brain.Screen.print(" ");
         }
         else if(SelectValueTwo >= 0){
             //BackBPark();
@@ -396,10 +278,9 @@ void AutonUpdater(){
 
         }
         else if(SelectValueTwo > 30){
-            //FrntRTopF();
             Brain.Screen.clearLine(1,vex::color::red);
             Brain.Screen.clearLine();
-            Brain.Screen.print("Front Red with the Top Middle Flag (Center)");
+            Brain.Screen.print(" ");
         }
         else if(SelectValueTwo >= 0){
             //FrntR();

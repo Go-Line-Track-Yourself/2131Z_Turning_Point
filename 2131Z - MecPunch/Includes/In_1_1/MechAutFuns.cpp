@@ -89,8 +89,22 @@ void AutonIntk(bool ON, bool In){
         } 
     }
     if(!ON){
-        IntakeMotor.stop();
+        IntakerMotor.stop();
     }
+}
+
+// Autonomous Puncher
+void AutonFire(){
+    PuncherMotor.rotateFor(vex::directionType::rev, 360, vex::rotationUnits::deg, 100, vex::velocityUnits::pct);
+}
+
+// Autonomous Puncher Adjust
+void AutonAjUp(){
+    AdjustPMotor.rotateTo(120,vex::rotationUnits::deg,100,vex::velocityUnits::pct);
+}
+
+void AutonAjDn(){
+    AdjustPMotor.rotateTo(0,vex::rotationUnits::deg,100,vex::velocityUnits::pct);
 }
 
 // Autonomous Drive Lock

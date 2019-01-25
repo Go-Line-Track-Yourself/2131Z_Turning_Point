@@ -52,7 +52,7 @@ void DriveCont_LockContM(){
         ManualMechDriveCont();
     }
 }
-
+/*
 void setPuncherPower(int power){
     PuncherMotor.spin(vex::directionType::rev, power, vex::velocityUnits::pct);
 }
@@ -65,9 +65,9 @@ void PuncherControl(){
         PuncherMotor.stop(vex::brakeType::coast);
     }
 }
-/*
+*/
 void setPuncherPower(int degrees){
-    PuncherMotor.rotateFor(vex::directionType::rev, degrees, vex::rotationUnits::deg);
+    PuncherMotor.rotateFor(vex::directionType::rev, degrees, vex::rotationUnits::deg, 100, vex::velocityUnits::pct);
 }
 
 void PuncherControl(){
@@ -76,7 +76,7 @@ void PuncherControl(){
     }  
     else PuncherMotor.stop(vex::brakeType::coast);
 }
-*/
+
 
 void AdjustMove(){
     if(Controller1.ButtonL1.pressing()){

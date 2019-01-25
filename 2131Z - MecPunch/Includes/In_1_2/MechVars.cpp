@@ -13,7 +13,8 @@ bool DriveLockInverted = false;
 bool DriveDirConBtnPressed;
 bool DriveDirInverted = false;
 
+bool IntakeToggle = true;
+
 // Mech Autonomous Function Variables
 int DriveEndWait=100;
 int TurnEndWait=250;
-//bool DriveRampingEnabled=true;

@@ -13,7 +13,7 @@ void FrntRTopF(){
     AutonFlyC(true);  
     AutonIntk(true, true);  
     AutonMove(40,75);
-    vex::task::sleep(200); 
+    vex::task::sleep(300); 
     AutonIntk(false, false); 
     AutonMove(-39.5,70);
     AutonMove(-3,25);
@@ -44,7 +44,7 @@ void BackRBread(){
     AutonFlyC(true);
     AutonIntk(true, true);
     AutonMove(41,75);
-    vex::task::sleep(100);
+    vex::task::sleep(300);
     AutonIntk(false, false);
     AutonMove(-41,70);
     AutonMove(-3,25);
@@ -74,9 +74,9 @@ void FrntBPark(){
     vex::task::sleep(300);
     AutonIntk(false, false); 
     AutonMove(-41,70);
-    AutonMove(-3,25);
+    AutonMove(-3,70);
     AutonMove(3,25);
-    AutonTurn(8.75,25,25);
+    AutonTurn(8.75,30,30);
     AutonIndx(true); 
     vex::task::sleep(1400);
     AutonIndx(false);
@@ -87,7 +87,7 @@ void FrntBPark(){
     AutonIndx(false); 
     AutonFlyC(false); 
     AutonIntk(false, false);
-    AutonTurn(1,25,25);
+    AutonTurn(1,40,40);
     AutonMove(20,90);
     AutonMove(-66,70);
     AutonTurn(-10);
@@ -103,7 +103,7 @@ void BackBBread(){
     AutonFlyC(true);
     AutonIntk(true, true);
     AutonMove(41,75);
-    vex::task::sleep(60);
+    vex::task::sleep(300);
     AutonIntk(false, false);
     AutonMove(-41,70);
     AutonMove(-3,25);
@@ -129,7 +129,7 @@ void BackBPark(){
     AutonHold(false);
     AutonIntk(true, true);
     AutonMove(43,75);
-    vex::task::sleep(500);
+    vex::task::sleep(300);
     AutonIntk(false, false);
     AutonMove(-12,60);
     AutonTurn(9,25,25);
@@ -144,7 +144,7 @@ void BackR(){
     AutonHold(false);
     AutonIntk(true, true); 
     AutonMove(40,80);
-    vex::task::sleep(200);
+    vex::task::sleep(300);
     AutonIntk(false, false);
     AutonMove(-5.5,70);
     AutonTurn(-9, 25,25);
@@ -166,7 +166,7 @@ void FrntB(){
     AutonIntk(false, false); 
     AutonMove(-41,70);
     AutonMove(-3,25);
-    AutonMove(3,25);
+    AutonMove(3.5,25);
     AutonTurn(6.5,25);
     AutonMove(1,25);
     AutonIndx(true); 
@@ -193,12 +193,12 @@ void FrntR(){
     AutonFlyC(true);  
     AutonIntk(true, true);  
     AutonMove(40,70);
-    vex::task::sleep(200); 
+    vex::task::sleep(300); 
     AutonIntk(false, false); 
     AutonMove(-39,70);
     AutonMove(-3,25);
     AutonMove(3,25);
-    AutonTurn(-9, 30,30);
+    AutonTurn(-13, 30,30);
     vex::task::sleep(50);
 //    AutonMove(1, 25);  
     AutonIndx(true); 
@@ -406,7 +406,7 @@ void AutonUpdater(){
             //FrntR();
             Brain.Screen.clearLine(1,vex::color::red);
             Brain.Screen.clearLine();
-            Brain.Screen.print("Front Red with Cap (Inch From Right)");
+            Brain.Screen.print("Front Red with Cap (Center)");
         }
     }
     else if(SelectValue >= 0){

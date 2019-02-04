@@ -1,0 +1,7 @@
+#include "Z-Team-Repository/2131Z - FlyWheel/Includes/In_1_4/Vars.cpp"
+#include "Z-Team-Repository/2131Z - FlyWheel/Includes/In_1_4/Ramping.cpp"
+#include "Z-Team-Repository/2131Z - FlyWheel/Includes/In_1_4/MotorVoids.cpp"
+#include "Z-Team-Repository/2131Z - FlyWheel/Includes/In_1_4/AutonFunctions.cpp"
+#include "Z-Team-Repository/2131Z - FlyWheel/Includes/In_1_4/BasicFunctions.cpp"
+#include "Z-Team-Repository/2131Z - FlyWheel/Includes/In_1_4/Auton.cpp"
+#include "Z-Team-Repository/2131Z - FlyWheel/Includes/In_1_4/StartUpFunctions.cpp"

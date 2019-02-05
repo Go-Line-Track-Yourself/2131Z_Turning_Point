@@ -1,5 +1,4 @@
 void BackRBread(){
-    // This is the back Red Auton when we are teamed up with P-Team
     AutonIntk(true, true);
     AutonMove(41,75);
     vex::task::sleep(100);
@@ -31,19 +30,22 @@ void FrntBPark(){
     AutonMove(-3,25);
     vex::task::sleep(200);
     AutonMove(3,25);
-    AutonTurn(8.75,25,25);
+    AutonTurn(16,25,25);
+    Wait(100);
     AutonFire();
     AutonAjUp();
-    AutonIntk(true, true);
-    vex::task::sleep(200);
-    AutonIntk(false, false); 
+    AutonBelt(true, true);
+    AutonIntk(true, true);     
+    Wait(900);
+    AutonBelt(false, false);
+    AutonIntk(false, false);
     AutonFire();
     AutonAjDn();
     AutonIntk(false, false);
     AutonTurn(.5,25,25);
     AutonMove(40,90);
     AutonMove(-66,70);
-    AutonTurn(-10);
+    AutonTurn(-16);
     AutonLock();
     AutonMove(40,80);
     vex::task::sleep(2000);
@@ -56,7 +58,7 @@ void BackBPark(){
     vex::task::sleep(500);
     AutonIntk(false, false);
     AutonMove(-12,60);
-    AutonTurn(9,25,25);
+    AutonTurn(16,25,25);
     AutonMove(-15,80);
     AutonMove(-3,25);
     AutonLock();
@@ -70,7 +72,7 @@ void BackR(){
     vex::task::sleep(200);
     AutonIntk(false, false);
     AutonMove(-12,70);
-    AutonTurn(-9, 25,25);
+    AutonTurn(-16, 25,25);
     AutonMove(-15,50);
     AutonMove(-3,25);
     AutonLock();
@@ -90,11 +92,14 @@ void FrntB(){
     AutonMove(3,25);
     AutonTurn(8.9,25,25);
     AutonMove(1,25);
+    Wait(100);
     AutonFire();
     AutonAjUp();
-    AutonIntk(true, true);
-    vex::task::sleep(200);
-    AutonIntk(false, false); 
+    AutonBelt(true, true);
+    AutonIntk(true, true);     
+    Wait(900);
+    AutonBelt(false, false);
+    AutonIntk(false, false);
     AutonFire();
     AutonAjDn();
     AutonIntk(false, false);
@@ -102,7 +107,7 @@ void FrntB(){
     AutonMove(40,70);
     AutonMove(-16,80);
     AutonIntk(true, false);
-    AutonTurn(-12);
+    AutonTurn(-18);
     AutonMove(16,70);
     AutonIntk(false, false);
 }
@@ -116,18 +121,21 @@ void FrntR(){
     AutonMove(3,25);
     AutonTurn(-9,30,30);
     AutonMove(1,25);  
+    Wait(100);
     AutonFire();
     AutonAjUp();
-    AutonIntk(true, true);
-    vex::task::sleep(200);
-    AutonIntk(false, false); 
+    AutonBelt(true, true);
+    AutonIntk(true, true);     
+    Wait(900);
+    AutonBelt(false, false);
+    AutonIntk(false, false);
     AutonFire();
     AutonAjDn();
     AutonTurn(-.5,25,25); 
     AutonMove(40,80);
     AutonMove(-18,80);
     AutonIntk(true, false);
-    AutonTurn(9,25,25);
+    AutonTurn(16,25,25);
     AutonMove(20,60);
     AutonIntk(false, false);
 }

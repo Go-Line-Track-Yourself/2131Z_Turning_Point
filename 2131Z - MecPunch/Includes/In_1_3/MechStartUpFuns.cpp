@@ -13,4 +13,6 @@ void UserCoStart(){
     BLMotor.setStopping(vex::brakeType::coast);
     FRMotor.setStopping(vex::brakeType::coast);
     BRMotor.setStopping(vex::brakeType::coast);
+
+    vex::task AutoIn(Auto_Intaking);
 }

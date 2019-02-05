@@ -71,7 +71,7 @@ void setPuncherPower(int degrees){
 }
 
 void PuncherControl(){
-    if(Controller1.ButtonA.pressing()) {
+    if(Controller1.ButtonR1.pressing()) {
         setPuncherPower(360);
     }  
     else PuncherMotor.stop(vex::brakeType::coast);
@@ -79,39 +79,37 @@ void PuncherControl(){
 
 
 void AdjustMove(){
+    /*
     if(Controller1.ButtonL1.pressing()){
         AdjustPMotor.rotateTo(120,vex::rotationUnits::deg);
       }
     else if(Controller1.ButtonL2.pressing()){
         AdjustPMotor.rotateTo(0,vex::rotationUnits::deg);
       }
+    */
+
+    if(Controller1.ButtonL1.pressing() && AdjustMotorBool==false){
+        AdjustMotorBool=true;
+        AdjustMotorSwitch=!AdjustMotorSwitch;
+    }
+    if(!Controller1.ButtonL1.pressing() && AdjustMotorBool==true){
+        AdjustMotorBool=false;
+    }
+
+    if(AdjustMotorSwitch){ 
+        AdjustPMotor.rotateTo(120,vex::rotationUnits::deg);
+    }
+    if(!AdjustMotorSwitch) {
+        AdjustPMotor.rotateTo(0,vex::rotationUnits::deg);
+    }
 }
 
 void IntakeVoid(){
-    if(Controller1.ButtonDown.pressing()) {
-        IntakeToggle=true;
-    }
-    if(Controller1.ButtonUp.pressing()) {
-        IntakeToggle=false;
-    }
-
-    if(IntakeToggle){
-        if(Controller1.ButtonR1.pressing()) {
-            IntakerMotor.spin(vex::directionType::rev, 100, vex::velocityUnits::pct);
-        }
-        else if(Controller1.ButtonR2.pressing()) {
-            IntakerMotor.spin(vex::directionType::fwd, 100, vex::velocityUnits::pct);
-        }
-        else {
-            IntakerMotor.stop();
-        }
-    }
-    if(!IntakeToggle){
-        if(Controller1.ButtonR1.pressing()) {
+        if(Controller1.ButtonLeft.pressing()) {
             TFeederMotor.spin(vex::directionType::rev, 100, vex::velocityUnits::pct);
             IntakerMotor.spin(vex::directionType::rev, 100, vex::velocityUnits::pct);
         }
-        else if(Controller1.ButtonR2.pressing()) {
+        else if(Controller1.ButtonDown.pressing()) {
             TFeederMotor.spin(vex::directionType::fwd, 100, vex::velocityUnits::pct);
             IntakerMotor.spin(vex::directionType::fwd, 100, vex::velocityUnits::pct);
         }
@@ -119,6 +117,25 @@ void IntakeVoid(){
             TFeederMotor.stop();
             IntakerMotor.stop();
         }
+
+}
+
+void AutoIntakeCont(){
+    if(Controller1.ButtonA.pressing() && IntakeEnabledBtnPressed==false){
+        IntakeEnabledBtnPressed=true;
+        IntakeEnabledInverted=!IntakeEnabledInverted;
+    }
+    if(!Controller1.ButtonA.pressing() && IntakeEnabledBtnPressed==true){
+        IntakeEnabledBtnPressed=false;
+    }
+
+    if(IntakeEnabledInverted){ 
+        AutoIntakeTaskEnabled=false;
+        IntakeVoid();
+    }
+    if(!IntakeEnabledInverted) {
+        vex::task AutoIn(Auto_Intaking);
+        //AutoIntakeEnabled=false;
 
     }
 }

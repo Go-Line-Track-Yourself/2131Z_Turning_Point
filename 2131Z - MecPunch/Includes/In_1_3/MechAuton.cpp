@@ -139,9 +139,10 @@ void Skillz(){
     AutonMove(-44,70);
     AutonIntk(false, false);
     AutonMove(-4,25);
-    AutonMove(3,25);
+    AutonMove(5,25);
     AutonTurn(-16,40,40);
-    AutonMove(40,80);
+    AutonMove(42,80);
+    Wait(100);
     AutonFire();
     AutonAjUp();
     AutonBelt(true, true);
@@ -151,9 +152,33 @@ void Skillz(){
     AutonIntk(false, false);
     AutonFire();
     AutonAjDn();
-    AutonTurn(-2,25,25);
+    AutonTurn(-1.5,25,25);
+    AutonIntk(true, true);
+    AutonBelt(true, true);
+    AutonMove(40,80);
+    AutonMove(-40,60);
+    AutonBelt(false, false);
+    AutonIntk(false, false);
+    AutonTurn(16,40,40);
+    AutonMove(-4,25);
+    AutonIntk(true, true);
+    AutonMove(41,80);
+    Wait(300);
+    AutonIntk(true, true); 
+    AutonMove(-4,70);
+    AutonTurn(-13,40,40);
+    AutonMove(5,60);
+    AutonFire();
+    AutonAjUp();
+    AutonBelt(true, true);
+    AutonIntk(true, true);     
+    Wait(900);
+    AutonBelt(false, false);
+    AutonIntk(false, false);
+    AutonFire();
+    AutonAjDn();
+    AutonTurn(-1.5,60,60);
     AutonMove(30,80);
-
 }
 
 void AutonPots(){

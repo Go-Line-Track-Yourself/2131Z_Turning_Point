@@ -219,39 +219,8 @@ void FrntR(){
 
 }
 
-void Skillz(){                                                 
-    AutonHold(false);
-    AutonFlyC(true);
-    AutonIntk(true, true);
-    AutonMove(42,75);
-    vex::task::sleep(100);
-    AutonIntk(false, false);
-    AutonMove(-42,70);
-    AutonMove(-3,25);
-    vex::task::sleep(300);
-    AutonMove(3,25);
-    AutonTurn(-9.2,30,30);
-    AutonMove(43, 70);
-    AutonIndx(true);
-    vex::task::sleep(1400);
-    AutonIndx(false);
-    AutonMove(18,50);
-    AutonIndx(true);
-    AutonIntk(true, true);  
-    vex::task::sleep(1500);
-    AutonIndx(false);
-    AutonTurn(-1.25,30,30);
-    AutonMove(25,70);
-    AutonFlyC(false);
-    AutonMove(-45,80);
-    AutonTurn(8,25,25);
-    AutonMove(-5,30);
-    AutonMove(45,70);
-    vex::task::sleep(300);
-    AutonMove(-8,70);
-    AutonTurn(7.5,25,25);
-    AutonMove(30);
-    AutonLock();
+void Skillz(){        
+
 }
 
 void AutonPots(){

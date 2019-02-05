@@ -139,3 +139,43 @@ void AutonNLck(){
 void Wait(double w){
     vex::task::sleep(w);
 }
+
+// Automatic Intake
+int	BottomLightValue;
+int TopLightValue;
+int BottomBallInMax = 40;
+int TopBallInMax = 40   
+bool BallInBottom;
+bool BallInTop  
+void Auto_Intake() {
+    BottomLightValue = BallSenseBottom.value(vex::percentUnits::pct);
+    TopLightValue = BallSenseTop.value(vex::percentUnits::pct);
+    
+    if (BottomLightValue < BottomBallInMax) BallInBottom = true;
+    else BallInBottom = false   
+    if (TopLightValue < TopBallInMax) BallInTop = true;
+    else BallInTop = false  
+    if(AutoIntakeOff){
+        setIntakePower(-5);
+        if(AutoFlip) setIntakerPower(-100);
+        //if(AutoMan) setIntakePower(100);
+    }
+    /*else if(!Charged){
+        setIntakePower(100);
+    }
+    else if(Charged){*/
+        else if(BallInBottom && BallInTop) setIntakerPower(0);
+        else setIntakerPower(100);
+    // }
+}
+    int Auto_Intaking(){
+AutoIntakeTaskEnabled = true;
+// AutoIntakeEnabled = true;
+while(AutoIntakeTaskEnabled){
+    if(AutoIntakeEnabled){Auto_Intake();}
+    else if(!AutoIntakeEnabled){/*intakeControll();*/}
+    vex::task::sleep(20);
+}
+setIntakePower(0);
+return 1;
+}

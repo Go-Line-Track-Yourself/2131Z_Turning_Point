@@ -13,7 +13,7 @@ bool DriveLockInverted = false;
 bool DriveDirConBtnPressed;
 bool DriveDirInverted = false;
 
-bool AutoIntakeEnabled = false;
+bool AutoIntakeEnabled = true;
 bool AutoIntakeTaskEnabled = false;
 bool AutoIntakeOff = false;
 bool AutoFlip=false;
@@ -27,3 +27,7 @@ int TurnEndWait=250;
 
 bool AdjustMotorBool;
 bool AdjustMotorSwitch = false;
+
+void Pause(double waittime){
+	vex::task::sleep(waittime);
+}

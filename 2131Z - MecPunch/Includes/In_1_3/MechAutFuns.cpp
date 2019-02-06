@@ -143,18 +143,21 @@ void Wait(double w){
 // Automatic Intake
 int	BottomLightValue;
 int TopLightValue;
+int MiddleLightValue;
 int BottomBallInMax = 40;
 int TopBallInMax = 40;
 bool BallInBottom;
 bool BallInTop;
 void Auto_Intake() {
     BottomLightValue = BallSenseBottom.value(vex::percentUnits::pct);
+    MiddleLightValue = BallSenseMiddle.value(vex::percentUnits::pct);
     TopLightValue = BallSenseTop.value(vex::percentUnits::pct);
-    
-    if (BottomLightValue < BottomBallInMax) BallInBottom = true;
+
+    if (BottomLightValue < BottomBallInMax || MiddleLightValue < BottomBallInMax) BallInBottom = true;
     else BallInBottom = false;
     if (TopLightValue < TopBallInMax) BallInTop = true;
     else BallInTop = false;
+
     if(AutoIntakeOff){
         SetIntakerPower(-5);
         if(AutoFlip) SetIntakerPower(-100);
@@ -166,7 +169,6 @@ void Auto_Intake() {
     else{
         SetIntakerPower(-100);
         SetTFeederPower(-100);
-
     } 
 }
 int Auto_Intaking(){
@@ -179,4 +181,13 @@ int Auto_Intaking(){
     }
     SetIntakerPower(0);
     return 1;
+}
+
+int DeBug(){
+    Brain.Screen.render(true,false);
+    while(1){
+        Brain.Screen.print(AutoIntakeEnabled);
+        Brain.Screen.render();
+        vex::task::sleep(20);
+    }
 }

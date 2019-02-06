@@ -77,17 +77,7 @@ void PuncherControl(){
     else PuncherMotor.stop(vex::brakeType::coast);
 }
 
-
 void AdjustMove(){
-    /*
-    if(Controller1.ButtonL1.pressing()){
-        AdjustPMotor.rotateTo(120,vex::rotationUnits::deg);
-      }
-    else if(Controller1.ButtonL2.pressing()){
-        AdjustPMotor.rotateTo(0,vex::rotationUnits::deg);
-      }
-    */
-
     if(Controller1.ButtonL1.pressing() && AdjustMotorBool==false){
         AdjustMotorBool=true;
         AdjustMotorSwitch=!AdjustMotorSwitch;

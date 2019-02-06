@@ -1,0 +1,7 @@
+#include "Z-Team-Repository/2131Z - MecPunch/Includes/In_1_4/MechVars.cpp"
+#include "Z-Team-Repository/2131Z - MecPunch/Includes/In_1_4/MechRamping.cpp"
+#include "Z-Team-Repository/2131Z - MecPunch/Includes/In_1_4/MechSetMotors.cpp"
+#include "Z-Team-Repository/2131Z - MecPunch/Includes/In_1_4/MechAutFuns.cpp"
+#include "Z-Team-Repository/2131Z - MecPunch/Includes/In_1_4/MechUserFuns.cpp"
+#include "Z-Team-Repository/2131Z - MecPunch/Includes/In_1_4/MechAuton.cpp"
+#include "Z-Team-Repository/2131Z - MecPunch/Includes/In_1_4/MechStartUpFuns.cpp"

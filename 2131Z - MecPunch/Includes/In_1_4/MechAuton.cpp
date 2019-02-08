@@ -24,7 +24,6 @@ void BackRBread(){
     AutonMove(-20,80);
     AutonTurn(8,30,30);
 }
-
 void FrntBPark(){
     AutonMove(42,70); 
     vex::task::sleep(300);
@@ -54,22 +53,28 @@ void FrntBPark(){
     vex::task::sleep(2000);
     AutonNLck();
 }
-
-void BackBPark(){                                                   
-    AutonIntk(true, true);
-    AutonMove(43,75);
-    vex::task::sleep(500);
-    AutonIntk(false, false);
-    AutonMove(-12,60);
-    AutonTurn(16,25,25);
-    AutonMove(-15,80);
-    AutonMove(-3,25);
+void BackBPark(){
+    AutonMove(41,75);
+    Wait(300);
+    AutonMove(-7,60);
+    AutonTurn(-16,25,25);
+    AutonMove(16,80);
+    AutonMove(3,25);
     AutonLock();
-    AutonMove(55,80);
+    AutonMove(-60,80);
     vex::task::sleep(1300);
     AutonNLck();
 }
-void BackR(){                                                   
+void BackB(){
+    AutonMove(41,75);
+    Wait(300);
+    AutonMove(-8,60);
+    StrafeRecon(900,80,-1);
+    Wait(500);
+    AutoIntakeOff = true;
+    AutonMove(5,80);
+}
+void BackR(){
     AutonIntk(true, true); 
     AutonMove(40,80);
     vex::task::sleep(200);
@@ -84,114 +89,112 @@ void BackR(){
     AutonNLck();
 
 }
-
-void FrntB(){                                                   
-    AutonIntk(true, true);  
-    AutonMove(42,70); 
+void FrntB(){
+    AutonMove(41,70); 
     vex::task::sleep(300);
-    AutonIntk(false, false); 
-    AutonMove(-41,70);
+    AutonMove(-43,70);
     AutonMove(-3,25);
     AutonMove(3,25);
-    AutonTurn(8.9,25,25);
-    AutonMove(1,25);
+    AutonTurn(15.5,40,40);
+    AutonMove(2,30);
     Wait(100);
     AutonFire();
     AutonAjUp();
-    AutonBelt(true, true);
-    AutonIntk(true, true);     
-    Wait(900);
-    AutonBelt(false, false);
-    AutonIntk(false, false);
     AutonFire();
     AutonAjDn();
-    AutonIntk(false, false);
-    AutonTurn(.5,25,25);
-    AutonMove(40,70);
+    AutonTurn(1,25,25);
+    AutonMove(42,70);
     AutonMove(-16,80);
-    AutonIntk(true, false);
     AutonTurn(-18);
+    AutoIntakeOff = true;
     AutonMove(16,70);
-    AutonIntk(false, false);
 }
 void FrntR(){
-    AutonIntk(true, true);  
     AutonMove(40,70);
     vex::task::sleep(200); 
-    AutonIntk(false, false); 
-    AutonMove(-39,70);
+    AutonMove(-40,70);
     AutonMove(-3,25);
-    AutonMove(3,25);
-    AutonTurn(-9,30,30);
+    AutonMove(4,25);
+    AutonTurn(-15.7,40,40);
     AutonMove(1,25);  
     Wait(100);
     AutonFire();
     AutonAjUp();
-    AutonBelt(true, true);
-    AutonIntk(true, true);     
-    Wait(900);
-    AutonBelt(false, false);
-    AutonIntk(false, false);
     AutonFire();
     AutonAjDn();
-    AutonTurn(-.5,25,25); 
+    AutonTurn(-1,25,25); 
     AutonMove(40,80);
+    StrafeRecon(500,80,1);
     AutonMove(-18,80);
-    AutonIntk(true, false);
-    AutonTurn(16,25,25);
+    AutonTurn(16,50,50);
+    AutoIntakeOff = true;
     AutonMove(20,60);
-    AutonIntk(false, false);
 }
-
 void Skillz(){                                                                                         
     AutonMove(41,80);
     Wait(300);
-    AutonIntk(true, true); 
     AutonMove(-44,70);
-    AutonIntk(false, false);
-    AutonMove(-4,25);
+    AutonMove(-3,25);
     AutonMove(5,25);
     AutonTurn(-16,40,40);
     AutonMove(42,80);
     Wait(100);
     AutonFire();
     AutonAjUp();
-    AutonBelt(true, true);
-    AutonIntk(true, true);     
-    Wait(900);
-    AutonBelt(false, false);
-    AutonIntk(false, false);
+    Wait(300);
     AutonFire();
     AutonAjDn();
     AutonTurn(-1.5,25,25);
-    AutonIntk(true, true);
-    AutonBelt(true, true);
     AutonMove(40,80);
-    AutonMove(-40,60);
-    AutonBelt(false, false);
-    AutonIntk(false, false);
+    StrafeRecon(300,90,1);
+    AutonMove(-43,60);
     AutonTurn(16,40,40);
     AutonMove(-4,25);
-    AutonIntk(true, true);
     AutonMove(41,80);
     Wait(300);
-    AutonIntk(true, true); 
     AutonMove(-4,70);
     AutonTurn(-13,40,40);
-    AutonMove(5,60);
+    AutonMove(2,60);
     AutonFire();
-    AutonAjUp();
-    AutonBelt(true, true);
-    AutonIntk(true, true);     
-    Wait(900);
-    AutonBelt(false, false);
-    AutonIntk(false, false);
+    AutonAjUp();    
+    Wait(300);
     AutonFire();
     AutonAjDn();
     AutonTurn(-1.5,60,60);
     AutonMove(30,80);
+    // Not tested after this point
+    StrafeRecon(500,80,1);
+    AutonMove(-20,70);
+    AutonTurn(16,40,40);
+    AutoIntakeOff = true;
+    AutonMove(40,70);
+    AutoIntakeOff = false;
+    AutonTurn(16,40,40);
+    AutonMove(24,80);
+    AutonTurn(16,40,40);
+    AutonMove(35,70);
+    Wait(300);
+    StrafeRecon(400,80,-1);
+    AutonMove(-41,80);
+    AutonMove(-3,25);
+    AutonMove(3,25);
+    AutonTurn(15.5,40,40);
+    AutonMove(2,30);
+    Wait(100);
+    AutonFire();
+    AutonAjUp();
+    AutonFire();
+    AutonAjDn();
+    AutonTurn(1,25,25);
+    AutonMove(42,70);
+    StrafeRecon(400,80,-1);
+    AutonMove(-66,70);
+    AutonTurn(16,30,30);
+    AutonLock();
+    AutonMove(40,80);
+    vex::task::sleep(2000);
+    AutonNLck();
 }
-
 void AutonPots(){
     int SelectValueOne = AutonSelectOne.value(vex::percentUnits::pct);
     int SelectValueTwo = AutonSelectTwo.value(vex::percentUnits::pct);
@@ -223,10 +226,10 @@ void AutonPots(){
 
         }
         else if(SelectValueTwo > 30){
-            
+            BackBPark();
         }
         else if(SelectValueTwo >= 0){
-            BackBPark();
+            BackB();
         }
     }
     else if(SelectValueOne > 20){
@@ -311,13 +314,13 @@ void AutonUpdater(){
         else if(SelectValueTwo > 30){
             Brain.Screen.clearLine(1,vex::color::blue);
             Brain.Screen.clearLine();
-            Brain.Screen.print(" ");
+            Brain.Screen.print("Back Blue Parking");
         }
         else if(SelectValueTwo >= 0){
             //BackBPark();
             Brain.Screen.clearLine(1,vex::color::blue);
             Brain.Screen.clearLine();
-            Brain.Screen.print("Back Blue Parking");
+            Brain.Screen.print("Back Blue with Caps (Center)");
         }
     }
     else if(SelectValueOne > 20){
@@ -372,7 +375,6 @@ void AutonUpdater(){
         }
     }
 }
-
 int WhatAuton(){
     while(true){
         AutonUpdater();

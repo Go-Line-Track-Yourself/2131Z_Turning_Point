@@ -33,7 +33,6 @@ void ManualMechDriveCont(){
         setMechDrivePower(0,0,0,0);//Last loop before disableing; used to release drivemanualcontrol
     }        
 }
-
 void driveLock(){
     stopDriveHold();
 }
@@ -56,7 +55,6 @@ void DriveCont_LockContM(){
 void setPuncherPower(int power){
     PuncherMotor.spin(vex::directionType::rev, power, vex::velocityUnits::pct);
 }
-
 void PuncherControl(){
     if(Controller1.ButtonA.pressing()) {
         setPuncherPower(100);
@@ -69,14 +67,12 @@ void PuncherControl(){
 void setPuncherPower(int degrees){
     PuncherMotor.rotateFor(vex::directionType::rev, degrees, vex::rotationUnits::deg, 100, vex::velocityUnits::pct);
 }
-
 void PuncherControl(){
     if(Controller1.ButtonR1.pressing()) {
         setPuncherPower(360);
     }  
     else PuncherMotor.stop(vex::brakeType::coast);
 }
-
 void AdjustMove(){
     if(Controller1.ButtonL1.pressing() && AdjustMotorBool==false){
         AdjustMotorBool=true;
@@ -93,7 +89,6 @@ void AdjustMove(){
         AdjustPMotor.rotateTo(0,vex::rotationUnits::deg);
     }
 }
-
 void IntakeVoid(){
         if(Controller1.ButtonLeft.pressing()) {
             TFeederMotor.spin(vex::directionType::rev, 100, vex::velocityUnits::pct);
@@ -109,7 +104,6 @@ void IntakeVoid(){
         }
 
 }
-
 void AutoIntakeCont(){
     if(Controller1.ButtonA.pressing() && IntakeEnabledBtnPressed==false){
         IntakeEnabledBtnPressed=true;

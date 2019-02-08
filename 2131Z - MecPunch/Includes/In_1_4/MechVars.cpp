@@ -15,7 +15,7 @@ bool DriveDirInverted = false;
 
 bool AutoIntakeEnabled = true;
 bool AutoIntakeTaskEnabled = false;
-bool AutoIntakeOff = true;
+bool AutoIntakeOff = false;
 bool AutoFlip=false;
 
 bool IntakeEnabledBtnPressed;

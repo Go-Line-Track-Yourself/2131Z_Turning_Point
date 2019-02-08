@@ -3,6 +3,9 @@ void PAutonStart(){
     WhatAuton();
 
     IntakerMotor.setStopping(vex::brakeType::brake);
+    TFeederMotor.setStopping(vex::brakeType::brake);
+    DriveRampingEnabled=true;
+
     vex::task AutoIn(Auto_Intaking);
     AutoIntakeOff = false;
 }

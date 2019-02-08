@@ -152,12 +152,13 @@ void Auto_Intake() {
         if(AutoFlip) SetIntakerPower(100);
     }
     else if(BallInBottom && BallInTop){
-        SetTFeederPower(0);
         if(Controller1.ButtonL2.pressing()){
             SetIntakerPower(100);
+            SetTFeederPower(100);
         }
         else {
             SetIntakerPower(0);
+            SetTFeederPower(0);
         }
     } 
     else{

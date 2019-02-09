@@ -1,4 +1,5 @@
 void BackRBread(){
+/*
     AutonIntk(true, true);
     AutonMove(41,75);
     vex::task::sleep(100);
@@ -23,34 +24,45 @@ void BackRBread(){
     AutonMove(40,70);
     AutonMove(-20,80);
     AutonTurn(8,30,30);
+///////////////////////////
+    AutonMove(39,80);
+    vex::task::sleep(200);
+    AutonMove(-4,70);
+    
+    AutonTurn(16, 40,40);
+    AutonMove(18,50);
+    AutonMove(3,25);
+    AutonLock();
+    AutonMove(-65,100);
+    AutoIntakeOff = false;
+    vex::task::sleep(15000);
+    AutonNLck();  
+*/
 }
 void FrntBPark(){
-    AutonMove(42,70); 
+    AutonMove(41,80); 
     vex::task::sleep(300);
-    AutonIntk(false, false); 
-    AutonMove(-41,70);
-    AutonMove(-3,25);
-    vex::task::sleep(200);
-    AutonMove(3,25);
-    AutonTurn(16,25,25);
-    Wait(100);
+    AutonMove(-43,90);
+    AutonMove(-3,30);
+    AutonMove(3,30);
+    AutonTurn(15.5,40,40);
     AutonFire();
     AutonAjUp();
-    AutonBelt(true, true);
-    AutonIntk(true, true);     
-    Wait(900);
-    AutonBelt(false, false);
-    AutonIntk(false, false);
+    Wait(300);
     AutonFire();
     AutonAjDn();
-    AutonIntk(false, false);
-    AutonTurn(.5,25,25);
-    AutonMove(40,90);
-    AutonMove(-66,70);
-    AutonTurn(-16);
+    AutonTurn(1,80,80);
+    AutonMove(42,70);
+//    AutonMove(-16,80);
+//    AutonTurn(-18,70,70);
+//    AutoIntakeOff = true;
+//    AutonMove(19,90);
+//    AutonTurn(22,50,50);
+    AutonMove(-70,90);
+    AutonTurn(16,80,80);
     AutonLock();
-    AutonMove(40,80);
-    vex::task::sleep(2000);
+    AutonMove(-50,100);
+    vex::task::sleep(1300);
     AutonNLck();
 }
 void BackBPark(){
@@ -75,17 +87,24 @@ void BackB(){
     AutonMove(5,80);
 }
 void BackR(){
-    AutonIntk(true, true); 
-    AutonMove(40,80);
+    AutonMove(39,80);
     vex::task::sleep(200);
-    AutonIntk(false, false);
-    AutonMove(-12,70);
-    AutonTurn(-16, 25,25);
-    AutonMove(-15,50);
-    AutonMove(-3,25);
+    AutonMove(-5,70);
+    AutoIntakeOff = true;
+    StrafeRecon(950,80,1);
+    AutonMove(5,80);
+    Wait(300);
+    AutonMove(-5,70);
+    AutonTurn(16, 40,40);
+    AutonMove(3,50);
     AutonLock();
-    AutonMove(55,100);
-    vex::task::sleep(3000);
+    AutonMove(-65,100);
+    AutoIntakeOff = false;
+    AutonTurn(33.5,40,40);
+    AutonAjUp();
+    AutonFire();
+    Wait(300);
+    AutonAjDn();
     AutonNLck();
 
 }
@@ -96,10 +115,9 @@ void FrntB(){
     AutonMove(-3,25);
     AutonMove(3,25);
     AutonTurn(15.5,40,40);
-    AutonMove(2,30);
-    Wait(100);
     AutonFire();
     AutonAjUp();
+    Wait(200);
     AutonFire();
     AutonAjDn();
     AutonTurn(1,25,25);
@@ -111,15 +129,16 @@ void FrntB(){
 }
 void FrntR(){
     AutonMove(40,70);
-    vex::task::sleep(200); 
+    Wait(200); 
     AutonMove(-40,70);
     AutonMove(-3,25);
     AutonMove(4,25);
     AutonTurn(-15.7,40,40);
-    AutonMove(1,25);  
-    Wait(100);
+//    AutonMove(1,25);  
+//    Wait(100);
     AutonFire();
     AutonAjUp();
+    Wait(200);
     AutonFire();
     AutonAjDn();
     AutonTurn(-1,25,25); 
@@ -130,14 +149,14 @@ void FrntR(){
     AutoIntakeOff = true;
     AutonMove(20,60);
 }
-void Skillz(){                                                                                         
+void Skillz(){     
     AutonMove(41,80);
-    Wait(300);
-    AutonMove(-44,70);
-    AutonMove(-3,25);
+    Wait(500);
+    AutonMove(-48,70);
+    AutonMove(-4,25);
     AutonMove(5,25);
-    AutonTurn(-16,40,40);
-    AutonMove(42,80);
+    AutonTurn(-15.5,40,40);
+    AutonMove(40,80);
     Wait(100);
     AutonFire();
     AutonAjUp();
@@ -146,39 +165,39 @@ void Skillz(){
     AutonAjDn();
     AutonTurn(-1.5,25,25);
     AutonMove(40,80);
-    StrafeRecon(300,90,1);
+    StrafeRecon(400,90,1);
+    AutonMove(6,40);
     AutonMove(-43,60);
     AutonTurn(16,40,40);
-    AutonMove(-4,25);
+    AutonMove(-8,60);
+    AutonMove(-3,30);
     AutonMove(41,80);
     Wait(300);
     AutonMove(-4,70);
     AutonTurn(-13,40,40);
-    AutonMove(2,60);
     AutonFire();
     AutonAjUp();    
     Wait(300);
     AutonFire();
     AutonAjDn();
-    AutonTurn(-1.5,60,60);
-    AutonMove(30,80);
-    // Not tested after this point
-    // Do a split run? Try multiple outputs depending on number of balls?
+    AutonTurn(-1,60,60);
+    AutonMove(45,80);
     StrafeRecon(500,80,1);
+    AutonMove(6,40);
     AutonMove(-20,70);
     AutonTurn(16,40,40);
     AutoIntakeOff = true;
-    AutonMove(40,70);
+    AutonMove(38,70);
     AutoIntakeOff = false;
-    AutonTurn(16,40,40);
-    AutonMove(24,80);
-    AutonTurn(16,40,40);
-    AutonMove(35,70);
+    AutonTurn(17,40,40);
+    AutonMove(16,80);
+    AutonTurn(17,40,40);
+    AutonMove(24,70);
     Wait(300);
     StrafeRecon(400,80,-1);
     AutonMove(-41,80);
     AutonMove(-3,25);
-    AutonMove(3,25);
+    AutonMove(16,25);
     AutonTurn(15.5,40,40);
     AutonMove(2,30);
     Wait(100);
@@ -186,9 +205,10 @@ void Skillz(){
     AutonAjUp();
     AutonFire();
     AutonAjDn();
-    AutonTurn(1,25,25);
+    AutonTurn(-1,25,25);
     AutonMove(42,70);
-    StrafeRecon(400,80,-1);
+    StrafeRecon(400,80,1);
+    AutonMove(6,40);
     AutonMove(-66,70);
     AutonTurn(16,30,30);
     AutonLock();

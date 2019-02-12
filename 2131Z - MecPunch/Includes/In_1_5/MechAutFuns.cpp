@@ -142,7 +142,7 @@ bool BallInNope;
 void Auto_Intake() {
     BottomLightValue = BallSenseBottom.value(vex::percentUnits::pct);
     MiddleLightValue = BallSenseMiddle.value(vex::percentUnits::pct);
-    NopeLightValue = BallSenseNope.value(vex::precentUnits::pct);
+    NopeLightValue = BallSenseNope.value(vex::percentUnits::pct);
     TopLightValue = BallSenseTop.value(vex::percentUnits::pct);
 
     if (BottomLightValue < BottomBallInMax || MiddleLightValue < BottomBallInMax) BallInBottom = true;
@@ -161,13 +161,11 @@ void Auto_Intake() {
         SetTFeederPower(0);
 
     }
-    else if(BallInTop){
-        if (BallInNope){
-            SetTFeederPower(-20);
-        }
+    else if(BallInTop && BallInNope){
+            SetTFeederPower(100);
     }
     else if(BallInBottom && BallInTop){
-        SetTFeederPower(-5);
+        SetTFeederPower(0);
         if(Controller1.ButtonL2.pressing()){
             SetIntakerPower(100);
         }

@@ -151,9 +151,12 @@ void Skillz(){
     AutonMove(-4,30);
     AutonMove(4,30);
     AutonTurn(-15.7,40,40);
+    AutonPSet();
     AutonMove(28,80);
     Wait(200);
     AutonFire();
+    Wait(20);
+    AutonPSet();
     AutonAjUp();
     Wait(300);
     AutonFire();
@@ -171,10 +174,12 @@ void Skillz(){
     AutoIntakeOff = false;
     Wait(300);
     AutonMove(-6,70);
+    AutonPSet();
     AutonTurn(-13.2,40,40);
     AutonFire(); 
     if (BallInTop){
         AutonAjUp();  
+        AutonPSet();
         Wait(300); 
         AutonFire();
         HitFlag = true;
@@ -188,6 +193,7 @@ void Skillz(){
     AutonMove(-18,70);
     Wait(300);  
     if (BallInTop && HitFlag == false){
+        AutonPSet();
         AutonFire();
         HitFlag = true;
         Wait(100);
@@ -211,10 +217,12 @@ void Skillz(){
     StrafeRecon(200,80,1);
     AutonMove(-4,25);
     AutonMove(16,60);
+    AutonPSet();
     AutonTurn(16.5,40,40);
     AutonFire();
     if (BallInTop){
         AutonAjUp();
+        AutonPSet();
         Wait(300);
         AutonFire();
         HitFlag = true;
@@ -227,6 +235,7 @@ void Skillz(){
     AutonMove(5,80);
     Wait(300);  
     if (BallInTop && HitFlag == false){
+        AutonPSet();
         AutonMove(-16,80);
         AutonFire();
         HitFlag = true;

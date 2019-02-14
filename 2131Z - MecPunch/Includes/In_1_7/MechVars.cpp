@@ -21,6 +21,8 @@ bool AutoFlip=false;
 bool IntakeEnabledBtnPressed;
 bool IntakeEnabledInverted = true;
 
+bool punchPressing= false;
+int PunchPlace = 0;
 // Mech Autonomous Function Variables
 int DriveEndWait=100;
 int TurnEndWait=250;

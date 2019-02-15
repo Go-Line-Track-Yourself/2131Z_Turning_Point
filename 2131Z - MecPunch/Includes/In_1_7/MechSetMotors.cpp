@@ -13,6 +13,9 @@ void SetTFeederPower(int power){
     TFeederMotor.spin(vex::directionType::fwd, power, vex::velocityUnits::pct);
 }
 
+void setPuncherPower(int degrees){
+    PuncherMotor.rotateFor(vex::directionType::fwd, degrees, vex::rotationUnits::deg, 100, vex::velocityUnits::pct);
+}
 void setDriveBrakeCoast(){
     BLMotor.setStopping(vex::brakeType::coast);
     BRMotor.setStopping(vex::brakeType::coast);
@@ -73,7 +76,8 @@ void setDrivePower(int left, int right){
     setMechFRPower(right);
     setMechBRPower(right);
 }
-
+/*
 void setPunchFor(int degs){
-    PuncherMotor.startRotateFor(vex::directionType::rev, degs, vex::rotationUnits::deg);
+    PuncherMotor.startRotateFor(degs,vex::rotationUnits::deg,100,vex::velocityUnits::pct);
 }
+*/

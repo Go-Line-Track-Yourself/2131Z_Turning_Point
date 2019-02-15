@@ -51,31 +51,37 @@ void DriveCont_LockContM(){
         ManualMechDriveCont();
     }
 }
-void setPuncherPower(int degrees){
-    PuncherMotor.rotateFor(vex::directionType::rev, degrees, vex::rotationUnits::deg, 100, vex::velocityUnits::pct);
-}
+
 void PuncherControl(){
-    if(punchPressing == false && Controller1.ButtonR2.pressing()) {
+    /*
+    if(punchPressing == false && Controller1.ButtonR1.pressing()) {
         //setPunchTo(330);
         PunchPlace=PunchPlace+1;
         punchPressing=true;
+        PunchRunOnce=true;
     }
-    if(punchPressing == true && Controller1.ButtonR2.pressing()) {
+    if(punchPressing == true && Controller1.ButtonR1.pressing()) {
         punchPressing=false;
     }
-
     if(PunchPlace==0) {//reset encoder assuming its at its first inital position
         PuncherMotor.stop(vex::brakeType::coast);
     }
-    else if(PunchPlace==1) {
-        setPunchFor(330);
+    if(PunchRunOnce){
+        if(PunchPlace==1) {
+            setPunchFor(280);
+        }
+        if(PunchPlace==2){
+            //rotate to fire and reset to resting position
+            PunchPlace=0;
+            setPunchFor(80);
+        }
+        PunchRunOnce = false;
     }
-
-    else if(PunchPlace==2){
-        //rotate to fire and reset to resting position
-        PunchPlace=0;
-        setPunchFor(30);
-    }
+    */
+    if(Controller1.ButtonR1.pressing()) {
+        setPuncherPower(392);
+    }  
+    else PuncherMotor.stop(vex::brakeType::coast);
 }
 void AdjustMove(){
     if(Controller1.ButtonL1.pressing() && AdjustMotorBool==false){

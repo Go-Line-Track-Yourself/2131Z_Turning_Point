@@ -102,10 +102,13 @@ void AutonBelt(bool ON, bool In){
 }
 // Autonomous Puncher
 void AutonPSet(){
-    PuncherMotor.startRotateFor(vex::directionType::rev, 330, vex::rotationUnits::deg, 100, vex::velocityUnits::pct);
+    PuncherMotor.startRotateFor(vex::directionType::fwd, 260, vex::rotationUnits::deg, 100, vex::velocityUnits::pct);
+}
+void AutonRFire(){
+    PuncherMotor.rotateFor(vex::directionType::fwd, 395, vex::rotationUnits::deg, 100, vex::velocityUnits::pct);
 }
 void AutonFire(){
-    PuncherMotor.startRotateFor(vex::directionType::rev, 30, vex::rotationUnits::deg, 100, vex::velocityUnits::pct);
+    PuncherMotor.rotateFor(vex::directionType::fwd, 132, vex::rotationUnits::deg, 100, vex::velocityUnits::pct);
 }
 // Autonomous Puncher Adjust
 void AutonAjUp(){

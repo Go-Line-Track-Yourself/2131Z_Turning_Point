@@ -21,6 +21,7 @@ void UserCoStart(){
     FRMotor.setStopping(vex::brakeType::coast);
     BRMotor.setStopping(vex::brakeType::coast);
 
+    PuncherMotor.rotateFor(vex::directionType::rev, 300, vex::rotationUnits::deg, 100, vex::velocityUnits::pct);
     vex::task AutoIn(Auto_Intaking);
     AutoIntakeOff = false;
 }

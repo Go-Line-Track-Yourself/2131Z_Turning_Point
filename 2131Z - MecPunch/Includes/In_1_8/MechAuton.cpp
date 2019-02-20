@@ -30,157 +30,344 @@
 //AutonAjDn();
     // Moves Puncher Down
 
-void BackRBread(){
-    AutonIntk(true, true);
-    AutonMove(41,75);
-    vex::task::sleep(100);
-    AutonIntk(false, false);
-    AutonMove(-41,70);
-    AutonMove(-3,25);
-    vex::task::sleep(300);
-    AutonMove(3,25);
-    AutonTurn(-16,30,30);
-    AutonMove(43, 70);
-    Wait(100);
-    AutonFire();
-    AutonAjUp();
-    AutonBelt(true, true);
-    AutonIntk(true, true);     
-    Wait(900);
-    AutonBelt(false, false);
-    AutonIntk(false, false);
-    AutonFire();
-    AutonAjDn();
-    AutonTurn(-.5,30,30);
-    AutonMove(40,70);
-    AutonMove(-20,80);
-    AutonTurn(8,30,30);
 
+
+
+
+//Back Blue
+void BackBPark(){
+    AutoIntakeOff = true;
     AutonMove(39,80);
-    vex::task::sleep(200);
+    Wait(200);
+    AutoIntakeOff = false;
+    Wait(200);
     AutonMove(-4,70);
-    
-    AutonTurn(16, 40,40);
-    AutonMove(18,50);
-    AutonMove(3,25);
+    AutoIntakeOff = true;
+    AutonTurn(-16,50,50);
+    AutoFlip = true;
+    AutonMove(5,80);
+    AutonTurn(-16,70,70);
+    AutonMove(5,70);
+    AutoFlip = false;
+    AutonTurn(-3,40,40);
+    AutonMove(8,50);
+    AutonTurn(19,50,50);
+    AutonMove(15,40,40);
+    AutonLock();
+    AutonMove(-65,100);
+    AutonNLck();
+}
+void BackBParkShot(){
+    AutoIntakeOff = true;
+    AutonMove(39,80);
+    Wait(200);
+    AutoIntakeOff = false;
+    Wait(200);
+    AutonMove(-4,70);
+    AutoIntakeOff = true;
+    AutonTurn(-16,50,50);
+    AutoFlip = true;
+    AutonMove(5,80);
+    AutonTurn(-16,70,70);
+    AutonMove(5,70);
+    AutoFlip = false;
+    AutonTurn(-3,40,40);
+    AutonMove(8,50);
+    AutonTurn(19,50,50);
+    AutonMove(15,40,40);
     AutonLock();
     AutonMove(-65,100);
     AutoIntakeOff = false;
-    vex::task::sleep(15000);
-    AutonNLck();  
-}
-void FrntBPark(){
-    AutonMove(41,80); 
-    vex::task::sleep(300);
-    AutonMove(-43,90);
-    AutonMove(-3,30);
-    AutonMove(3,30);
-    AutonTurn(15.5,40,40);
-    AutonFire();
+    AutonPSet();
+    AutonTurn(-33.5,40,40);
     AutonAjUp();
-    Wait(300);
     AutonFire();
-    AutonAjDn();
-    AutonTurn(1,80,80);
-    AutonMove(42,70);
-
-    AutonMove(-70,90);
-    AutonTurn(16,80,80);
-    AutonLock();
-    AutonMove(-50,100);
-    vex::task::sleep(1300);
-    AutonNLck();
-}
-void BackBPark(){
-    AutonMove(41,75);
     Wait(300);
-    AutonMove(-7,60);
-    AutonTurn(-16,25,25);
-    AutonMove(16,80);
-    AutonMove(3,25);
-    AutonLock();
-    AutonMove(-60,80);
-    vex::task::sleep(1300);
+    AutonAjDn();
     AutonNLck();
 }
 void BackB(){
-    AutonMove(41,75);
-    Wait(300);
-    AutonMove(-10,60);
-    StrafeRecon(900,80,-1);
-    Wait(500);
     AutoIntakeOff = true;
-    AutonMove(5,80);
-}
-void BackR(){
     AutonMove(39,80);
-    vex::task::sleep(200);
-    AutonMove(-5,70);
+    Wait(200);
+    AutoIntakeOff = false;
+    Wait(200);
+    AutonMove(-4,70);
     AutoIntakeOff = true;
-    StrafeRecon(950,80,1);
+    AutonTurn(-16,50,50);
+    AutoFlip = true;
     AutonMove(5,80);
+    AutonTurn(-16,70,70);
+    AutonMove(5,70);
+    AutoFlip = false;
+    AutonTurn(-3,40,40);
+    AutonMove(8,50);
+    AutonTurn(19,50,50);
+    AutonMove(15,40,40);
+}
+void BackBBread(){
+    AutoIntakeOff = true;
+    AutonMove(41,70); 
+    Wait(100);
+    AutoIntakeOff = false;
     Wait(300);
-    AutonMove(-5,70);
-    AutonTurn(16, 40,40);
-    AutonMove(3,50);
+    AutonMove(-43,70);
+    AutonMove(-3,25);
+    AutonMove(3,25);
+    AutonTurn(15.5,40,40);
+    AutonPSet();
+    AutonMove(43,70);
+    Wait(150);
+    AutonFire();
+    AutonAjUp();
+    Wait(200);
+    AutonRFire();
+    AutonAjDn();
+    AutonTurn(1,25,25);
+    AutonMove(42,70);
+    StrafeRecon(300,70,-1);
+    AutonMove(5.5,70);
+    AutonMove(-38,80);
+    AutonTurn(16,60,60);
+    AutonLock();
+    AutonMove(-40,70);
+    AutonNLck();
+}
+
+
+
+
+
+//Back Red
+void BackRPark(){
+    AutoIntakeOff = true;
+    AutonMove(39,80);
+    Wait(200);
+    AutoIntakeOff = false;
+    Wait(200);
+    AutonMove(-4,70);
+    AutoIntakeOff = true;
+    AutonTurn(16,50,50);
+    AutoFlip = true;
+    AutonMove(5,80);
+    AutonTurn(16,70,70);
+    AutonMove(5,70);
+    AutoFlip = false;
+    AutonTurn(3,40,40);
+    AutonMove(8,50);
+    AutonTurn(-19,50,50);
+    AutonMove(15,40,40);
     AutonLock();
     AutonMove(-65,100);
     AutoIntakeOff = false;
+    AutonNLck();
+}
+void BackRParkShot(){
+    AutoIntakeOff = true;
+    AutonMove(39,80);
+    Wait(200);
+    AutoIntakeOff = false;
+    Wait(200);
+    AutonMove(-4,70);
+    AutoIntakeOff = true;
+    AutonTurn(16,50,50);
+    AutoFlip = true;
+    AutonMove(5,80);
+    AutonTurn(16,70,70);
+    AutonMove(5,70);
+    AutoFlip = false;
+    AutonTurn(3,40,40);
+    AutonMove(8,50);
+    AutonTurn(-19,50,50);
+    AutonMove(15,40,40);
+    AutonLock();
+    AutonMove(-65,100);
+    AutoIntakeOff = false;
+    AutonPSet();
     AutonTurn(33.5,40,40);
     AutonAjUp();
     AutonFire();
     Wait(300);
     AutonAjDn();
     AutonNLck();
-
 }
-void FrntB(){
-    AutonMove(41,70); 
-    vex::task::sleep(300);
-    AutonMove(-43,70);
-    AutonMove(-3,25);
-    AutonMove(3,25);
-    AutonTurn(15.5,40,40);
-    AutonFire();
-    AutonAjUp();
-    Wait(200);
-    AutonFire();
-    AutonAjDn();
-    AutonTurn(1,25,25);
-    AutonMove(42,70);
-    AutonMove(-16,80);
-    AutonTurn(-18);
+void BackRBread(){
     AutoIntakeOff = true;
-    AutonMove(16,70);
-}
-void FrntR(){
     AutonMove(40,70);
+    Wait(100);
+    AutoIntakeOff = false;
     Wait(200); 
     AutonMove(-40,70);
     AutonMove(-3,25);
     AutonMove(4,25);
     AutonTurn(-15.3,40,40);
+    AutonPSet();
+    AutonMove(43,70);
     AutonFire();
     AutonAjUp();
     Wait(200);
-    AutonFire();
+    AutonRFire();
     AutonAjDn();
     AutonTurn(-0.5,25,25); 
     AutonMove(40,80);
     StrafeRecon(500,80,1);
-    AutonMove(-18,80);
-    AutonTurn(16,50,50);
+    AutonMove(5.5,60);
+    AutonMove(-38,80);
     AutoIntakeOff = true;
+    AutonTurn(-16,50,50);
+    AutonLock();
+    AutonMove(-40,60);
+    AutonNLck();
+}
+void BackR(){
+    AutoIntakeOff = true;
+    AutonMove(39,80);
+    Wait(200);
+    AutoIntakeOff = false;
+    Wait(200);
+    AutonMove(-4,70);
+    AutoIntakeOff = true;
+    AutonTurn(16,50,50);
+    AutoFlip = true;
+    AutonMove(5,80);
+    AutonTurn(16,70,70);
+    AutonMove(5,70);
+    AutoFlip = false;
+    AutonTurn(3,40,40);
+    AutonMove(8,50);
+    AutonTurn(-19,50,50);
+    AutonMove(15,40,40);
+}
+
+
+
+
+
+//Front Blue
+void FrntB(){
+    AutoIntakeOff = true;
+    AutonMove(41,70); 
+    Wait(100);
+    AutoIntakeOff = false;
+    Wait(300);
+    AutonMove(-43,70);
+    AutonMove(-3,25);
+    AutonMove(3,25);
+    AutonPSet();
+    AutonTurn(15.5,40,40);
+    AutonFire();
+    AutonAjUp();
+    Wait(200);
+    AutonRFire();
+    AutonAjDn();
+    AutonTurn(1,25,25);
+    AutonMove(42,70);
+    StrafeRecon(300,70,-1);
+    AutonMove(5.5,70);
+    AutonMove(-16,80);
+    AutoIntakeOff = true;
+    AutonTurn(-18,60,60);
+    AutoFlip = true;
+    AutonMove(16,70);
+}
+void FrntBPark(){
+    AutoIntakeOff = true;
+    AutonMove(41,70); 
+    Wait(100);
+    AutoIntakeOff = false;
+    Wait(300);
+    AutonMove(-43,70);
+    AutonMove(-3,25);
+    AutonMove(3,25);
+    AutonPSet();
+    AutonTurn(15.5,40,40);
+    AutonFire();
+    AutonAjUp();
+    Wait(200);
+    AutonRFire();
+    AutonAjDn();
+    AutonTurn(1,25,25);
+    AutonMove(42,70);
+    StrafeRecon(300,70,-1);
+    AutonMove(5.5,70);
+    AutonMove(-38,80);
+    AutonTurn(16,60,60);
+    AutonLock();
+    AutonMove(-40,70);
+    AutonNLck();
+}
+
+
+
+
+
+//Front Red
+void FrntR(){
+    AutoIntakeOff = true;
+    AutonMove(40,70);
+    Wait(100);
+    AutoIntakeOff = false;
+    Wait(200); 
+    AutonMove(-40,70);
+    AutonMove(-3,25);
+    AutonMove(4,25);
+    AutonPSet();
+    AutonTurn(-15.3,40,40);
+    AutonFire();
+    AutonAjUp();
+    Wait(200);
+    AutonRFire();
+    AutonAjDn();
+    AutonTurn(-0.5,25,25); 
+    AutonMove(40,80);
+    StrafeRecon(500,80,1);
+    AutonMove(5.5,60);
+    AutonMove(-18,80);
+    AutoIntakeOff = true;
+    AutonTurn(16,50,50);
+    AutoFlip = true;
     AutonMove(20,60);
 }
-void Skillz(){   
+void FrntRPark(){
+    AutoIntakeOff = true;
+    AutonMove(40,70);
+    Wait(100);
+    AutoIntakeOff = false;
+    Wait(200); 
+    AutonMove(-40,70);
+    AutonMove(-3,25);
+    AutonMove(4,25);
+    AutonPSet();
+    AutonTurn(-15.3,40,40);
+    AutonFire();
+    AutonAjUp();
+    Wait(200);
+    AutonRFire();
+    AutonAjDn();
+    AutonTurn(-0.5,25,25); 
+    AutonMove(40,80);
+    StrafeRecon(500,80,1);
+    AutonMove(5.5,60);
+    AutonMove(-38,80);
+    AutoIntakeOff = true;
+    AutonTurn(-16,50,50);
+    AutonLock();
+    AutonMove(-40,80);
+    AutonNLck();
+}
+
+
+
+
+
+//Skills
+void Skillz(){
     AutoIntakeOff = true;
     AutoFlip = false;  
     AutonMove(41,80);
     AutoIntakeOff = false;
     Wait(500);
     AutonMove(-48,70);
-    StrafeRecon(100,80,-1);
     AutonMove(-4,30);
     AutonMove(4,30);
     AutonTurn(-15.7,40,40);
@@ -196,7 +383,7 @@ void Skillz(){
     AutonTurn(-1,25,25);
     AutonMove(47,80);
     StrafeRecon(400,90,1);
-    AutonMove(5.5,40);
+    AutonMove(6,40);
     AutoIntakeOff = true;
     AutonMove(-43,80);
     AutonTurn(16,40,40);
@@ -209,6 +396,7 @@ void Skillz(){
     AutonPSet();
     AutonTurn(-13.2,40,40);
     AutonFire();
+    Wait(400);
     if (BallInTop){
         AutonAjUp();  
         Wait(300); 
@@ -220,9 +408,9 @@ void Skillz(){
     AutonTurn(-0.75,60,60);
     AutonMove(45,80);
     StrafeRecon(400,80,1);
-    AutonMove(5.5,40);
+    AutonMove(6,40);
     AutonMove(-18,70);
-    Wait(300);  
+    Wait(200);  
     if (BallInTop && HitFlag == false){
         AutonRFire();
         HitFlag = true;
@@ -251,6 +439,7 @@ void Skillz(){
     AutonTurn(16.5,40,40);
     HitFlag = false;
     AutonFire();
+    Wait(300);
     if (BallInTop){
         AutonAjUp();
         Wait(300);
@@ -262,28 +451,29 @@ void Skillz(){
     AutonTurn(-1.5,25,25);
     AutonMove(41,70);
     StrafeRecon(400,80,1);
-    AutonMove(5,80);
-    Wait(300);  
+    AutonMove(6.5,80);
+    StrafeRecon(100,80,1);
+    Wait(500);
     if (BallInTop && HitFlag == false){
         AutonPSet();
         AutonMove(-16,80);
         AutonFire();
         HitFlag = true;
         Wait(100);
-        AutonMove(-15,80);
+        AutonMove(-16,80);
     }
     else {
-        AutonMove(-31,80);
+        AutonMove(-33,80);
     }
-    AutonTurn(-18,40,40);
+    AutonTurn(-16,40,40);
     AutonMove(-22,80);
-    AutonMove(-4,40);
+    AutonMove(-7,40);
     AutoIntakeOff = true;
     AutoFlip = true;
     AutonMove(43,80);
     AutonMove(-5,70);
     AutonTurn(16,40,40);
-    AutonMove(-4,25);
+    AutonMove(-7,25);
     AutonMove(4,30);
     AutonMove(-36,100);
     AutonTurn(16,30,30);
@@ -293,6 +483,12 @@ void Skillz(){
     vex::task::sleep(2000);
     AutonNLck();
 }
+
+
+
+
+
+//Selecting
 void AutonPots(){
     int SelectValueOne = AutonSelectOne.value(vex::percentUnits::pct);
     int SelectValueTwo = AutonSelectTwo.value(vex::percentUnits::pct);
@@ -318,10 +514,10 @@ void AutonPots(){
     
     else if(SelectValueOne > 40){
         if(SelectValueTwo > 80){
-
+            BackBBread();
         }
         else if(SelectValueTwo > 50){
-
+            BackBParkShot();
         }
         else if(SelectValueTwo > 30){
             BackBPark();
@@ -338,7 +534,7 @@ void AutonPots(){
 
         }
         else if(SelectValueTwo > 30){
-            
+            FrntRPark();
         }
         else if(SelectValueTwo >= 0){
             FrntR();
@@ -346,13 +542,13 @@ void AutonPots(){
     }
     else if(SelectValueOne >= 0){
         if(SelectValueTwo > 80){
-            
+            BackRBread();
         }
         else if(SelectValueTwo > 50){
-
+            BackRParkShot();
         }
         else if(SelectValueTwo > 30){
-            BackRBread();
+            BackRPark();
         }
         else if(SelectValueTwo >= 0){
             BackR();
@@ -367,7 +563,7 @@ void AutonUpdater(){
         //Skillz;
         Brain.Screen.clearLine(1,vex::color::purple);
         Brain.Screen.clearLine();
-        Brain.Screen.print("Skillz Mode");
+        Brain.Screen.print("Skillz");
     }
 
     else if(SelectValueOne > 60){
@@ -387,38 +583,39 @@ void AutonUpdater(){
             //FrntBPark();
             Brain.Screen.clearLine(1,vex::color::blue);
             Brain.Screen.clearLine();
-            Brain.Screen.print("Front Blue Parking Mode (Inch From Right)");
+            Brain.Screen.print("Front Blue Parking");
         }
         else if(SelectValueTwo >= 0){
             //FrntB();
             Brain.Screen.clearLine(1,vex::color::blue);
             Brain.Screen.clearLine();
-            Brain.Screen.print("Front Blue with Cap (Inch From Right)");
+            Brain.Screen.print("Front Blue Caps");
         }
     }
     else if(SelectValueOne > 40){
         if(SelectValueTwo > 80){
+            //BackBBread();
             Brain.Screen.clearLine(1,vex::color::blue);
             Brain.Screen.clearLine();
-            Brain.Screen.print(" ");
-
+            Brain.Screen.print("Back Blue Bread");
         }
         else if(SelectValueTwo > 50){
+            //BackBParkShot();
             Brain.Screen.clearLine(1,vex::color::blue);
             Brain.Screen.clearLine();
-            Brain.Screen.print(" ");
-
+            Brain.Screen.print("Back Blue Parking with Middle Flag");
         }
         else if(SelectValueTwo > 30){
+            //BackBPark();
             Brain.Screen.clearLine(1,vex::color::blue);
             Brain.Screen.clearLine();
             Brain.Screen.print("Back Blue Parking");
         }
         else if(SelectValueTwo >= 0){
-            //BackBPark();
+            //BackB();
             Brain.Screen.clearLine(1,vex::color::blue);
             Brain.Screen.clearLine();
-            Brain.Screen.print("Back Blue with Caps (Center)");
+            Brain.Screen.print("Back Blue Caps");
         }
     }
     else if(SelectValueOne > 20){
@@ -435,41 +632,44 @@ void AutonUpdater(){
 
         }
         else if(SelectValueTwo > 30){
+            //FrntRPark();
             Brain.Screen.clearLine(1,vex::color::red);
             Brain.Screen.clearLine();
-            Brain.Screen.print(" ");
+            Brain.Screen.print("Front Red Parking");
         }
         else if(SelectValueTwo >= 0){
             //FrntR();
             Brain.Screen.clearLine(1,vex::color::red);
             Brain.Screen.clearLine();
-            Brain.Screen.print("Front Red with Cap (Inch From Right)");
+            Brain.Screen.print("Front Red Caps");
         }
     }
     else if(SelectValueOne >= 0){
         if(SelectValueTwo > 80){
-            Brain.Screen.clearLine(1,vex::color::red);
-            Brain.Screen.clearLine();
-            Brain.Screen.print(" ");
-            
-        }
-        else if(SelectValueTwo > 50){
-            Brain.Screen.clearLine(1,vex::color::red);
-            Brain.Screen.clearLine();
-            Brain.Screen.print(" ");
-
-        }
-        else if(SelectValueTwo > 30){
             //BackRBread();
             Brain.Screen.clearLine(1,vex::color::red);
             Brain.Screen.clearLine();
-            Brain.Screen.print("Back Red Bread (Center)");
+            Brain.Screen.print("Back Red Bread");
+            
+        }
+        else if(SelectValueTwo > 50){
+            //BackRParkShot();
+            Brain.Screen.clearLine(1,vex::color::red);
+            Brain.Screen.clearLine();
+            Brain.Screen.print("Back Red Parking and Middle Flag");
+
+        }
+        else if(SelectValueTwo > 30){
+            //BackRPark();
+            Brain.Screen.clearLine(1,vex::color::red);
+            Brain.Screen.clearLine();
+            Brain.Screen.print("Back Red Parking");
         }
         else if(SelectValueTwo >= 0){
             //BackR();
             Brain.Screen.clearLine(1,vex::color::red);
             Brain.Screen.clearLine();
-            Brain.Screen.print("Back Red Caps (Center)");
+            Brain.Screen.print("Back Red Caps";
         }
     }
 }

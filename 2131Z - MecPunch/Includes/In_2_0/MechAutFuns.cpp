@@ -139,11 +139,11 @@ int PuncherSpinFunction(){
 void AutonFire(bool WaitForFire=true){
         PunchControlPositionEnabled = true;
         if(!PuncherCharged){
-            PuncherDeg+=260;
+            PuncherDeg+=250;
             PuncherCharged = true;
         }
         else if(PuncherCharged){
-            PuncherDeg+=100;
+            PuncherDeg+=110;
             PuncherCharged = false;
         }
         vex::task PuncherSpinTask(PuncherSpinFunction);
@@ -220,6 +220,7 @@ void Auto_Intake() {
     }
     else if(BallInBottom && BallInTop){
         SetTFeederPower(0);
+        SetIntakerPower(10);
         if(Controller1.ButtonL2.pressing()){
             SetIntakerPower(100);
         }

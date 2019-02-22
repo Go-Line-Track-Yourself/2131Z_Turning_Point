@@ -57,11 +57,11 @@ void PuncherControl(){
         R1Pressed = true;
         PunchControlPositionEnabled = true;
         if(!PuncherCharged){
-            PuncherDeg+=260;
+            PuncherDeg+=240;
             PuncherCharged = true;
         }
         else if(PuncherCharged){
-            PuncherDeg+=100;
+            PuncherDeg+=120;
             PuncherCharged = false;
         }
     }

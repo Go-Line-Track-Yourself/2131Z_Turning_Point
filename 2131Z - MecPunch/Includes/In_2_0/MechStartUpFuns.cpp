@@ -11,7 +11,6 @@ void PAutonStart(){
 }
 void AutonStart(){
     PuncherMotor.resetRotation();
-
 }
 void UserCoStart(){
     Brain.Screen.render(false,false);

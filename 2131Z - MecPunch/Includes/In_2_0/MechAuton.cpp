@@ -36,7 +36,7 @@
 void BackBPark(){
     AutonMove(33,60);
     Wait(200);
-    AutonTurn(-14,40,40);
+    AutonTurn(-13.5,40,40);
     AutoIntakeOff = true;
     AutoFlip = true;
     AutonMove(20,70);
@@ -44,10 +44,10 @@ void BackBPark(){
     AutonMove(3,50);
     AutoFlip = false;
     AutonTurn(18,40,40);
-    StrafeRecon(170,70,1);
+    StrafeRecon(160,70,1);
     AutonMove(8,40);
     AutonLock();
-    AutonMove(-62);
+    AutonMove(-64,80);
     Wait(3000);
     AutonNLck();
 }
@@ -375,7 +375,7 @@ void Skillz(){
     AutoIntakeOff = false;
     Wait(500);
     AutonMove(-45,70);
-    AutonMove(-4,25);
+    AutonMove(-4,15);
     AutonMove(4.5,30);
     AutonTurn(-15.1,40,40);
     AutonFire();
@@ -389,6 +389,7 @@ void Skillz(){
     Wait(500);
     AutonFire();
     AutonAjDn();
+    AutonTurn(-0.4,60);
     StrafeRecon(160,30,-1);
     AutonMove(47,90);
     StrafeRecon(400,90,1);
@@ -435,14 +436,15 @@ void Skillz(){
     AutonMove(17,70);
     Wait(300);
     AutoFlip = false;
-    AutonMove(-73,80);
-    StrafeRecon(800,80,-1);
+    AutonTurn(-0.1,25);
+    AutonMove(-71,80);
+    StrafeRecon(750,80,-1);
     StrafeRecon(200,80,1);
     AutoIntakeOff = true;
     AutonMove(20,70);
     Wait(100);
     AutoIntakeOff = false;
-    Wait(600);
+    Wait(1000);
     AutoIntakeOff = true;
     AutoFlip = true;
     AutonMove(3,50);
@@ -455,7 +457,7 @@ void Skillz(){
     AutonMove(-4,25);
     AutonMove(16,60);
     AutonFire();
-    AutonTurn(16.5,40,40);
+    AutonTurn(16.3,40,40);
     HitFlag = false;
     AutonFire();
     Wait(700);
@@ -468,6 +470,7 @@ void Skillz(){
         AutonAjDn();
         Wait(100);
     }
+    AutonTurn(-0.2);
     StrafeRecon(175,40,-1);
     AutonMove(41,70);
     StrafeRecon(400,80,1);
@@ -483,19 +486,19 @@ void Skillz(){
         AutonMove(-23,80);
     }
     else {
-        AutonMove(-39,80);
+        AutonMove(-37,80);
     }
     AutonTurn(15,40,40);
     HitFlag = false;
-    AutonMove(12,80);
+    AutonMove(8,40);
     AutoIntakeOff = true;
     AutoFlip = true;
-    AutonMove(-4,60);
-    StrafeRecon(1000,80,1);
-    AutonMove(8,60);
+    StrafeRecon(1100,80,1);
+    AutonMove(-6,60);
     AutoFlip = false;
+    AutonMove(5,50);
     AutonLock();
-    AutonMove(-75,80);
+    AutonMove(-80,75);
     vex::task::sleep(2000);
     AutonNLck();
 }

@@ -41,13 +41,13 @@ void BackBPark(){
     AutoFlip = true;
     AutonMove(20,70);
     AutonTurn(-21,70,70);
-    AutonMove(6,50);
+    AutonMove(3,50);
     AutoFlip = false;
     AutonTurn(18,40,40);
-    StrafeRecon(350,70,1);
-    AutonMove(10,40);
+    StrafeRecon(170,70,1);
+    AutonMove(8,40);
     AutonLock();
-    AutonMove(-60);
+    AutonMove(-62);
     Wait(3000);
     AutonNLck();
 }
@@ -236,25 +236,33 @@ void FrntB(){
     AutonMove(-35,70);
     AutonMove(-3,25);
     AutonMove(4,25);
-    //AutonPSet();
+    AutonFire();
     AutonTurn(15.5,40,40);
     AutonFire();
     AutonAjUp();
+    AutonFire();
     Wait(200);
-    //AutonRFire();
+    AutonFire();
     AutonAjDn();
     AutonTurn(0.5,25,25);
     AutonMove(42,70);
     StrafeRecon(300,70,-1);
     AutonMove(5,70);
     AutonMove(-19,80);
-    //AutonPSet();
-    AutonTurn(-13,40,40);
+    AutonFire();
+    AutonTurn(-11,40,40);
     AutonMove(3,25);
     Wait(2600);
     AutonFire();
+    Wait(600);
+    if(BallInTop){
+        AutonFire();
+        AutonAjUp();
+        AutonFire();
+        AutonAjDn();
+    }
     AutoIntakeOff = true;
-    AutonTurn(-8,60,60);
+    AutonTurn(-4,60,60);
     AutoFlip = true;
     AutonMove(7,70);
 }
@@ -363,15 +371,15 @@ void FrntRPark(){
 void Skillz(){
     AutoIntakeOff = true;
     AutoFlip = false;  
-    AutonMove(41,80);
+    AutonMove(40,80);
     AutoIntakeOff = false;
     Wait(500);
-    AutonMove(-48,70);
-    AutonMove(-4,30);
+    AutonMove(-45,70);
+    AutonMove(-4,25);
     AutonMove(4.5,30);
     AutonTurn(-15.1,40,40);
     AutonFire();
-    AutonMove(28,80);
+    AutonMove(29,70);
     AutonTurn(0.1,25,25);
     Wait(200);
     AutonFire();
@@ -381,14 +389,14 @@ void Skillz(){
     Wait(500);
     AutonFire();
     AutonAjDn();
-    AutonTurn(-0.6,25,25);
-    AutonMove(47,80);
+    StrafeRecon(160,30,-1);
+    AutonMove(47,90);
     StrafeRecon(400,90,1);
-    AutonMove(6,40);
+    AutonMove(5,40);
     AutoIntakeOff = true;
     AutonMove(-43,80);
     AutonTurn(16,40,40);
-    AutonMove(-8,60);
+    AutonMove(-8,40);
     AutonMove(-3,30);
     AutonMove(43,80);
     AutoIntakeOff = false;
@@ -399,8 +407,8 @@ void Skillz(){
     AutonFire();
     Wait(1000);
     if (BallInTop){
-        AutonFire();
         AutonAjUp();  
+        AutonFire();
         Wait(300); 
         AutonFire();
         HitFlag = true;
@@ -415,8 +423,10 @@ void Skillz(){
     Wait(200);  
     if (BallInTop && HitFlag == false){
         AutonFire();
+        AutonTurn(0.75,25,25);
         AutonFire();
         HitFlag = true;
+        AutonTurn(-0.75,25,25);
         Wait(100);
     }
     AutonTurn(-16.5,40,40);
@@ -426,15 +436,21 @@ void Skillz(){
     Wait(300);
     AutoFlip = false;
     AutonMove(-73,80);
-    StrafeRecon(850,80,-1);
+    StrafeRecon(800,80,-1);
     StrafeRecon(200,80,1);
     AutoIntakeOff = true;
-    AutonMove(23,70);
+    AutonMove(20,70);
     Wait(100);
     AutoIntakeOff = false;
-    Wait(300);
+    Wait(600);
+    AutoIntakeOff = true;
+    AutoFlip = true;
+    AutonMove(3,50);
+    AutonMove(-5,80);
     StrafeRecon(500,80,-1);
-    AutonMove(-44,80);
+    AutoFlip = false;
+    AutoIntakeOff = false;
+    AutonMove(-42,80);
     StrafeRecon(200,80,1);
     AutonMove(-4,25);
     AutonMove(16,60);
@@ -442,7 +458,7 @@ void Skillz(){
     AutonTurn(16.5,40,40);
     HitFlag = false;
     AutonFire();
-    Wait(500);
+    Wait(700);
     if (BallInTop){
         AutonFire();
         AutonAjUp();
@@ -452,39 +468,34 @@ void Skillz(){
         AutonAjDn();
         Wait(100);
     }
-    AutonTurn(-1.25,25,25);
+    StrafeRecon(175,40,-1);
     AutonMove(41,70);
     StrafeRecon(400,80,1);
     AutonMove(6.5,80);
     StrafeRecon(100,80,1);
-    Wait(700);
+    Wait(800);
     if (BallInTop && HitFlag == false){
         AutonFire();
         AutonMove(-16,80);
         AutonFire();
         HitFlag = true;
         Wait(100);
-        AutonMove(-16,80);
+        AutonMove(-23,80);
     }
     else {
-        AutonMove(-33,80);
+        AutonMove(-39,80);
     }
-    AutonTurn(-16,40,40);
-    AutonMove(-22,80);
-    AutonMove(-7,40);
+    AutonTurn(15,40,40);
+    HitFlag = false;
+    AutonMove(12,80);
     AutoIntakeOff = true;
     AutoFlip = true;
-    AutonMove(43,80);
-    AutonMove(-5,70);
-    AutonTurn(16,40,40);
-    AutonMove(-7,25);
-    StrafeRecon(200,50,-1);
-    AutonMove(4,30);
-    AutonLock();
-    AutonMove(-42,80);
-    AutonTurn(16,30,30);
-    AutonMove(-33,80);
+    AutonMove(-4,60);
+    StrafeRecon(1000,80,1);
+    AutonMove(8,60);
     AutoFlip = false;
+    AutonLock();
+    AutonMove(-75,80);
     vex::task::sleep(2000);
     AutonNLck();
 }

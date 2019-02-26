@@ -252,7 +252,7 @@ void FrntB(){
     AutonFire();
     AutonTurn(-11,40,40);
     AutonMove(3,25);
-    Wait(2600);
+//    Wait(2600);
     AutonFire();
     Wait(600);
     if(BallInTop){
@@ -327,10 +327,9 @@ void FrntR(){
     AutonFire();
     AutonTurn(10,50,50);
     AutoFlip = true;
-    AutonMove(18,60);
-    Wait(200);
+    AutonMove(15,60);
+    Wait(50);
     AutonMove(-3,80);
-    Wait(1000);
     AutoFlip = false;
 }
 void FrntRPark(){

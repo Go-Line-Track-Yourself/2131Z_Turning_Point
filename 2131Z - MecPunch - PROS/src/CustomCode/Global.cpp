@@ -2,7 +2,7 @@
 
 bool DriveRampingEnabled;
 void set_DriveRampingEnabled(bool d){
-    DriveRampingEnabled=d();
+    DriveRampingEnabled=d;
 }
 bool get_DriveRampingEnabled(){
     return DriveRampingEnabled:
@@ -10,7 +10,7 @@ bool get_DriveRampingEnabled(){
 //---//
 bool MechDriveRampingEnabled;
 void set_MechDriveRampingEnabled(bool e){
-    MechDriveRampingEnabled=e();
+    MechDriveRampingEnabled=e;
 }
 bool get_MechDriveRampingEnabled(){
     return MechDriveRampingEnabled;
@@ -18,7 +18,7 @@ bool get_MechDriveRampingEnabled(){
 //---//
 bool DriveLockConBtnPressed();
 void set_DriveLockConBtnPressed(bool dl){
-    DriveLockConBtnPressed=dl();
+    DriveLockConBtnPressed=dl;
 }
 bool get_DriveLockConBtnPressed(){
     return DriveLockConBtnPressed;
@@ -26,7 +26,7 @@ bool get_DriveLockConBtnPressed(){
 //---//
 bool DriveLockInverted();
 void set_DriveLockInverted(bool i){
-    DriveLockInverted=i();
+    DriveLockInverted=i;
 }
 bool get_DriveLockInverted(){
     return DriveLockInverted;
@@ -34,7 +34,7 @@ bool get_DriveLockInverted(){
 //---//
 bool DriveDirConBtnPressed();
 void set_DriveDirConBtnPressed(bool DDir){
-    DriveDirConBtnPressed=DDir();
+    DriveDirConBtnPressed=DDir;
 }
 bool get_DriveDirConBtnPressed(){
     return DriveDirConBtnPressed;
@@ -42,7 +42,7 @@ bool get_DriveDirConBtnPressed(){
 //---//
 bool DriveDirInverted();
 void set_DriveDirInverted(bool DriveIn){
-    DriveDirInverted-DriveIn();
+    DriveDirInverted-DriveIn;
 }
 bool get_DriveDirInverted(){
     return DriveDirInverted;
@@ -50,7 +50,7 @@ bool get_DriveDirInverted(){
 //---//
 bool AutoIntakeEnabled();
 void set_AutoIntakeEnabled(bool ai){
-    AutoIntakeEnabled=ai();
+    AutoIntakeEnabled=ai;
 }
 bool get_AutoIntakeEnabled(){
     return AutoIntakeEnabled;
@@ -58,7 +58,7 @@ bool get_AutoIntakeEnabled(){
 //---//
 bool AutoIntakeTaskEnabled();
 void set_AutoIntakeTaskEnabled(bool aiT){
-    AutoIntakeTaskEnabled=aiT();
+    AutoIntakeTaskEnabled=aiT;
 }
 bool get_AutoIntakeTaskEnabled(){
     return AutoIntakeTaskEnabled;
@@ -66,7 +66,7 @@ bool get_AutoIntakeTaskEnabled(){
 //---//
 bool AutoIntakeOff();
 void set_AutoIntakeOff(bool aiO){
-    AutoIntakeOff=aiO();
+    AutoIntakeOff=aiO;
 }
 bool get_AutoIntakeOff(){
     return AutoIntakeOff;
@@ -74,7 +74,7 @@ bool get_AutoIntakeOff(){
 //---//
 bool IntakeEnabledBtnPressed();
 void set_IntakeEnabledBtnPressed(bool eiP){
-    IntakeEnabledBtnPressed=eiP();
+    IntakeEnabledBtnPressed=eiP;
 }
 bool get_IntakeEnabledBtnPressed(){
     return IntakeEnabledBtnPressed;
@@ -82,9 +82,49 @@ bool get_IntakeEnabledBtnPressed(){
 //---//
 bool IntakeEnabledInverted();
 void set_IntakeEnabledInverted(bool eiI){
-    IntakeEnabledInverted=eiI();
+    IntakeEnabledInverted=eiI;
 }
 bool get_IntakeEnabledInverted(){
     return IntakeEnabledInverted;
+}
+//---//
+bool punchPressing();
+void set_punchPressing(bool p){
+    punchPressing=p;
+}
+bool get_punchPressing(){
+    return punchPressing;
+}
+//---//
+int PunchPlace();
+void set_PunchPlace(int p){
+    PunchPlace=p;
+}
+int get_PunchPlace(){
+    return PunchPlace;
+}
+//---//
+bool PunchRunOnce();
+void set_PunchRunOnce(bool pRO){
+    PunchRunOnce=pRO;
+}
+bool get_PunchRunOnce(){
+    return PunchRunOnce;
+}
+//---//
+bool PuncherCharged();
+void set_PuncherCharged(bool pC){
+    PuncherCharged=pC;
+}
+bool get_PuncherCharged(){
+    return PuncherCharged;
+}
+//---//
+bool R1Pressed();
+void set_R1Pressed(bool R1){
+    R1Pressed=R1p;
+}
+bool get_R1Pressed(){
+    return R1Pressed;
 }
 //---//

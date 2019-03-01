@@ -52,19 +52,33 @@ bool IntakeEnabledBtnPressed();
 
 
 void set_IntakeEnabledInverted(bool eiI);
-bool IntakeEnabledInverted():
-
+bool IntakeEnabledInverted();
 
 // Puncher Control
-
-bool punchPressing= false;
-int PunchPlace = 0;
-bool PunchRunOnce = false;
+void punchPressing(bool p);
+bool punchPressing();
 
 
-bool PuncherCharged = false;
-bool R1Pressed = false;
+void PunchPlace(int p);
+int PunchPlace();
+
+
+void PunchRunOnce(bool pRO);
+bool PunchRunOnce();
+
+
+void PuncherCharged(bool pC);
+bool PuncherCharged();
+
+
+void R1Pressed(bool R1p);
+bool R1Pressed();
+
+
+void PuncherDeg(int pD);
 int PuncherDeg = 0;
+
+
 bool PunchControlPositionEnabled = false;
 
 // Mech Autonomous Function Variables
@@ -78,7 +92,6 @@ void Pause(double waittime){
 	vex::task::sleep(waittime);
 }
 
-// Autonomous
 bool HitFlag = false;
 
 

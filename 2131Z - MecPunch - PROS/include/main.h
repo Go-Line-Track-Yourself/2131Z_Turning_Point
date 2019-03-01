@@ -36,7 +36,9 @@
 
 #include "api.h"
 
-
+#include "Custom/Analog-Config.hpp"
+#include "Custom/Controller-Config.hpp"
+#include "Custom/Motors-Config.hpp"
 #include "Custom/Global.hpp"
 #include "Custom/MechAutFuns.hpp"
 #include "Custom/MechAuton.hpp"
@@ -71,6 +73,9 @@
  */
 #ifdef __cplusplus
 
+#include "Custom/Analog-Config.cpp"
+#include "Custom/Controller-Config.cpp"
+#include "Custom/Motors-Config.cpp"
 #include "Custom/Global.cpp"
 #include "Custom/MechAutFuns.cpp"
 #include "Custom/MechAuton.cpp"

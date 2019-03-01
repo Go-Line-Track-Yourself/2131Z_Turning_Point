@@ -52,7 +52,39 @@ bool AutoIntakeEnabled();
 void set_AutoIntakeEnabled(bool ai){
     AutoIntakeEnabled=ai();
 }
-bool AutoIntakeEnabled(){
-    return AutoIntakeEnabled:
+bool get_AutoIntakeEnabled(){
+    return AutoIntakeEnabled;
+}
+//---//
+bool AutoIntakeTaskEnabled();
+void set_AutoIntakeTaskEnabled(bool aiT){
+    AutoIntakeTaskEnabled=aiT();
+}
+bool get_AutoIntakeTaskEnabled(){
+    return AutoIntakeTaskEnabled;
+}
+//---//
+bool AutoIntakeOff();
+void set_AutoIntakeOff(bool aiO){
+    AutoIntakeOff=aiO();
+}
+bool get_AutoIntakeOff(){
+    return AutoIntakeOff;
+}
+//---//
+bool IntakeEnabledBtnPressed();
+void set_IntakeEnabledBtnPressed(bool eiP){
+    IntakeEnabledBtnPressed=eiP();
+}
+bool get_IntakeEnabledBtnPressed(){
+    return IntakeEnabledBtnPressed;
+}
+//---//
+bool IntakeEnabledInverted();
+void set_IntakeEnabledInverted(bool eiI){
+    IntakeEnabledInverted=eiI();
+}
+bool get_IntakeEnabledInverted(){
+    return IntakeEnabledInverted;
 }
 //---//

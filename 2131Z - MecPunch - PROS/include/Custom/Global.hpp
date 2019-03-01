@@ -35,18 +35,32 @@ void set_AutoIntakeEnabled(bool ai);
 bool AutoIntakeEnabled();
 
 
-bool AutoIntakeTaskEnabled = false;
-bool AutoIntakeOff = false;
-bool AutoFlip=false;
+void set_AutoIntakeTaskEnabled(bool aiT);
+bool AutoIntakeTaskEnabled();
 
-bool IntakeEnabledBtnPressed;
-bool IntakeEnabledInverted = true;
+
+void set_AutoIntakeOff(bool aiO);
+bool AutoIntakeOff();
+
+
+void set_AutoFlip(bool aiF);
+bool AutoFlip();
+
+
+void set_IntakeEnabledBtnPressed(bool ieP);
+bool IntakeEnabledBtnPressed();
+
+
+void set_IntakeEnabledInverted(bool eiI);
+bool IntakeEnabledInverted():
+
+
+// Puncher Control
 
 bool punchPressing= false;
 int PunchPlace = 0;
 bool PunchRunOnce = false;
 
-// Puncher Control
 
 bool PuncherCharged = false;
 bool R1Pressed = false;

@@ -2,14 +2,22 @@
 #define MOTORS_CONFIG.HPP
 #include "api.h"
 
-extern pros::Motor FRMotor;
-extern pros::Motor BRMotor;
-extern pros::Motor FLMotor;
-extern pros::Motor BLMotor;
-extern pros::Motor TFeederMotor;
-extern pros::Motor PuncherMotor;
-extern pros::Motor IntakerMotor;
-extern pros::Motor AdjustMotor;
 
+namespace DriveMotors {
+  extern pros::Motor FRMotor;
+  extern pros::Motor BRMotor;
+  extern pros::Motor FLMotor;
+  extern pros::Motor BLMotor;
+}
+ namespace IntakeMotors {
+    extern pros::Motor TFeederMotor;
+    extern pros::Motor IntakerMotor;
+}
+ namespace PuncherMotors {
+    extern pros::Motor PuncherMotor;
+}
+namespace LiftMotors {
+    extern pros::Motor LiftMotor;
+}
 
 #endif /* end of include guard: MOTORS_CONFIG.HPP */

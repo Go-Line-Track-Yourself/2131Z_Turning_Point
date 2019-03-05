@@ -1,35 +1,3 @@
-///////---------Guide----------///////
-                    //AutonMove(Amount in Inches, speed percentage); 
-                        // Move Robot Set Amount
-                    //AutonTurn(Amount in Inches, speed percentage, speed percentage);
-                        // Turns Robot Set Amount
-                        // 90 Degree turns are usually around 16
-                    //AutonLock();
-                        // Locks Wheels on Drive
-                    //AutonNLck();
-                        // Unlocks Wheels on Drive
-                    //Wait(wait amount in milliseconds);
-                        // Pauses Code for specified time
-                    ////AutonPSet();
-                        // Cocks puncher into fire ready position
-                    //AutonFire();
-                        // Rotates to fire
-                        // Must act after PSet
-                    ////AutonRFire();
-                        // Fires once from non-cocked position
-                    //StrafeRecon(time in milliseconds, speed percentage, direction);
-                        // direction is either -1 or 1. Left or Right. Respectively.
-                    //AutonIntk(on or off, direction);
-                        // both are done by either true or false.
-                        // true meaning on, false meaning off. true meaning in, false meaning out.
-                    //AutonBelt(on or off, direction);
-                        // both are done by either true or false.
-                        // true meaning on, false meaning off. true meaning in, false meaning out.
-                    //AutonAjUp();
-                        // Moves Puncher Up
-                    //AutonAjDn();
-                        // Moves Puncher Down
-
 
 
 //Back Blue

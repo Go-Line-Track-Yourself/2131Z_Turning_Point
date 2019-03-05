@@ -36,22 +36,21 @@
 
 #include "api.h"
 
-#include "Custom/Analog-Config.hpp"
-#include "Custom/Controller-Config.hpp"
-#include "Custom/Motors-Config.hpp"
+#include "Custom/Configs/Analog-Config.hpp"
+#include "Custom/Configs/Controller-Config.hpp"
+#include "Custom/Configs/Motors-Config.hpp"
 #include "Custom/Global.hpp"
-#include "Custom/MechAutFuns.hpp"
-#include "Custom/MechAuton.hpp"
-#include "Custom/MechRamping.hpp"
-#include "Custom/MechSetMotors.hpp"
-#include "Custom/MechStartUpFuns.hpp"
-#include "Custom/MechUserFuns.hpp"
-#include "Custom/MechVars.hpp"
+#include "Custom/AutonRoutines.hpp"
+#include "Custom/Drive.hpp"
+#include "Custom/Intake.hpp"
+#include "Custom/Lift.hpp"
+#include "Custom/Puncher.hpp"
+
 /**
  * You should add more #includes
 
  */
-//#include "okapi/api.hpp"
+#include "okapi/api.hpp"
 //#include "pros/api_legacy.h"
 
 /**
@@ -73,18 +72,15 @@
  */
 #ifdef __cplusplus
 
-#include "Custom/Analog-Config.cpp"
-#include "Custom/Controller-Config.cpp"
-#include "Custom/Motors-Config.cpp"
+#include "Custom/Configs/Analog-Config.cpp"
+#include "Custom/Configs/Controller-Config.cpp"
+#include "Custom/Configs/Motors-Config.cpp"
 #include "Custom/Global.cpp"
-#include "Custom/MechAutFuns.cpp"
-#include "Custom/MechAuton.cpp"
-#include "Custom/MechRamping.cpp"
-#include "Custom/MechSetMotors.cpp"
-#include "Custom/MechStartUpFuns.cpp"
-#include "Custom/MechUserFuns.cpp"
-#include "Custom/MechVars.cpp"
-
+#include "Custom/AutonRoutines.cpp"
+#include "Custom/Drive.cpp"
+#include "Custom/Intake.cpp"
+#include "Custom/Lift.cpp"
+#include "Custom/Puncher.cpp"
 
 
 extern "C" {

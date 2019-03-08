@@ -2,7 +2,13 @@
 #define INTAKE_HPP
 
 namespace Intake{
+    bool AutoIntakeEnabled;
+    bool AutoIntakeTaskEnabled;
+    bool AutoIntakeOff;
+    bool AutoFlip;
 
+    bool IntakeEnabledBtnPressed;
+    bool IntakeEnabledInverted;
     //SetMotors
     void SetIntakerPower(int power);
     void SetTFeederPower(int power);

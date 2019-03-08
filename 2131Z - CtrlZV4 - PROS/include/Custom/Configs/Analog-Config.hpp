@@ -2,7 +2,7 @@
 #define ANALOG_CONFIG_HPP
 #include "api.h"
 
-namespace ballSensors {
+namespace BallSensors {
   extern pros::ADILineSensor BallSenseBottom;
   extern pros::ADILineSensor BallSenseTop;
   extern pros::ADILineSensor BallSenseMiddle;

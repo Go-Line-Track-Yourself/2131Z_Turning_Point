@@ -1,4 +1,5 @@
 #include "Custom/Configs/Analog-Config.hpp"
+#include "main.h"
 
 namespace BallSensors {
   pros::ADILineSensor BallSenseBottom(E);

@@ -1,8 +1,9 @@
-#inlcude "Custom/Drive.cpp"
-#include "Custom/Global.cpp"
+#include "Custom/Drive.hpp"
+#include "Custom/Global.hpp"
+#include "main.h"
 
 
-namespace Drive{
+namespace Drive {
   bool DriveRampingEnabled;
   bool MechDriveRampingEnabled;
 
@@ -16,46 +17,46 @@ namespace Drive{
   int TurnEndWait=250;
   ///////////////////////SetMotors///////////////////////
     void SDMP(int LPower, int RPower){
-         FLMotor.spin(vex::directionType::fwd, LPower, vex::velocityUnits::pct);
-         BLMotor.spin(vex::directionType::fwd, LPower, vex::velocityUnits::pct);
-         FRMotor.spin(vex::directionType::fwd, RPower, vex::velocityUnits::pct);
-         BRMotor.spin(vex::directionType::fwd, RPower, vex::velocityUnits::pct);
+         FLMotor.moveVelocity(LPower);
+         BLMotor.moveVelocity(LPower);
+         FRMotor.moveVelocity(RPower);
+         BRMotor.moveVelocity(RPower);
     }
 
     void setDriveBrakeCoast(){
-        BLMotor.setStopping(vex::brakeType::coast);
-        BRMotor.setStopping(vex::brakeType::coast);
-        FLMotor.setStopping(vex::brakeType::coast);
-        FRMotor.setStopping(vex::brakeType::coast);
+        BLMotor.setBrakeMode(okapi::AbstractMotor::coast);
+        BRMotor.setBrakeMode(okapi::AbstractMotor::coast);
+        FLMotor.setBrakeMode(okapi::AbstractMotor::coast);
+        FRMotor.setBrakeMode(okapi::AbstractMotor::coast);
     }
     void stopDriveHold(){
-        BLMotor.stop(vex::brakeType::hold);
-        BRMotor.stop(vex::brakeType::hold);
-        FLMotor.stop(vex::brakeType::hold);
-        FRMotor.stop(vex::brakeType::hold);
+        BLMotor.moveVelocity(0);
+        BRMotor.moveVelocity(0);
+        FLMotor.moveVelocity(0);
+        FRMotor.moveVelocity(0);
     }
     void setMechFLPower(int pct){
-        if(pct==0)   FLMotor.stop();
+        if(pct==0)   FLMotor.moveVelocity(0);
         else{
-            FLMotor.spin(vex::directionType::fwd,pct,vex::velocityUnits::pct);
+            FLMotor.moveVelocity(pct);
         }
     }
     void setMechBLPower(int pct){
-        if(pct==0)   BLMotor.stop();
+        if(pct==0)   BLMotor.moveVelocity(0);
         else{
-            BLMotor.spin(vex::directionType::fwd,pct,vex::velocityUnits::pct);
+            BLMotor.moveVelocity(pct);
         }
     }
     void setMechFRPower(int pct){
-        if(pct==0)   FRMotor.stop();
+        if(pct==0)   FRMotor.moveVelocity(0);
         else{
-            FRMotor.spin(vex::directionType::fwd,pct,vex::velocityUnits::pct);
+            FRMotor.moveVelocity(pct);
         }
     }
     void setMechBRPower(int pct){
-        if(pct==0)   BRMotor.stop();
+        if(pct==0)   BRMotor.moveVelocity(0);
         else{
-            BRMotor.spin(vex::directionType::fwd,pct,vex::velocityUnits::pct);
+            BRMotor.moveVelocity(pct);
         }
     }
     void setMechDrivePower(int LF,int LB,int RF,int RB){
@@ -94,10 +95,10 @@ namespace Drive{
   }
   void ManualMechDriveCont(){
       IsFippedControll();
-      int LeftVirtJoy=Controller1.Axis3.value();
-      int RightVirtJoy=Controller1.Axis2.value();
-      int LeftHorJoy=Controller1.Axis4.value();
-      int RightHorJoy=Controller1.Axis1.value();
+      int LeftVirtJoy=Master_Controller.getAnalong(okapi::ControllerAnalog::leftY)*200;
+      int RightVirtJoy=Master_Controller.getAnalong(okapi::ControllerAnalog::rightY)*200;
+      int LeftHorJoy=Master_Controller.getAnalong(okapi::ControllerAnalog::leftX)*200;
+      int RightHorJoy=Master_Controller.getAnalong(okapi::ControllerAnalog::rightX)*200;
 
       if(std::abs(LeftVirtJoy)<5)    LeftVirtJoy=0;
       if(std::abs(RightVirtJoy)<5)    RightVirtJoy=0;
@@ -144,7 +145,7 @@ namespace Drive{
             LDR.TaskRun();
             RDR.TaskRun();
             SDMP(LDR.Pct,RDR.Pct);
-            vex::task::sleep(LDR.ChangeMsec);
+            pros::delay(LDR.ChangeMsec);
         }
         return 1;
     }
@@ -193,10 +194,10 @@ namespace Drive{
             RPowSend=RPowSend*Vector;
             //Send it to Driving Power
             SetDRpower(LPowSend,RPowSend);
-            vex::task::sleep(1);
+            pros::delay(1);
         }
         SetDRpower(0,0);
-        vex::task::sleep(FinalWait);
+        pros::delay(FinalWait);
     }
     // Autonomous Turn
     void AutonTurn(double Dis, int LPowSend=40 , int RPowSend=40, int FinalWait=25){
@@ -207,22 +208,22 @@ namespace Drive{
         FLMotor.resetRotation();
         while(std::abs(FLMotor.rotation(vex::rotationUnits::rev))<std::abs(Dis)){
            DI(LPowSend,-RPowSend);
-           vex::task::sleep(1);
+           pros::delay(1);
         }
         DI(0,0);
-        vex::task::sleep(FinalWait);
+        pros::delay(FinalWait);
     }
     void AutonLock(){
-        BLMotor.stop(vex::brakeType::hold);
-        BRMotor.stop(vex::brakeType::hold);
-        FLMotor.stop(vex::brakeType::hold);
-        FRMotor.stop(vex::brakeType::hold);
+        BLMotor.setBrakeMode(okapi::AbstractMotor::hold);
+        BRMotor.setBrakeMode(okapi::AbstractMotor::hold);
+        FLMotor.setBrakeMode(okapi::AbstractMotor::hold);
+        FRMotor.setBrakeMode(okapi::AbstractMotor::hold);
     }
     void AutonNLck(){
-            BLMotor.stop(vex::brakeType::coast);
-            BRMotor.stop(vex::brakeType::coast);
-            FLMotor.stop(vex::brakeType::coast);
-            FRMotor.stop(vex::brakeType::coast);
+            BLMotor.setBrakeMode(okapi::AbstractMotor::coast);
+            BRMotor.setBrakeMode(okapi::AbstractMotor::coast);
+            FLMotor.setBrakeMode(okapi::AbstractMotor::coast);
+            FRMotor.setBrakeMode(okapi::AbstractMotor::coast);
     }
 
     void StrafeRecon(int time, int power, int dir){

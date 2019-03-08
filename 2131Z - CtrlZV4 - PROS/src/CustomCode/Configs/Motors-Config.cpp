@@ -1,18 +1,19 @@
 #include "Custom/Configs/Motors-Config.hpp"
+#include "main.h"
 
-namespace DriveMotors {
-  pros::Motor FRMotor(5,pros::MECH_SET_MOTOR_GEARSET_18,true,pros::E_MOTOR_ENCODER_DEGREES);
-  pros::Motor BRMotor(10,pros::MECH_SET_MOTOR_GEARSET_18,true,pros::E_MOTOR_ENCODER_DEGREES);
-  pros::Motor FLMotor(2,pros::MECH_SET_MOTOR_GEARSET_18,true,pros::E_MOTOR_ENCODER_DEGREES);
-  pros::Motor BLMotor(1,pros::MECH_SET_MOTOR_GEARSET_18,true,pros::E_MOTOR_ENCODER_DEGREES);
+namespace Drive {
+  okapi::Motor FRMotor(5,true,okapi::AbstractMotor::gearset::green,okapi::AbstractMotor::encoderUnits::degrees);
+  okapi::Motor BRMotor(10,true,okapi::AbstractMotor::gearset::green,okapi::AbstractMotor::encoderUnits::degrees);
+  okapi::Motor FLMotor(2,false,okapi::AbstractMotor::gearset::green,okapi::AbstractMotor::encoderUnits::degrees);
+  okapi::Motor BLMotor(1,false,okapi::AbstractMotor::gearset::green,okapi::AbstractMotor::encoderUnits::degrees);
 }
-namespace IntakeMotors{
-  pros::Motor TFeederMotor(9,pros::MECH_SET_MOTOR_GEARSET_6,true,pros::E_MOTOR_ENCODER_DEGREES);
-  pros::Motor IntakerMotor(3,pros::MECH_SET_MOTOR_GEARSET_36,true,pros::E_MOTOR_ENCODER_DEGREES);
+namespace Intake {
+  okapi::Motor TFeederMotor(9,false,okapi::AbstractMotor::gearset::green,okapi::AbstractMotor::encoderUnits::degrees);
+  okapi::Motor IntakerMotor(3,false,okapi::AbstractMotor::gearset::green,okapi::AbstractMotor::encoderUnits::degrees);
 }
-namespace PuncherMotors {
-  pros::Motor PuncherMotor(7,pros::MECH_SET_MOTOR_GEARSET_18,true,pros::E_MOTOR_ENCODER_DEGREES);
+namespace Puncher {
+  okapi::Motor PuncherMotor(7,false,okapi::AbstractMotor::gearset::red,okapi::AbstractMotor::encoderUnits::degrees);
 }
-namespace LiftMotors {
-  pros::Motor LiftMotor(8,pros::MECH_SET_MOTOR_GEARSET_18,true,pros::E_MOTOR_ENCODER_DEGREES);
+namespace Lift {
+  okapi::Motor LiftMotor(8,false,okapi::AbstractMotor::gearset::green,okapi::AbstractMotor::encoderUnits::degrees);
 }

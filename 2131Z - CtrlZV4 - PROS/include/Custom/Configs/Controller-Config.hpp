@@ -1,6 +1,6 @@
 #ifndef CONTROLLER_CONFIG_HPP
 #define CONTROLLER_CONFIG_HPP
-#include "okapi/api.h"
+#include "okapi/api.hpp"
 
 extern okapi::Controller Master_Controller;
 

@@ -2,6 +2,14 @@
 #define PUNCHER_HPP
 
 namespace Puncher{
+    bool punchPressing;
+    int PunchPlace;
+    bool PunchRunOnce;
+
+    bool PuncherCharged;
+    bool R1Pressed;
+    int PuncherDeg;
+    bool PunchControlPositionEnabled;
 
     //SetMotors
     void setPunchFor(int degs);

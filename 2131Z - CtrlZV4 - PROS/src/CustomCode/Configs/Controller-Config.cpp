@@ -1,10 +1,12 @@
 #include "Custom/Configs/Controller-Config.hpp"
+#include "main.h"
 
-pros::Controller Master_Controller(pros::E_CONTROLLER_MASTER);
+okapi::Controller Master_Controller(pros::E_CONTROLLER_MASTER);
 
 namespace Drive{
   okapi::ControllerButton FlipDrive = Master_Controller[okapi::ControllerDigital::X];
   okapi::ControllerButton DriveLock = Master_Controller[okapi::ControllerDigital::B];
+  okapi::
 }
 namespace Intake{
   okapi::ControllerButton ManuIn = Master_Controller[okapi::ControllerDigital::left];

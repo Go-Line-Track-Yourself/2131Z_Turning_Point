@@ -1,6 +1,17 @@
 #ifndef DRIVE_HPP
 #define DRIVE_HPP
 namespace Drive{
+    bool DriveRampingEnabled;
+    bool MechDriveRampingEnabled;
+
+    bool DriveLockConBtnPressed;
+    bool DriveLockInverted;
+
+    bool DriveDirConBtnPressed;
+    bool DriveDirInverted;
+
+    int DriveEndWait;
+    int TurnEndWait;
     //SetMotors
     void SDMP(int LPower, int RPower);
     void setDriveBrakeCoast()

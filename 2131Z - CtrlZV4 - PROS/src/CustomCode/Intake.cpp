@@ -1,5 +1,6 @@
 #include "Custom/Intake.hpp"
-#include "Custom/Global.cpp"
+#include "Custom/Global.hpp"
+#include "main.h"
 
 namespace Intake{
     bool AutoIntakeEnabled = true;

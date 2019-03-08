@@ -72,16 +72,6 @@
  */
 #ifdef __cplusplus
 
-#include "CustomCode/Configs/Analog-Config.cpp"
-#include "CustomCode/Configs/Controller-Config.cpp"
-#include "CustomCode/Configs/Motors-Config.cpp"
-#include "CustomCode/Global.cpp"
-#include "CustomCode/AutonRoutines.cpp"
-#include "CustomCode/Drive.cpp"
-#include "CustomCode/Intake.cpp"
-#include "CustomCode/Lift.cpp"
-#include "CustomCode/Puncher.cpp"
-
 
 extern "C" {
 #endif

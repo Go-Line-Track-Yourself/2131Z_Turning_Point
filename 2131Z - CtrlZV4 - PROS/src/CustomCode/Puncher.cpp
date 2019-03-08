@@ -1,5 +1,6 @@
-#include "Custom/Puncher.cpp"
-#include "Custom/Global.cpp"
+#include "Custom/Puncher.hpp"
+#include "Custom/Global.hpp"
+#include "main.h"
 
 namespace Puncher{
     bool punchPressing= false;

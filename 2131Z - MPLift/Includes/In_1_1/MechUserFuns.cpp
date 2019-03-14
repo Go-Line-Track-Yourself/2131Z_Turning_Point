@@ -80,32 +80,27 @@ void PuncherControl(){
 }
 
 void Lift(){
-    if(Controller1.ButtonL1.pressing() && DriveDirInverted == false) {
-        RevLiftMotor.spin(vex::directionType::fwd, 70, vex::velocityUnits::pct);
+    if(Controller1.ButtonL1.pressing()) {
+        RevLiftMotor.spin(vex::directionType::fwd, 100, vex::velocityUnits::pct);
     }
     else if(Controller1.ButtonL2.pressing()) {
-        RevLiftMotor.spin(vex::directionType::rev, 70, vex::velocityUnits::pct);
+        RevLiftMotor.spin(vex::directionType::rev, 100, vex::velocityUnits::pct);
     }
 }
 
-void ArizonaFlip(){
-    if(Controller1.ButtonL1.pressing() && DriveDirInverted == true) {
-        ArizonaMotor.spin(vex::directionType::fwd, 70, vex::velocityUnits::pct);
-    }
-    else if(Controller1.ButtonL2.pressing()) {
-        ArizonaMotor.spin(vex::directionType::rev, 70, vex::velocityUnits::pct);
-    }
-}
 
 void IntakeVoid(){
         if(Controller1.ButtonLeft.pressing()) {
             IntakerMotor.spin(vex::directionType::fwd, 100, vex::velocityUnits::pct);
+            TFeederMotor.spin(vex::directionType::fwd, 100, vex::velocityUnits::pct);
         }
         else if(Controller1.ButtonDown.pressing()) {
             IntakerMotor.spin(vex::directionType::rev, 100, vex::velocityUnits::pct);
+            TFeederMotor.spin(vex::directionType::rev, 100, vex::velocityUnits::pct);
         }
         else {
             IntakerMotor.stop();
+            TFeederMotor.stop();
         }
 
 }

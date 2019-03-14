@@ -82,14 +82,27 @@ void AutonTurn(double Dis, int LPowSend=40 , int RPowSend=40, int FinalWait=25){
 void AutonIntk(bool ON, bool In){
     if(ON){
         if(In){
-            SetIntakerPower(-100);
+            SetIntakerPower(100);
         } 
         if(!In){
-            SetIntakerPower(100);
+            SetIntakerPower(-100);
         } 
     }
     if(!ON){
         IntakerMotor.stop();
+    }
+}
+void AutonBelt(bool ON, bool In){
+    if(ON){
+        if(In){
+            SetTFeederPower(-100);
+        } 
+        if(!In){
+            SetTFeederPower(100);
+        } 
+    }
+    if(!ON){
+        TFeederMotor.stop();
     }
 }
 
@@ -200,16 +213,26 @@ void Auto_Intake() {
         }
     else if(AutoIntakeOff){
         SetIntakerPower(0);
+        if(AutoFlip) SetIntakerPower(-100);
+        SetTFeederPower(0);
 
     }
     else if(BallInTop && BallInNope){
-            SetIntakerPower(-100);
+            SetTFeederPower(-100);
     }
     else if(BallInBottom && BallInTop){
-        SetIntakerPower(0);
+        SetTFeederPower(0);
+        SetIntakerPower(-10);
+        if(Controller1.ButtonL2.pressing()){
+            SetIntakerPower(-100);
+        }
+        else {
+            SetIntakerPower(0);
+        }
     } 
     else{
         SetIntakerPower(100);
+        SetTFeederPower(100);
     } 
 }
 int Auto_Intaking(){

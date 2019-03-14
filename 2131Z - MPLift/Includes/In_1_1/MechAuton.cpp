@@ -42,10 +42,10 @@ void BackBParkShot(){
     AutoIntakeOff = false;
     //AutonPSet();
     AutonTurn(-33.5,40,40);
-    AutonAjUp();
+     
     AutonFire();
     Wait(300);
-    AutonAjDn();
+     
     AutonNLck();
 }
 void BackB(){
@@ -73,10 +73,10 @@ void BackBBread(){
     AutonMove(43,70);
     Wait(150);
     AutonFire();
-    AutonAjUp();
+     
     Wait(200);
     //AutonRFire();
-    AutonAjDn();
+     
     AutonTurn(1,25,25);
     AutonMove(42,70);
     StrafeRecon(300,70,-1);
@@ -139,10 +139,10 @@ void BackRParkShot(){
     AutoIntakeOff = false;
     //AutonPSet();
     AutonTurn(33.5,40,40);
-    AutonAjUp();
+     
     AutonFire();
     Wait(300);
-    AutonAjDn();
+     
     AutonNLck();
 }
 void BackRBread(){
@@ -158,10 +158,10 @@ void BackRBread(){
     //AutonPSet();
     AutonMove(43,70);
     AutonFire();
-    AutonAjUp();
+     
     Wait(200);
     //AutonRFire();
-    AutonAjDn();
+     
     AutonTurn(-0.5,25,25); 
     AutonMove(40,80);
     StrafeRecon(500,80,1);
@@ -207,11 +207,11 @@ void FrntB(){
     AutonFire();
     AutonTurn(15.5,40,40);
     AutonFire();
-    AutonAjUp();
+     
     AutonFire();
     Wait(200);
     AutonFire();
-    AutonAjDn();
+     
     AutonTurn(0.5,25,25);
     AutonMove(42,70);
     StrafeRecon(300,70,-1);
@@ -225,9 +225,9 @@ void FrntB(){
     Wait(600);
     if(BallInTop){
         AutonFire();
-        AutonAjUp();
+         
         AutonFire();
-        AutonAjDn();
+         
     }
     AutoIntakeOff = true;
     AutonTurn(-4,60,60);
@@ -246,10 +246,10 @@ void FrntBPark(){
     //AutonPSet();
     AutonTurn(15.5,40,40);
     AutonFire();
-    AutonAjUp();
+     
     Wait(200);
     //AutonRFire();
-    AutonAjDn();
+     
     AutonTurn(1,25,25);
     AutonMove(42,70);
     StrafeRecon(300,70,-1);
@@ -278,11 +278,11 @@ void FrntR(){
     AutonFire();
     AutonTurn(-15.1,40,40);
     AutonFire();
-    AutonAjUp();
+     
     AutonFire();
     Wait(200);
     AutonFire();
-    AutonAjDn();
+     
     AutonTurn(-0.75,25,25); 
     AutonMove(40,80);
     StrafeRecon(500,80,1);
@@ -312,11 +312,11 @@ void FrntRPark(){
     AutonFire();
     AutonTurn(-15.3,40,40);
     AutonFire();
-    AutonAjUp();
+     
     AutonFire();
     Wait(200);
     AutonFire();
-    AutonAjDn();
+     
     AutonTurn(-0.5,25,25); 
     AutonMove(40,80);
     StrafeRecon(500,80,1);
@@ -352,10 +352,10 @@ void Skillz(){
     AutonFire();
     Wait(20);
     AutonFire();
-    AutonAjUp();
+     
     Wait(500);
     AutonFire();
-    AutonAjDn();
+     
     AutonTurn(-0.4,60);
     StrafeRecon(160,30,-1);
     AutonMove(47,90);
@@ -375,12 +375,12 @@ void Skillz(){
     AutonFire();
     Wait(1000);
     if (BallInTop){
-        AutonAjUp();  
+           
         AutonFire();
         Wait(300); 
         AutonFire();
         HitFlag = true;
-        AutonAjDn();
+         
         Wait(100);
     }
     AutonTurn(-1,60,60);
@@ -430,11 +430,11 @@ void Skillz(){
     Wait(700);
     if (BallInTop){
         AutonFire();
-        AutonAjUp();
+         
         Wait(300);
         AutonFire();
         HitFlag = true;
-        AutonAjDn();
+         
         Wait(100);
     }
     AutonTurn(-0.2);

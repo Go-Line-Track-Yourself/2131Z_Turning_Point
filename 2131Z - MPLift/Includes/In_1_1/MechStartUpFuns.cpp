@@ -19,6 +19,7 @@ void UserCoStart(){
 
     DriveRampingEnabled=false;
     PuncherMotor.setStopping(vex::brakeType::coast);
+    RevLiftMotor.setStopping(vex::brakeType::hold);
     FLMotor.setStopping(vex::brakeType::coast);
     BLMotor.setStopping(vex::brakeType::coast);
     FRMotor.setStopping(vex::brakeType::coast);

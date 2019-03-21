@@ -190,7 +190,7 @@ int TopLightValue;
 int MiddleLightValue;
 int NopeLightValue;
 int BottomBallInMax = 50;
-int TopBallInMax = 50;
+int TopBallInMax = 60;
 int NopeBallInMax = 70;
 bool BallInBottom;
 bool BallInTop;

@@ -86,6 +86,9 @@ void Lift(){
     else if(Controller1.ButtonL2.pressing()) {
         RevLiftMotor.spin(vex::directionType::rev, 100, vex::velocityUnits::pct);
     }
+    else {
+        RevLiftMotor.stop();
+    }
 }
 
 

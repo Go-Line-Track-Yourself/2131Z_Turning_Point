@@ -159,14 +159,18 @@ void AutonFire(bool WaitForFire=true){
 
 
 // Autonomous Lift
-void AutonLiftUp(int percent){
-    RevLiftMotor.rotateTo(180,vex::rotationUnits::deg, percent,vex::velocityUnits::pct);
+void AutonLiftUp(){
+    RevLiftMotor.rotateTo(720,vex::rotationUnits::deg, 100,vex::velocityUnits::pct);
 }
-void AutonLiftMid(int percent){
-    RevLiftMotor.rotateTo(90,vex::rotationUnits::deg, percent,vex::velocityUnits::pct);
+void AutonLiftMid(){
+    RevLiftMotor.rotateTo(250,vex::rotationUnits::deg, 100,vex::velocityUnits::pct);
 }
-void AutonLiftDn(int percent){
-    RevLiftMotor.rotateTo(0,vex::rotationUnits::deg, percent,vex::velocityUnits::pct);
+void AutonLiftDn(){
+    RevLiftMotor.rotateTo(0,vex::rotationUnits::deg, 100,vex::velocityUnits::pct);
+}
+
+void AutonLift(int deg){
+    RevLiftMotor.rotateTo( deg,vex::rotationUnits::deg, 60,vex::velocityUnits::pct);
 }
 
 
@@ -189,9 +193,9 @@ int	BottomLightValue;
 int TopLightValue;
 int MiddleLightValue;
 int NopeLightValue;
-int BottomBallInMax = 50;
-int TopBallInMax = 60;
-int NopeBallInMax = 70;
+int BottomBallInMax = 40;
+int TopBallInMax = 50;
+int NopeBallInMax = 30;
 bool BallInBottom;
 bool BallInTop;
 bool BallInNope;
@@ -208,7 +212,7 @@ void Auto_Intake() {
     if (NopeLightValue < NopeBallInMax) BallInNope = true;
     else BallInNope = false;
 
-    if(Controller1.ButtonL2.pressing()){
+    if(Controller1.ButtonR2.pressing()){
             SetIntakerPower(-100);
         }
     else if(AutoIntakeOff){
@@ -218,7 +222,8 @@ void Auto_Intake() {
 
     }
     else if(BallInTop && BallInNope){
-            SetTFeederPower(-100);
+            SetTFeederPower(-60);
+            Wait(130);
     }
     else if(BallInBottom && BallInTop){
         SetTFeederPower(0);

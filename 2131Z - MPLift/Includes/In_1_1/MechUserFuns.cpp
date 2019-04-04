@@ -80,11 +80,25 @@ void PuncherControl(){
 }
 
 void Lift(){
-    if(Controller1.ButtonL1.pressing()) {
+    int LiftAtMax = 720;
+    int LiftAtMin = 0;
+    bool LiftMax;
+    bool LiftMin;
+    if (RevLiftMotor.rotation(vex::rotationUnits::deg) < LiftAtMax) LiftMax = true;
+    else LiftMax = false;
+    if (RevLiftMotor.rotation(vex::rotationUnits::deg) > LiftAtMin) LiftMin = true;
+    else LiftMin = false;
+    if(Controller1.ButtonL1.pressing() && LiftMax == true) {
         RevLiftMotor.spin(vex::directionType::fwd, 100, vex::velocityUnits::pct);
     }
-    else if(Controller1.ButtonL2.pressing()) {
+    else if(Controller1.ButtonL1.pressing() && LiftMax == false) {
+        RevLiftMotor.stop();
+    }
+    else if(Controller1.ButtonL2.pressing() && LiftMin == true) {
         RevLiftMotor.spin(vex::directionType::rev, 100, vex::velocityUnits::pct);
+    }
+    else if(Controller1.ButtonL2.pressing() && LiftMin == false) {
+        RevLiftMotor.stop();
     }
     else {
         RevLiftMotor.stop();

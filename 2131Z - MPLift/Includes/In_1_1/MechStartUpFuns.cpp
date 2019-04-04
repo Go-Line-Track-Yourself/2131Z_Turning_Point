@@ -15,7 +15,7 @@ void AutonStart(){
 void UserCoStart(){
     Brain.Screen.render(false,false);
     Brain.Screen.clearScreen();
-    vex::task Debug(DeBug);
+    //vex::task Debug(DeBug);
 
     DriveRampingEnabled=false;
     PuncherMotor.setStopping(vex::brakeType::coast);
@@ -24,6 +24,8 @@ void UserCoStart(){
     BLMotor.setStopping(vex::brakeType::coast);
     FRMotor.setStopping(vex::brakeType::coast);
     BRMotor.setStopping(vex::brakeType::coast);
+    IntakerMotor.setStopping(vex::brakeType::brake);
+    TFeederMotor.setStopping(vex::brakeType::brake);
 
     //PuncherMotor.rotateFor(vex::directionType::fwd, 260, vex::rotationUnits::deg, 100, vex::velocityUnits::pct);
 

@@ -1,5 +1,3 @@
-
-
 //Back Blue
 void BackBPark(){
     AutonMove(33,60);
@@ -95,7 +93,7 @@ void BackBBread(){
 //Back Red
 void BackRPark(){
     AutoIntakeOff = true;
-    AutonMove(39,80);
+    AutonMove(34,80);
     Wait(200);
     AutoIntakeOff = false;
     Wait(200);
@@ -175,22 +173,26 @@ void BackRBread(){
 }
 void BackR(){
     AutoIntakeOff = true;
-    AutonMove(39,80);
+    AutonMove(31,80);
     Wait(200);
     AutoIntakeOff = false;
     Wait(200);
-    AutonMove(-4,70);
+    AutonMove(-3,70);
     AutoIntakeOff = true;
-    AutonTurn(16,50,50);
-    AutoFlip = true;
-    AutonMove(5,80);
-    AutonTurn(16,70,70);
-    AutonMove(5,70);
-    AutoFlip = false;
-    AutonTurn(3,40,40);
-    AutonMove(8,50);
+    AutonTurn(-24.5,60,60);
+    AutonMove(-14.5,60);
+    AutonLiftMid();
+    AutonFire();
+    AutonMove(4.5,60);
+    AutonTurn(7.25,50,50);
+    AutonFire();
     AutonTurn(-19,50,50);
-    AutonMove(15,40,40);
+    AutonMove(29,90);
+    AutonMove(1,40);
+    AutonLiftUp();
+    AutonMove(-.25,50);
+    AutonLiftDn();
+    AutonMove(-2,50);
 }
 
 
@@ -199,30 +201,34 @@ void BackR(){
 
 //Front Blue
 void FrntB(){
-    AutonMove(33,60); 
+    AutonMove(33,80); 
     Wait(300);
     AutonMove(-35,70);
     AutonMove(-3,25);
     AutonMove(4,25);
     AutonFire();
-    AutonTurn(15.5,40,40);
+    AutonTurn(16,40,40);
+    AutonMove(8,30);
     AutonFire();
-     
+    Wait(80);
     AutonFire();
+    AutonLiftMid();
     Wait(200);
     AutonFire();
+    AutonLiftDn();
      
-    AutonTurn(0.5,25,25);
-    AutonMove(42,70);
+    AutonTurn(1,25,25);
+    AutonMove(34,70);
     StrafeRecon(300,70,-1);
     AutonMove(5,70);
     AutonMove(-19,80);
     AutonFire();
     AutonTurn(-11,40,40);
-    AutonMove(3,25);
-//    Wait(2600);
+    AutonMove(5,25);
+    AutonLiftMid();
     AutonFire();
     Wait(600);
+/*
     if(BallInTop){
         AutonFire();
          
@@ -233,6 +239,7 @@ void FrntB(){
     AutonTurn(-4,60,60);
     AutoFlip = true;
     AutonMove(7,70);
+    */
 }
 void FrntBPark(){
     AutoIntakeOff = true;
@@ -268,34 +275,77 @@ void FrntBPark(){
 //Front Red
 void FrntR(){
     AutoIntakeOff = true;
-    AutonMove(32,70);
+    AutonMove(33,70);
     Wait(100);
     AutoIntakeOff = false;
     Wait(200); 
-    AutonMove(-33,70);
-    AutonMove(-4,25);
-    AutonMove(4,25);
+    AutonMove(-29,60);
+    //AutonMove(-33,60);
+    //AutonMove(-4,25);
+    //AutonMove(2,25);
     AutonFire();
-    AutonTurn(-15.1,40,40);
+    AutonTurn(-16.25,40,40);
+    AutonMove(7,40);
     AutonFire();
-     
+    AutonLiftMid();
     AutonFire();
     Wait(200);
     AutonFire();
-     
-    AutonTurn(-0.75,25,25); 
+    AutonLiftDn();
+    Wait(50);
+    AutonTurn(-0.5,25,25); 
     AutonMove(40,80);
     StrafeRecon(500,80,1);
     AutonMove(5.5,40);
     AutonMove(-19,80);
     AutoIntakeOff = true;
-    AutonTurn(9.5,50,50);
+    //AutonTurn(9.5,50,50);
+    AutonTurn(11.5,50,50);
     AutonFire();
-    AutonMove(3,50);
+    //AutonMove(6,50);
+    AutonLiftMid();
     AutonFire();
-    AutonTurn(10,50,50);
+    AutonLiftDn();
+    AutonTurn(7,50,50);
     AutoFlip = true;
-    AutonMove(15,60);
+    AutonMove(18,60);
+    Wait(50);
+    AutonMove(-3,80);
+    AutoFlip = false;
+}
+void FrntRFarSide(){
+    AutoIntakeOff = true;
+    AutonMove(33,70);
+    Wait(100);
+    AutoIntakeOff = false;
+    Wait(200); 
+    AutonMove(-29,60);
+    AutonFire();
+    AutonTurn(-16.25,60,60);
+    AutonMove(5,40);
+    AutonFire();
+    AutonLiftMid();
+    AutonFire();
+    Wait(200);
+    AutonFire();
+    AutonLiftDn();
+    Wait(50);
+    AutonTurn(-0.5,25,25); 
+    AutonMove(40,80);
+    StrafeRecon(500,80,1);
+    AutonMove(5.5,40);
+    StrafeRecon(100,25,-1);
+    AutonMove(-19,80);
+    AutonTurn(12.7,60,60);
+    AutonMove(2,30);
+    AutonFire();
+    AutonLiftMid();
+    AutonFire();
+    AutonLiftDn();
+    AutoIntakeOff = true;
+    AutonTurn(5,80,80);
+    AutoFlip = true;
+    AutonMove(18,60);
     Wait(50);
     AutonMove(-3,80);
     AutoFlip = false;
@@ -517,7 +567,7 @@ void AutonPots(){
             
         }
         else if(SelectValueTwo > 50){
-
+            FrntRFarSide();
         }
         else if(SelectValueTwo > 30){
             FrntRPark();
@@ -612,9 +662,10 @@ void AutonUpdater(){
             
         }
         else if(SelectValueTwo > 50){
+            //FrntRFarSide
             Brain.Screen.clearLine(1,vex::color::red);
             Brain.Screen.clearLine();
-            Brain.Screen.print(" ");
+            Brain.Screen.print("Front Red Far Side Hit Again");
 
         }
         else if(SelectValueTwo > 30){

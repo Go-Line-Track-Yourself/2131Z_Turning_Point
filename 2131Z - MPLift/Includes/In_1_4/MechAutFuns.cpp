@@ -139,11 +139,11 @@ int PuncherSpinFunction(){
 void AutonFire(bool WaitForFire=true){
         PunchControlPositionEnabled = true;
         if(!PuncherCharged){
-            PuncherDeg+=250;
+            PuncherDeg+=240;
             PuncherCharged = true;
         }
         else if(PuncherCharged){
-            PuncherDeg+=110;
+            PuncherDeg+=120;
             PuncherCharged = false;
         }
         vex::task PuncherSpinTask(PuncherSpinFunction);
@@ -169,7 +169,7 @@ void AutonLiftDn(){
     RevLiftMotor.rotateTo(0,vex::rotationUnits::deg, 100,vex::velocityUnits::pct);
 }
 
-// Autonomous Custom Puncher Heights Via Lift
+// Autonomous Custom Puncher Heights With Lift
 void AutonLiftCustom1(){
     RevLiftMotor.rotateTo(100,vex::rotationUnits::deg, 100,vex::velocityUnits::pct);
 }
@@ -179,7 +179,12 @@ void AutonLiftCustom2(){
 void AutonLiftCustom3(){
     RevLiftMotor.rotateTo(130,vex::rotationUnits::deg, 100,vex::velocityUnits::pct);
 }
-
+void AutonLiftCustom4(){
+    RevLiftMotor.rotateTo(150,vex::rotationUnits::deg, 50,vex::velocityUnits::pct);
+}
+void AutonLiftCustom5(){
+    RevLiftMotor.rotateTo(302,vex::rotationUnits::deg, 50,vex::velocityUnits::pct);
+}
 
 // Autonomous Drive Lock
 void AutonLock(){
